@@ -35,6 +35,12 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eRt-IJ-Q2b">
+                                <rect key="frame" x="10" y="677" width="373" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -44,10 +50,14 @@
                             <constraint firstItem="7KR-qT-XlV" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="gcg-uN-Qkn"/>
                             <constraint firstItem="RU8-OE-d7c" firstAttribute="top" secondItem="ICL-z3-N75" secondAttribute="bottom" constant="20" id="gkV-Y8-HRh"/>
                             <constraint firstItem="ICL-z3-N75" firstAttribute="top" secondItem="7KR-qT-XlV" secondAttribute="bottom" constant="20" id="iaX-Qp-aAj"/>
+                            <constraint firstItem="eRt-IJ-Q2b" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="10" id="pLv-MW-Ynp"/>
+                            <constraint firstItem="eRt-IJ-Q2b" firstAttribute="top" secondItem="RU8-OE-d7c" secondAttribute="bottom" constant="30" id="rLT-mF-a99"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="eRt-IJ-Q2b" secondAttribute="trailing" constant="10" id="toJ-RO-dgg"/>
                             <constraint firstItem="ICL-z3-N75" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="wTv-XQ-Q64"/>
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="descriptionLabel" destination="eRt-IJ-Q2b" id="NCm-Vk-9bw"/>
                         <outlet property="statusLabel" destination="ICL-z3-N75" id="7za-MY-1bl"/>
                         <outlet property="temperatureLable" destination="RU8-OE-d7c" id="gbP-8o-wDZ"/>
                         <outlet property="weatherImageView" destination="7KR-qT-XlV" id="YvH-pJ-Xzj"/>

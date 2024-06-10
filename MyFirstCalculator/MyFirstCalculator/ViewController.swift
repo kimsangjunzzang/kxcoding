@@ -13,33 +13,7 @@ class ViewController: UIViewController {
     
     @IBOutlet weak var secondOperandField: UITextField!
     
-    @IBAction func selectOperator(_ sender: Any) {
-        let actionSheet = UIAlertController(title: nil, message: nil, preferredStyle: .actionSheet)
-        
-        let plusAction = UIAlertAction(title: "+ (더하기)", style: .default) { _  in
-            self.operatorButton.setTitle("+", for: .normal)
-        }
-        actionSheet.addAction(plusAction)
-        
-        let minusAction = UIAlertAction(title: "- (빼기)", style: .default) { _ in
-            self.operatorButton.setTitle("-", for: .normal)
-        }
-        actionSheet.addAction(minusAction)
-        
-        let multiplyAction = UIAlertAction(title: "* (곱하기)", style: .default) { _ in
-            self.operatorButton.setTitle("*", for: .normal)
-            
-        }
-        actionSheet.addAction(multiplyAction)
-        
-        let divideAction = UIAlertAction(title: "/ (나누기)", style: .default) { _  in
-            self.operatorButton.setTitle("/", for: .normal)
-            
-        }
-        actionSheet.addAction(divideAction)
-        
-        present(actionSheet,animated: true)
-    }
+   
     
     @IBOutlet weak var operatorButton: UIButton!
     
@@ -79,6 +53,33 @@ class ViewController: UIViewController {
         // Do any additional setup after loading the view.
     }
     
+    @IBAction func selectOperator(_ sender: Any) {
+        let actionSheet = UIAlertController(title: nil, message: nil, preferredStyle: .actionSheet)
+        
+        let plusAction = UIAlertAction(title: "+ (더하기)", style: .default) { _  in
+            self.operatorButton.setTitle("+", for: .normal)
+        }
+        actionSheet.addAction(plusAction)
+        
+        let minusAction = UIAlertAction(title: "- (빼기)", style: .default) { _ in
+            self.operatorButton.setTitle("-", for: .normal)
+        }
+        actionSheet.addAction(minusAction)
+        
+        let multiplyAction = UIAlertAction(title: "* (곱하기)", style: .default) { _ in
+            self.operatorButton.setTitle("*", for: .normal)
+            
+        }
+        actionSheet.addAction(multiplyAction)
+        
+        let divideAction = UIAlertAction(title: "/ (나누기)", style: .default) { _  in
+            self.operatorButton.setTitle("/", for: .normal)
+            
+        }
+        actionSheet.addAction(divideAction)
+        
+        present(actionSheet,animated: true)
+    }
     
 }
 

@@ -17,10 +17,11 @@ class ViewController: UIViewController {
     @IBAction func login(_ sender: Any) {
         let id = idField.text!
         let password = passwordField.text!
+
         
-        if id.isEmpty || password.isEmpty {
+        guard !id.isEmpty && !password.isEmpty else{
             print("계정을 입력하세요")
-            return // 코드블록의 실행을 끝낸다.
+            return
         }
         
         if id == "kxcoding" && password == "1234"{

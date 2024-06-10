@@ -20,7 +20,7 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         let weather = "비"
-        let temperature = -10
+        let temperature = 27
         
         statusLabel.text = weather
         temperatureLable.text = String(temperature)
@@ -39,19 +39,7 @@ class ViewController: UIViewController {
         default:
             break
         }
-//        
-//        if temperature < -10 {
-//            descriptionLabel.text = "이불 밖은 위험해요"
-//        }else if temperature >= -10 && temperature <= 10{
-//            descriptionLabel.text = "두툼한 패딩을 챙기세요"
-//        }else if temperature >= 11 && temperature <= 20{
-//            descriptionLabel.text = "일교차를 조심하세요"
-//        }else if temperature >= 21 && temperature <= 30{
-//            descriptionLabel.text = "여름이 다가오고 있어요"
-//        }else{
-//            descriptionLabel.text = "xx 여름"
-//            
-//        }
+
         
         switch weather {
 

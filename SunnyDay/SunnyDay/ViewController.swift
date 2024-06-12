@@ -19,44 +19,49 @@ class ViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        let weather = "비"
-        let temperature = 27
         
+        let weather = "비"
+        let temperature = 10
+        
+        weatherImageView.image = getWeatherImage(matching: weather)
         statusLabel.text = weather
         temperatureLable.text = String(temperature)
+        descriptionLabel.text = getTemperatureDescription(matching: temperature)
         
-        switch temperature {
-        case ..<(-10):
-            descriptionLabel.text = "이불 밖은 위험해요"
-        case -10...10:
-            descriptionLabel.text = "두툼한 패딩을 챙기세요"
-        case 11 ... 20:
-            descriptionLabel.text = "일교차를 조심하세요"
-        case 21 ... 30:
-            descriptionLabel.text = "여름이 다가오고 있어요"
-        case 31...:
-            descriptionLabel.text = "XX 여름"
-        default:
-            break
-        }
-
         
+    }
+    
+    func getWeatherImage(matching weather: String) -> UIImage? {
         switch weather {
-
         case "맑음" :
-            weatherImageView.image = UIImage(named: "016-sun")
+            return  UIImage(named: "016-sun")
         case "흐림" :
-            weatherImageView.image = UIImage(named: "001-cloud")
+            return UIImage(named: "001-cloud")
         case "눈" :
-            weatherImageView.image = UIImage(named: "004-cloud")
+            return UIImage(named: "004-cloud")
         case "비" :
-            weatherImageView.image = UIImage(named: "002-cloud")
+            return UIImage(named: "002-cloud")
         default:
-            break
+            return nil
         }
         
     }
     
-    
+    func getTemperatureDescription(matching temperature: Int) -> String{
+        switch temperature {
+        case ..<(-10):
+            return "이불 밖은 위험해요"
+        case -10...10:
+            return "두툼한 패딩을 챙기세요"
+        case 11 ... 20:
+            return "일교차를 조심하세요"
+        case 21 ... 30:
+            return "여름이 다가오고 있어요"
+        case 31...:
+            return "XX 여름"
+        default:
+            return ""
+        }
+    }
 }
 

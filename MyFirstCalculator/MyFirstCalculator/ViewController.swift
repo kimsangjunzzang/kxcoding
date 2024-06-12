@@ -28,9 +28,6 @@ class ViewController: UIViewController {
         let plusAction = UIAlertAction(title: "+ (더하기)", style: .default) { _  in
             self.operatorButton.setTitle("+", for: .normal)
         }
-//        let action = UIAlertAction(title: "+ (더하기)", style: .default, handler: {(action: UIAlertAction) -> Void in
-//            self.operatorButton.setTitle("+", for: .normal)
-//        })
         actionSheet.addAction(plusAction)
        
         let minusAction = UIAlertAction(title: "- (빼기)", style: .default) { _ in

@@ -17,38 +17,6 @@ class ViewController: UIViewController {
     
     @IBOutlet weak var resultLabel: UILabel!
     
-    @IBAction func calculate(_ sender: Any) {
-        guard let text = firstOperandField.text, let a = Int(text) else{
-            return
-        }
-        guard let text = secondOperandField.text, let b = Int(text) else{
-            return
-        }
-        guard  let op = operatorButton.title(for: .normal)else{
-            return
-        }
-        
-        var result : Int? = nil
-        switch op {
-        case "+":
-            result = a + b
-            
-        case "-":
-            result = a - b
-            
-        case "*":
-            result = a * b
-            
-        case "/":
-            result = a / b
-            
-        default:
-            break
-        }
-        guard let result else{return}
-        resultLabel.text = String(result)
-    }
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
@@ -80,6 +48,51 @@ class ViewController: UIViewController {
         actionSheet.addAction(divideAction)
         
         present(actionSheet,animated: true)
+    }
+    
+    @IBAction func calculate(_ sender: Any) {
+        guard let text = firstOperandField.text, let a = Int(text) else{
+            showAlert("값을 입력해 주세요")
+            return
+        }
+        
+        guard let text = secondOperandField.text, let b = Int(text) else{
+            showAlert("값을 입력해 주세요")
+            return
+        }
+        
+        guard  let op = operatorButton.title(for: .normal), op != "?" else {
+            showAlert("연산자를 선택해 주세요")
+            return
+        }
+        
+        var result : Int? = nil
+        
+        switch op {
+        case "+":
+            result = a + b
+            
+        case "-":
+            result = a - b
+            
+        case "*":
+            result = a * b
+            
+        case "/":
+            result = a / b
+            
+        default:
+            break
+        }
+        guard let result else{return}
+        resultLabel.text = String(result)
+    }
+    
+    func showAlert(_ message : String){
+        let alert = UIAlertController(title: "알림", message: "\(message)", preferredStyle: .alert)
+        let okAction = UIAlertAction(title: "확인", style: .default)
+        alert.addAction(okAction)
+        present(alert, animated: true)
     }
     
 }

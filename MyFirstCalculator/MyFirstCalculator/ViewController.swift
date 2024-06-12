@@ -13,39 +13,40 @@ class ViewController: UIViewController {
     
     @IBOutlet weak var secondOperandField: UITextField!
     
-   
-    
     @IBOutlet weak var operatorButton: UIButton!
-    
     
     @IBOutlet weak var resultLabel: UILabel!
     
-    
     @IBAction func calculate(_ sender: Any) {
-        let a = Int(firstOperandField.text!)!
-        let b = Int(secondOperandField.text!)!
-        
-        let op = operatorButton.title(for: .normal)!
-        
-        if op == "+"{
-            let result = a + b
-            resultLabel.text = String(result)
-        }else if op == "-"{
-            let result = a - b
-            resultLabel.text = String(result)
+        guard let text = firstOperandField.text, let a = Int(text) else{
+            return
         }
-        else if op == "*"{
-            let result = a * b
-            resultLabel.text = String(result)
+        guard let text = secondOperandField.text, let b = Int(text) else{
+            return
         }
-        else if op == "/"{
-            let result = a / b
-            resultLabel.text = String(result)
-        }else{
-            print("연산자 선택해주세요")
+        guard  let op = operatorButton.title(for: .normal)else{
+            return
         }
         
-        
+        var result : Int? = nil
+        switch op {
+        case "+":
+            result = a + b
+            
+        case "-":
+            result = a - b
+            
+        case "*":
+            result = a * b
+            
+        case "/":
+            result = a / b
+            
+        default:
+            break
+        }
+        guard let result else{return}
+        resultLabel.text = String(result)
     }
     
     override func viewDidLoad() {

@@ -20,8 +20,8 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        let weather = "비"
-        let temperature = 10
+        let weather = ["비","흐림","눈","비"].randomElement() ?? "맑음"
+        let temperature = Int.random(in: -20 ... 38)
         
         weatherImageView.image = getWeatherImage(matching: weather)
         statusLabel.text = weather

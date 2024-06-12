@@ -18,15 +18,26 @@ class ViewController: UIViewController {
     @IBOutlet weak var number6Label: UILabel!
     @IBOutlet weak var number7Label: UILabel!
     
+    @IBOutlet var labels: [UILabel]!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
     }
     
+    override func viewWillTransition(to size: CGSize, with coordinator: any UIViewControllerTransitionCoordinator) {
+        super.viewWillTransition(to: size, with: coordinator)
+       
+        coordinator.animate { _ in
+            for label in self.labels{
+                label.layer.cornerRadius = label.bounds.width / 2
+                label.clipsToBounds = true
+            }
+        }
+    }
+    
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
-        
-        let labels = [number1Label!,number2Label!,number3Label!,number4Label!,number5Label!,number6Label!,number7Label!]
         
         var nums = [Int]()
         while nums.count < labels.count {
@@ -37,41 +48,46 @@ class ViewController: UIViewController {
             }
             
         }
-        let sortedNums = nums.sorted()
+        
+        nums.sort()
+        
         
         for (index,label) in labels.enumerated(){
             label.layer.cornerRadius = label.bounds.width / 2
             label.clipsToBounds = true
             
-            label.text = String(sortedNums[index])
+            label.text = String(nums[index])
             
-            switch sortedNums[index] {
-            case 1...10:
-                label.backgroundColor = UIColor.yellow
-                label.textColor = UIColor.black
-            case 11...20:
-                label.backgroundColor = UIColor.blue
-                label.textColor = UIColor.white
-            case 21...30:
-                label.backgroundColor = UIColor.red
-                label.textColor = UIColor.white
-            case 31 ... 40:
-                label.backgroundColor = UIColor.gray
-                label.textColor = UIColor.white
-            case 41 ... 45:
-                label.backgroundColor = UIColor.green
-                label.textColor = UIColor.black
-            default:
-                break
-                
-            }
-            
+            label.backgroundColor = getColors(from: nums[index]).backgroundColor
+            label.textColor = getColors(from: nums[index]).textColor
         }
         
-        number7Label.backgroundColor = UIColor.purple
-        number7Label.textColor = UIColor.white
+        let colors = getColors(from: nil)
+        number7Label.backgroundColor = colors.backgroundColor
+        number7Label.textColor = colors.textColor
     }
     
-    
+    func getColors(from number: Int?) -> (backgroundColor: UIColor,textColor: UIColor){
+        
+        guard let number else{
+            return (UIColor.purple, UIColor.white)
+        }
+        
+        switch number{
+        case 1...10:
+            return (UIColor.yellow,UIColor.black)
+        case 11...20:
+            return (UIColor.blue,UIColor.white)
+        case 21...30:
+            return (UIColor.red,UIColor.white)
+        case 31 ... 40:
+            return (UIColor.gray,UIColor.white)
+        case 41 ... 45:
+            return (UIColor.green,UIColor.black)
+        default:
+            return (UIColor.purple,UIColor.white)
+            
+        }
+    }
 }
 

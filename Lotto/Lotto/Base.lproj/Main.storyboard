@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="32700.99.1234" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="23077.2" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
     <device id="retina6_12" orientation="landscape" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22685"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="23068.1"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -96,6 +96,13 @@
                         <outlet property="number5Label" destination="lCB-ou-h6C" id="VY2-BD-9ON"/>
                         <outlet property="number6Label" destination="PMZ-mt-v8i" id="m2M-pe-UyJ"/>
                         <outlet property="number7Label" destination="jsx-bl-7bl" id="wdp-Ot-k22"/>
+                        <outletCollection property="labels" destination="C7N-WK-YDS" collectionClass="NSMutableArray" id="g7q-tF-0GV"/>
+                        <outletCollection property="labels" destination="4o7-lo-mb4" collectionClass="NSMutableArray" id="W0B-Kq-WE0"/>
+                        <outletCollection property="labels" destination="Pxy-7s-B9P" collectionClass="NSMutableArray" id="ptq-Fc-haQ"/>
+                        <outletCollection property="labels" destination="532-Ei-RDg" collectionClass="NSMutableArray" id="dwe-BN-kny"/>
+                        <outletCollection property="labels" destination="lCB-ou-h6C" collectionClass="NSMutableArray" id="V9b-jA-xkw"/>
+                        <outletCollection property="labels" destination="PMZ-mt-v8i" collectionClass="NSMutableArray" id="HiX-15-J9I"/>
+                        <outletCollection property="labels" destination="jsx-bl-7bl" collectionClass="NSMutableArray" id="ZVP-rc-Nrf"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>

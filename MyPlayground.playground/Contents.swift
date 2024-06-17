@@ -1,5 +1,9 @@
 import UIKit
 
+
+// MARK: class & struct
+
+/*
 class Person {
     var name: String
     var age: Int
@@ -11,3 +15,21 @@ class Person {
 }
 
 Person(name: "Name", age: 0)
+
+struct Person{
+    var name: String
+    var age: Int
+}
+Person(name: "Name",age: 0)
+*/
+
+//MARK: Enumeration
+
+/*
+enum Alignment {
+    case left
+    case center
+    case right
+}
+Alignment.center
+*/

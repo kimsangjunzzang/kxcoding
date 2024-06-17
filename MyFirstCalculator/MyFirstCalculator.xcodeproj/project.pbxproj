@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1D0D4A042C2093D50040684B /* Operator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D0D4A032C2093D50040684B /* Operator.swift */; };
 		1D4D543D2C16C3D80034E751 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D4D543C2C16C3D80034E751 /* AppDelegate.swift */; };
 		1D4D543F2C16C3D80034E751 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D4D543E2C16C3D80034E751 /* SceneDelegate.swift */; };
 		1D4D54412C16C3D80034E751 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D4D54402C16C3D80034E751 /* ViewController.swift */; };
@@ -33,6 +34,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		1D0D4A032C2093D50040684B /* Operator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Operator.swift; sourceTree = "<group>"; };
 		1D4D54392C16C3D80034E751 /* MyFirstCalculator.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MyFirstCalculator.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1D4D543C2C16C3D80034E751 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		1D4D543E2C16C3D80034E751 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -98,6 +100,7 @@
 				1D4D54452C16C3DA0034E751 /* Assets.xcassets */,
 				1D4D54472C16C3DA0034E751 /* LaunchScreen.storyboard */,
 				1D4D544A2C16C3DA0034E751 /* Info.plist */,
+				1D0D4A032C2093D50040684B /* Operator.swift */,
 			);
 			path = MyFirstCalculator;
 			sourceTree = "<group>";
@@ -234,6 +237,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				1D4D54412C16C3D80034E751 /* ViewController.swift in Sources */,
+				1D0D4A042C2093D50040684B /* Operator.swift in Sources */,
 				1D4D543D2C16C3D80034E751 /* AppDelegate.swift in Sources */,
 				1D4D543F2C16C3D80034E751 /* SceneDelegate.swift in Sources */,
 			);

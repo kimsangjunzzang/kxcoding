@@ -23,6 +23,7 @@ class ViewController: UIViewController {
     }
     
     @IBAction func selectOperator(_ sender: Any) {
+        
         let actionSheet = UIAlertController(title: nil, message: nil, preferredStyle: .actionSheet)
         
         let plusAction = UIAlertAction(title: "+ (더하기)", style: .default) { _  in

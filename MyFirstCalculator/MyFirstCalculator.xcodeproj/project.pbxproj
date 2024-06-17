@@ -13,9 +13,6 @@
 		1D4D54442C16C3D80034E751 /* Base in Resources */ = {isa = PBXBuildFile; fileRef = 1D4D54432C16C3D80034E751 /* Base */; };
 		1D4D54462C16C3DA0034E751 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1D4D54452C16C3DA0034E751 /* Assets.xcassets */; };
 		1D4D54492C16C3DA0034E751 /* Base in Resources */ = {isa = PBXBuildFile; fileRef = 1D4D54482C16C3DA0034E751 /* Base */; };
-		1D4D54542C16C3DA0034E751 /* MyFirstCalculatorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D4D54532C16C3DA0034E751 /* MyFirstCalculatorTests.swift */; };
-		1D4D545E2C16C3DA0034E751 /* MyFirstCalculatorUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D4D545D2C16C3DA0034E751 /* MyFirstCalculatorUITests.swift */; };
-		1D4D54602C16C3DA0034E751 /* MyFirstCalculatorUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D4D545F2C16C3DA0034E751 /* MyFirstCalculatorUITestsLaunchTests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -45,10 +42,7 @@
 		1D4D54482C16C3DA0034E751 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		1D4D544A2C16C3DA0034E751 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		1D4D544F2C16C3DA0034E751 /* MyFirstCalculatorTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MyFirstCalculatorTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		1D4D54532C16C3DA0034E751 /* MyFirstCalculatorTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyFirstCalculatorTests.swift; sourceTree = "<group>"; };
 		1D4D54592C16C3DA0034E751 /* MyFirstCalculatorUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MyFirstCalculatorUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		1D4D545D2C16C3DA0034E751 /* MyFirstCalculatorUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyFirstCalculatorUITests.swift; sourceTree = "<group>"; };
-		1D4D545F2C16C3DA0034E751 /* MyFirstCalculatorUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyFirstCalculatorUITestsLaunchTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -80,8 +74,6 @@
 			isa = PBXGroup;
 			children = (
 				1D4D543B2C16C3D80034E751 /* MyFirstCalculator */,
-				1D4D54522C16C3DA0034E751 /* MyFirstCalculatorTests */,
-				1D4D545C2C16C3DA0034E751 /* MyFirstCalculatorUITests */,
 				1D4D543A2C16C3D80034E751 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -108,23 +100,6 @@
 				1D4D544A2C16C3DA0034E751 /* Info.plist */,
 			);
 			path = MyFirstCalculator;
-			sourceTree = "<group>";
-		};
-		1D4D54522C16C3DA0034E751 /* MyFirstCalculatorTests */ = {
-			isa = PBXGroup;
-			children = (
-				1D4D54532C16C3DA0034E751 /* MyFirstCalculatorTests.swift */,
-			);
-			path = MyFirstCalculatorTests;
-			sourceTree = "<group>";
-		};
-		1D4D545C2C16C3DA0034E751 /* MyFirstCalculatorUITests */ = {
-			isa = PBXGroup;
-			children = (
-				1D4D545D2C16C3DA0034E751 /* MyFirstCalculatorUITests.swift */,
-				1D4D545F2C16C3DA0034E751 /* MyFirstCalculatorUITestsLaunchTests.swift */,
-			);
-			path = MyFirstCalculatorUITests;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -268,7 +243,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				1D4D54542C16C3DA0034E751 /* MyFirstCalculatorTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -276,8 +250,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				1D4D545E2C16C3DA0034E751 /* MyFirstCalculatorUITests.swift in Sources */,
-				1D4D54602C16C3DA0034E751 /* MyFirstCalculatorUITestsLaunchTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -494,7 +466,6 @@
 		1D4D54672C16C3DA0034E751 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
@@ -514,7 +485,6 @@
 		1D4D54682C16C3DA0034E751 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
@@ -534,7 +504,6 @@
 		1D4D546A2C16C3DA0034E751 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = MQR4AUJW5C;
@@ -552,7 +521,6 @@
 		1D4D546B2C16C3DA0034E751 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = MQR4AUJW5C;

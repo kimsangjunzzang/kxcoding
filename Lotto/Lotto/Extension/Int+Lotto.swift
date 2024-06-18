@@ -8,7 +8,10 @@
 import Foundation
 
 extension Int {
-    static func uniqueRandomNumbers(in range: ClosedRange<Int>,count: Int) -> [Int]{
+    
+    static func uniqueRandomNumbers(in range: ClosedRange<Int>,count: Int
+    ) -> [Int]{
+        
         var nums = [Int]()
         while nums.count < count {
             
@@ -16,7 +19,6 @@ extension Int {
             if !nums.contains(rnd){
                 nums.append(rnd)
             }
-            
         }
         nums.sort()
         

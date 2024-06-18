@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 56;
+	objectVersion = 70;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -25,6 +25,20 @@
 		1D4D54A42C16EB510034E751 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		1D4D54A62C16EB510034E751 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
+
+/* Begin PBXFileSystemSynchronizedBuildFileExceptionSet section */
+		1D0D4A102C21B1920040684B /* PBXFileSystemSynchronizedBuildFileExceptionSet */ = {
+			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
+			membershipExceptions = (
+				Weather.swift,
+			);
+			target = 1D4D54942C16EB500034E751 /* SunnyDay */;
+		};
+/* End PBXFileSystemSynchronizedBuildFileExceptionSet section */
+
+/* Begin PBXFileSystemSynchronizedRootGroup section */
+		1D0D4A0D2C21B1830040684B /* Model */ = {isa = PBXFileSystemSynchronizedRootGroup; exceptions = (1D0D4A102C21B1920040684B /* PBXFileSystemSynchronizedBuildFileExceptionSet */, ); explicitFileTypes = {}; explicitFolders = (); path = Model; sourceTree = "<group>"; };
+/* End PBXFileSystemSynchronizedRootGroup section */
 
 /* Begin PBXFrameworksBuildPhase section */
 		1D4D54922C16EB500034E751 /* Frameworks */ = {
@@ -56,6 +70,7 @@
 		1D4D54972C16EB500034E751 /* SunnyDay */ = {
 			isa = PBXGroup;
 			children = (
+				1D0D4A0D2C21B1830040684B /* Model */,
 				1D4D54982C16EB500034E751 /* AppDelegate.swift */,
 				1D4D549A2C16EB500034E751 /* SceneDelegate.swift */,
 				1D4D549C2C16EB500034E751 /* ViewController.swift */,

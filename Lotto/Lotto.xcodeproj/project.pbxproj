@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 56;
+	objectVersion = 70;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -25,6 +25,21 @@
 		1D4D54EA2C1825150034E751 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		1D4D54EC2C1825150034E751 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
+
+/* Begin PBXFileSystemSynchronizedBuildFileExceptionSet section */
+		1D0D4A142C21BB140040684B /* PBXFileSystemSynchronizedBuildFileExceptionSet */ = {
+			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
+			membershipExceptions = (
+				"Int+Lotto.swift",
+				"UILabel+Lotto.swift",
+			);
+			target = 1D4D54DA2C1825140034E751 /* Lotto */;
+		};
+/* End PBXFileSystemSynchronizedBuildFileExceptionSet section */
+
+/* Begin PBXFileSystemSynchronizedRootGroup section */
+		1D0D4A112C21BAFD0040684B /* Extension */ = {isa = PBXFileSystemSynchronizedRootGroup; exceptions = (1D0D4A142C21BB140040684B /* PBXFileSystemSynchronizedBuildFileExceptionSet */, ); explicitFileTypes = {}; explicitFolders = (); path = Extension; sourceTree = "<group>"; };
+/* End PBXFileSystemSynchronizedRootGroup section */
 
 /* Begin PBXFrameworksBuildPhase section */
 		1D4D54D82C1825140034E751 /* Frameworks */ = {
@@ -56,6 +71,7 @@
 		1D4D54DD2C1825140034E751 /* Lotto */ = {
 			isa = PBXGroup;
 			children = (
+				1D0D4A112C21BAFD0040684B /* Extension */,
 				1D4D54DE2C1825140034E751 /* AppDelegate.swift */,
 				1D4D54E02C1825140034E751 /* SceneDelegate.swift */,
 				1D4D54E22C1825140034E751 /* ViewController.swift */,

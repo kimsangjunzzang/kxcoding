@@ -42,6 +42,7 @@ extension ViewController: UITableViewDataSource{
         }
     }
     
+    
     func tableView(
         _ tableView: UITableView,
         cellForRowAt indexPath: IndexPath
@@ -62,6 +63,31 @@ extension ViewController: UITableViewDataSource{
         }
         // #3
         return cell
+    }
+    
+    func tableView(
+        _ tableView: UITableView,
+        titleForHeaderInSection section: Int
+    ) -> String? {
+        switch section {
+        case 0:
+            return "좋아하는 과일"
+        case 1:
+            return "사용할 수 있는 언어"
+        default:
+            return nil
+        }
+    }
+    func tableView(
+        _ tableView: UITableView,
+        titleForFooterInSection section: Int
+    ) -> String? {
+        switch section {
+        case 1:
+            return "\(languages.count)개의 언어를 사용할 수 있습니다."
+        default:
+            return nil
+        }
     }
     
 }

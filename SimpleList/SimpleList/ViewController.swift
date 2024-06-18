@@ -7,17 +7,22 @@
 
 import UIKit
 
-class ViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
+class ViewController: UIViewController{
+    
+    let fruits = ["Apple","Banana","Orange"]
     
     override func viewDidLoad() {
         super.viewDidLoad()
     }
     
+}
+
+extension ViewController: UITableViewDataSource, UITableViewDelegate  {
     func tableView(
         _ tableView: UITableView,
         numberOfRowsInSection section: Int
     ) -> Int {
-        return 100
+        return fruits.count
     }
     
     func tableView(
@@ -28,10 +33,10 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath)
         
         // #2
-        cell.textLabel?.text = "\(indexPath.section) - \(indexPath.row)"
+        cell.textLabel?.text = fruits[indexPath.row]
         
         // #3
         return cell
     }
+    
 }
-

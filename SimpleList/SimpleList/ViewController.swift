@@ -7,24 +7,31 @@
 
 import UIKit
 
-class ViewController: UIViewController, UITableViewDataSource {
-   
-
+class ViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
+    
     override func viewDidLoad() {
         super.viewDidLoad()
     }
     
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+    func tableView(
+        _ tableView: UITableView,
+        numberOfRowsInSection section: Int
+    ) -> Int {
         return 100
     }
     
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+    func tableView(
+        _ tableView: UITableView,
+        cellForRowAt indexPath: IndexPath
+    ) -> UITableViewCell {
+        // #1
         let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath)
-        cell.textLabel?.text = "\(indexPath.row)"
+        
+        // #2
+        cell.textLabel?.text = "\(indexPath.section) - \(indexPath.row)"
+        
+        // #3
         return cell
     }
-    
-
-
 }
 

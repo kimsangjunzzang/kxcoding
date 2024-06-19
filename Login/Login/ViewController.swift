@@ -98,7 +98,6 @@ extension ViewController : UITextFieldDelegate {
     }
     
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
-        print(#function, textField)
         
         switch textField {
         case idField:
@@ -108,6 +107,6 @@ extension ViewController : UITextFieldDelegate {
         default:
             break
         }
-        return false
+        return false // false 를 통해 텍스트 필드의 기본 동작(줄 바꿈 삽입)을 막고 있다.
     }
 }

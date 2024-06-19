@@ -15,7 +15,8 @@ class ViewController: UIViewController {
         
     @IBOutlet weak var resultLabel: UILabel!
     
-
+    @IBOutlet weak var loginButton: UIButton!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
@@ -55,6 +56,33 @@ class ViewController: UIViewController {
 }
 
 extension ViewController : UITextFieldDelegate {
+    func textField(
+        _ textField: UITextField,
+        shouldChangeCharactersIn range: NSRange,
+        replacementString string: String
+    ) -> Bool {
+        
+        var finalId = idField.text ?? ""
+        var finalPassword = passwordField.text ?? ""
+        
+        if textField == idField {
+            guard let range = Range(range, in: finalId) else {
+                return true
+            }
+            finalId = finalId.replacingCharacters(in: range, with: string)
+            
+        }else if textField == passwordField {
+            guard let range = Range(range, in: finalPassword) else {
+                return true
+            }
+            finalPassword = finalPassword.replacingCharacters(in: range, with: string)
+        }
+        
+        loginButton.isEnabled = !finalId.isEmpty && !finalPassword.isEmpty
+        
+        return true
+    }
+    
     func textFieldShouldEndEditing(_ textField: UITextField) -> Bool {
         if textField == idField {
             let cnt = textField.text?.count ?? 0
@@ -64,8 +92,7 @@ extension ViewController : UITextFieldDelegate {
             textField.layer.borderColor = isValidId ? nil : UIColor.red.cgColor
             textField.layer.cornerRadius = isValidId ? 0: 5
             textField.tintColor = isValidId ? view.tintColor : .red
-            
-            return isValidId
+           
         }
         return true
     }

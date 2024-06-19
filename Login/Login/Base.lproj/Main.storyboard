@@ -32,7 +32,7 @@
                                     <outlet property="delegate" destination="BYZ-38-t0r" id="wZt-bV-arM"/>
                                 </connections>
                             </textField>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8bZ-8k-PZ5">
+                            <button opaque="NO" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8bZ-8k-PZ5">
                                 <rect key="frame" x="16" y="231" width="361" height="35"/>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="filled" title="로그인"/>
@@ -66,6 +66,7 @@
                     </view>
                     <connections>
                         <outlet property="idField" destination="SJt-hi-oeQ" id="KHb-gT-fdg"/>
+                        <outlet property="loginButton" destination="8bZ-8k-PZ5" id="Agc-GY-Ycc"/>
                         <outlet property="passwordField" destination="O91-jJ-q4n" id="nsw-mo-YDG"/>
                         <outlet property="resultLabel" destination="oAZ-Ov-1X7" id="oXR-o0-d3B"/>
                     </connections>

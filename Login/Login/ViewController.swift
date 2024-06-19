@@ -54,3 +54,33 @@ class ViewController: UIViewController {
 
 }
 
+extension ViewController : UITextFieldDelegate {
+    func textFieldShouldEndEditing(_ textField: UITextField) -> Bool {
+        if textField == idField {
+            let cnt = textField.text?.count ?? 0
+            let isValidId = (6 ... 12).contains(cnt)
+            
+            textField.layer.borderWidth = isValidId ? 0 : 1
+            textField.layer.borderColor = isValidId ? nil : UIColor.red.cgColor
+            textField.layer.cornerRadius = isValidId ? 0: 5
+            textField.tintColor = isValidId ? view.tintColor : .red
+            
+            return isValidId
+        }
+        return true
+    }
+    
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        print(#function, textField)
+        
+        switch textField {
+        case idField:
+            passwordField.becomeFirstResponder()
+        case passwordField:
+            login(self)
+        default:
+            break
+        }
+        return false
+    }
+}

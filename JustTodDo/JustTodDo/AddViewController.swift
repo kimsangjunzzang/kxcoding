@@ -9,7 +9,7 @@ import UIKit
 
 class AddViewController: UIViewController {
     
-    var listVC: ListViewController? // VC 선언
+    var listVC: ListViewController? // 커플링, 결합도 ( 강한 의존 )
     
     @IBOutlet weak var inputField: UITextField!
     

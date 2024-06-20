@@ -15,6 +15,7 @@ class ListViewController: UIViewController {
     
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        //destination 에는 navigation Control View가 저장되어 있거 UIViewController로 업캐스팅 되었다.
         if let vc = segue.destination.children.first as? AddViewController {
             vc.listVC = self
         }

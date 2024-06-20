@@ -25,7 +25,7 @@ class AddViewController: UIViewController {
     }
     
     @IBAction func save(_ sender: Any) {
-        guard let text = inputField.text else{return}
+        guard let text = inputField.text else {return}
         
         listVC?.toDoList.append(text)
         listVC?.toDoTableView.reloadData() // 테이블 뷰에 데이터 변경을 알려준다

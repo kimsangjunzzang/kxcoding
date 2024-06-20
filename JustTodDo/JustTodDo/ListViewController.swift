@@ -11,7 +11,7 @@ class ListViewController: UIViewController {
     
     var toDoList = [String]()
     
-    @IBOutlet weak var toDoTableView: UITableView!
+    @IBOutlet weak var toDoTableView: UITableView! // 자동으로 언래핑 되는 io
     
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {

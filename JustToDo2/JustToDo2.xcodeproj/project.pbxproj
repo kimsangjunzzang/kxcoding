@@ -26,6 +26,7 @@
 		1D85D2C82C248A1200EFBEBF /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		1D85D2CA2C248A1200EFBEBF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		1D85D2D02C248B9900EFBEBF /* AddViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddViewController.swift; sourceTree = "<group>"; };
+		1D85D2D32C248DC900EFBEBF /* Protocol.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = Protocol.playground; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -66,6 +67,7 @@
 				1D85D2C52C248A1200EFBEBF /* Assets.xcassets */,
 				1D85D2C72C248A1200EFBEBF /* LaunchScreen.storyboard */,
 				1D85D2CA2C248A1200EFBEBF /* Info.plist */,
+				1D85D2D32C248DC900EFBEBF /* Protocol.playground */,
 			);
 			path = JustToDo2;
 			sourceTree = "<group>";

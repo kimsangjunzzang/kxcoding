@@ -21,7 +21,7 @@ class ViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
+        firstOperandField.delegate = self
     }
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
@@ -118,3 +118,17 @@ class ViewController: UIViewController {
     
 }
 
+ // MARK: 텍스트 필드에 숫자만 입력 가능하도록 만드는 함수
+extension ViewController : UITextFieldDelegate{
+    func textField(
+        _ textField: UITextField,
+        shouldChangeCharactersIn range: NSRange,
+        replacementString string: String
+    ) -> Bool {
+        
+        guard !string.isEmpty else {return true}         // 3번째 인자가 비어있을 경우 true 리턴
+        guard let _ = Int(string) else {return false}    // INT로 받을 수 없는 string이 입력 될경우 false 리턴
+        
+        return true
+    }
+}

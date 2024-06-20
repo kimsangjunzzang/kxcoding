@@ -76,20 +76,15 @@
                         <rect key="frame" x="0.0" y="0.0" width="393" height="842"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Ach-pm-4jR">
-                                <rect key="frame" x="16" y="86" width="361" height="33"/>
+                            <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="JWf-X5-3n0">
+                                <rect key="frame" x="16" y="111" width="361" height="34"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="dLP-Sw-t0k"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                        <constraints>
-                            <constraint firstItem="Ach-pm-4jR" firstAttribute="top" secondItem="dLP-Sw-t0k" secondAttribute="top" constant="30" id="1ra-3v-Z54"/>
-                            <constraint firstItem="dLP-Sw-t0k" firstAttribute="trailing" secondItem="Ach-pm-4jR" secondAttribute="trailing" constant="16" id="22I-SY-f7Q"/>
-                            <constraint firstItem="dLP-Sw-t0k" firstAttribute="bottom" secondItem="Ach-pm-4jR" secondAttribute="bottom" constant="723" id="Rhh-Ga-WDp"/>
-                            <constraint firstItem="Ach-pm-4jR" firstAttribute="leading" secondItem="dLP-Sw-t0k" secondAttribute="leading" constant="16" id="usy-2P-1Pv"/>
-                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="할 일 추가" id="DBj-fR-iyz">
                         <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="FiE-wo-kf1">
@@ -104,7 +99,7 @@
                         </barButtonItem>
                     </navigationItem>
                     <connections>
-                        <outlet property="inputField" destination="Ach-pm-4jR" id="iIM-4K-FoO"/>
+                        <outlet property="inputField" destination="JWf-X5-3n0" id="d83-Ho-mQR"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="OzU-H3-GHz" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>

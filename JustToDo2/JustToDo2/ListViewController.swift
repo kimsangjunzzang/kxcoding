@@ -13,10 +13,14 @@ class ListViewController: UIViewController {
 
     @IBOutlet weak var toDoTableView: UITableView!
     
+    // 이렇게 하면 listviewcontroller 가 addviewcontroller의 delegate가 된다.
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if let vc = segue.destination.children.first as? AddViewController {
+            vc.delegate = self
+        }
+    }
     
-    
-    
-    
+
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
@@ -39,3 +43,15 @@ extension ListViewController : UITableViewDataSource {
     }
 }
 
+extension ListViewController : TodoDelegate {
+    
+    func addViewController(_ vc: UIViewController, didInsert todo: String) {
+        toDoList.append(todo)
+        toDoTableView.reloadData()
+    }
+// 선택적 맴버일 경우 필요하지 않을시 사용하지 않을 수 있다.
+//    func addViewControllerDidCancel(_ vc: UIViewController) {
+//        
+//    }
+    
+}

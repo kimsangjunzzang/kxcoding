@@ -9,23 +9,9 @@ import UIKit
 
 class AddViewController: UIViewController {
     
-//    weak var delegate
+    weak var delegate: TodoDelegate?
 
-    
     @IBOutlet weak var inputField: UITextField!
-    
-    
-    @IBAction func cancel(_ sender: Any) {
-        dismiss(animated: true)
-    }
-    
-    
-    @IBAction func save(_ sender: Any) {
-        guard let text = inputField.text else {return}
-        
-        dismiss(animated: true)
-    }
-    
     
     
     override func viewDidLoad() {
@@ -34,5 +20,17 @@ class AddViewController: UIViewController {
         // Do any additional setup after loading the view.
     }
     
+    @IBAction func cancel(_ sender: Any) {
+        
+        delegate?.addViewControllerDidCancel?(self) // 선택적 메소드가 되었기 때문에 ? 넣어준다.
+        dismiss(animated: true)
+    }
+    
+    
+    @IBAction func save(_ sender: Any) {
+        guard let text = inputField.text else {return}
+        delegate?.addViewController(self, didInsert: text)
+        dismiss(animated: true)
+    }
 
 }

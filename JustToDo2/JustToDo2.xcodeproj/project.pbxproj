@@ -14,6 +14,7 @@
 		1D85D2C62C248A1200EFBEBF /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1D85D2C52C248A1200EFBEBF /* Assets.xcassets */; };
 		1D85D2C92C248A1200EFBEBF /* Base in Resources */ = {isa = PBXBuildFile; fileRef = 1D85D2C82C248A1200EFBEBF /* Base */; };
 		1D85D2D12C248B9900EFBEBF /* AddViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D85D2D02C248B9900EFBEBF /* AddViewController.swift */; };
+		1D85D2D52C249AE100EFBEBF /* TodoDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D85D2D42C249AE100EFBEBF /* TodoDelegate.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -27,6 +28,7 @@
 		1D85D2CA2C248A1200EFBEBF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		1D85D2D02C248B9900EFBEBF /* AddViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddViewController.swift; sourceTree = "<group>"; };
 		1D85D2D32C248DC900EFBEBF /* Protocol.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = Protocol.playground; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
+		1D85D2D42C249AE100EFBEBF /* TodoDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodoDelegate.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -63,6 +65,7 @@
 				1D85D2BE2C248A1000EFBEBF /* SceneDelegate.swift */,
 				1D85D2C02C248A1000EFBEBF /* ListViewController.swift */,
 				1D85D2D02C248B9900EFBEBF /* AddViewController.swift */,
+				1D85D2D42C249AE100EFBEBF /* TodoDelegate.swift */,
 				1D85D2C22C248A1000EFBEBF /* Main.storyboard */,
 				1D85D2C52C248A1200EFBEBF /* Assets.xcassets */,
 				1D85D2C72C248A1200EFBEBF /* LaunchScreen.storyboard */,
@@ -147,6 +150,7 @@
 				1D85D2BD2C248A1000EFBEBF /* AppDelegate.swift in Sources */,
 				1D85D2D12C248B9900EFBEBF /* AddViewController.swift in Sources */,
 				1D85D2BF2C248A1000EFBEBF /* SceneDelegate.swift in Sources */,
+				1D85D2D52C249AE100EFBEBF /* TodoDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

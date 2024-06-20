@@ -11,6 +11,15 @@ class ListViewController: UIViewController {
     
     var toDoList = [String]()
     
+    @IBOutlet weak var toDoTableView: UITableView!
+    
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if let vc = segue.destination.children.first as? AddViewController {
+            vc.listVC = self
+        }
+    }
+    
 
     override func viewDidLoad() {
         super.viewDidLoad()

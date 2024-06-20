@@ -18,6 +18,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		1D85D2AE2C246A4400EFBEBF /* MyPlayground(2).playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = "MyPlayground(2).playground"; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
 		1DA4CDF72C2466C300255E2A /* MyPlayground.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = MyPlayground.playground; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
 		1DCD01A02C24527A004F6C8A /* JustTodDo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = JustTodDo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1DCD01A32C24527A004F6C8A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -71,6 +72,7 @@
 				1DCD01AE2C24527B004F6C8A /* LaunchScreen.storyboard */,
 				1DCD01B12C24527B004F6C8A /* Info.plist */,
 				1DA4CDF72C2466C300255E2A /* MyPlayground.playground */,
+				1D85D2AE2C246A4400EFBEBF /* MyPlayground(2).playground */,
 			);
 			path = JustTodDo;
 			sourceTree = "<group>";

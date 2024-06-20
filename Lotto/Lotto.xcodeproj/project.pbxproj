@@ -24,6 +24,7 @@
 		1D4D54E72C1825150034E751 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		1D4D54EA2C1825150034E751 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		1D4D54EC2C1825150034E751 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		1DCD01962C2451F4004F6C8A /* .gitignore */ = {isa = PBXFileReference; lastKnownFileType = text; path = .gitignore; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFileSystemSynchronizedBuildFileExceptionSet section */
@@ -55,6 +56,7 @@
 		1D4D54D22C1825140034E751 = {
 			isa = PBXGroup;
 			children = (
+				1DCD01962C2451F4004F6C8A /* .gitignore */,
 				1D4D54DD2C1825140034E751 /* Lotto */,
 				1D4D54DC2C1825140034E751 /* Products */,
 			);

@@ -12,7 +12,7 @@
         <!--To Do-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="JustTodDo" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="ListViewController" customModule="JustTodDo" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -54,11 +54,59 @@
                             <constraint firstItem="0jp-kh-6fO" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="oab-fp-DUe"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" title="To Do" id="z9l-51-JX0"/>
+                    <navigationItem key="navigationItem" title="To Do" id="z9l-51-JX0">
+                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="H9r-PV-tU2">
+                            <connections>
+                                <segue destination="a62-4a-82P" kind="presentation" id="utL-XV-bFT"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1066.4122137404579" y="3.5211267605633805"/>
+        </scene>
+        <!--할 일 추가-->
+        <scene sceneID="mPR-kF-PhE">
+            <objects>
+                <viewController id="UPJ-G4-2BA" customClass="AddViewController" customModule="JustTodDo" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="VJE-gL-mZp">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="842"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Das-tX-N4M">
+                                <rect key="frame" x="16" y="86" width="361" height="34"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="CuZ-0e-n8A"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="CuZ-0e-n8A" firstAttribute="trailing" secondItem="Das-tX-N4M" secondAttribute="trailing" constant="16" id="1Uq-dr-SIm"/>
+                            <constraint firstItem="Das-tX-N4M" firstAttribute="leading" secondItem="CuZ-0e-n8A" secondAttribute="leading" constant="16" id="BHJ-T2-RLg"/>
+                            <constraint firstItem="Das-tX-N4M" firstAttribute="top" secondItem="CuZ-0e-n8A" secondAttribute="top" constant="30" id="dvN-t2-CDw"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" title="할 일 추가" id="rs7-3Y-xzk">
+                        <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="OM7-2v-loC">
+                            <connections>
+                                <action selector="cancel:" destination="UPJ-G4-2BA" id="xcX-a5-I8M"/>
+                            </connections>
+                        </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" systemItem="save" id="Gh6-av-oz1">
+                            <connections>
+                                <action selector="save:" destination="UPJ-G4-2BA" id="INd-dh-5of"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="inputField" destination="Das-tX-N4M" id="LWf-IC-2Uv"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="0WC-xN-fp6" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2944.2748091603053" y="3.5211267605633805"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="7Dn-3C-7qf">
@@ -77,6 +125,24 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="xC9-87-dzs" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="139.69465648854961" y="3.5211267605633805"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="CS6-FA-dYM">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="a62-4a-82P" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="p5i-6U-3gM">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="56"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="UPJ-G4-2BA" kind="relationship" relationship="rootViewController" id="jyg-gK-sDZ"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="xDO-El-fjc" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2017.5572519083969" y="3.5211267605633805"/>
         </scene>
     </scenes>
     <resources>

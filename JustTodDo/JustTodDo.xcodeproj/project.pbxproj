@@ -9,23 +9,25 @@
 /* Begin PBXBuildFile section */
 		1DCD01A42C24527A004F6C8A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DCD01A32C24527A004F6C8A /* AppDelegate.swift */; };
 		1DCD01A62C24527A004F6C8A /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DCD01A52C24527A004F6C8A /* SceneDelegate.swift */; };
-		1DCD01A82C24527A004F6C8A /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DCD01A72C24527A004F6C8A /* ViewController.swift */; };
+		1DCD01A82C24527A004F6C8A /* ListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DCD01A72C24527A004F6C8A /* ListViewController.swift */; };
 		1DCD01AB2C24527A004F6C8A /* Base in Resources */ = {isa = PBXBuildFile; fileRef = 1DCD01AA2C24527A004F6C8A /* Base */; };
 		1DCD01AD2C24527B004F6C8A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1DCD01AC2C24527B004F6C8A /* Assets.xcassets */; };
 		1DCD01B02C24527B004F6C8A /* Base in Resources */ = {isa = PBXBuildFile; fileRef = 1DCD01AF2C24527B004F6C8A /* Base */; };
 		1DCD01B82C2456D0004F6C8A /* .gitignore in Resources */ = {isa = PBXBuildFile; fileRef = 1DCD01B72C2456D0004F6C8A /* .gitignore */; };
+		1DCD01BA2C245AA6004F6C8A /* AddViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DCD01B92C245AA6004F6C8A /* AddViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		1DCD01A02C24527A004F6C8A /* JustTodDo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = JustTodDo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1DCD01A32C24527A004F6C8A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		1DCD01A52C24527A004F6C8A /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		1DCD01A72C24527A004F6C8A /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		1DCD01A72C24527A004F6C8A /* ListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListViewController.swift; sourceTree = "<group>"; };
 		1DCD01AA2C24527A004F6C8A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		1DCD01AC2C24527B004F6C8A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		1DCD01AF2C24527B004F6C8A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		1DCD01B12C24527B004F6C8A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		1DCD01B72C2456D0004F6C8A /* .gitignore */ = {isa = PBXFileReference; lastKnownFileType = text; path = .gitignore; sourceTree = "<group>"; };
+		1DCD01B92C245AA6004F6C8A /* AddViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -61,7 +63,8 @@
 			children = (
 				1DCD01A32C24527A004F6C8A /* AppDelegate.swift */,
 				1DCD01A52C24527A004F6C8A /* SceneDelegate.swift */,
-				1DCD01A72C24527A004F6C8A /* ViewController.swift */,
+				1DCD01A72C24527A004F6C8A /* ListViewController.swift */,
+				1DCD01B92C245AA6004F6C8A /* AddViewController.swift */,
 				1DCD01A92C24527A004F6C8A /* Main.storyboard */,
 				1DCD01AC2C24527B004F6C8A /* Assets.xcassets */,
 				1DCD01AE2C24527B004F6C8A /* LaunchScreen.storyboard */,
@@ -142,8 +145,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				1DCD01A82C24527A004F6C8A /* ViewController.swift in Sources */,
+				1DCD01A82C24527A004F6C8A /* ListViewController.swift in Sources */,
 				1DCD01A42C24527A004F6C8A /* AppDelegate.swift in Sources */,
+				1DCD01BA2C245AA6004F6C8A /* AddViewController.swift in Sources */,
 				1DCD01A62C24527A004F6C8A /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

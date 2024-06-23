@@ -7,6 +7,11 @@
 
 import UIKit
 
+extension Notification.Name {
+    static let toDoDidInsert = Notification.Name("toDoDidInsert")
+}
+
+
 class ListViewController: UIViewController {
     
     var toDoList = [String]()
@@ -23,8 +28,12 @@ class ListViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        NotificationCenter.default.addObserver(forName: NSNotification.Name("toDoDidInsert"), object: nil, queue: .main) { noti in
-            if let todo = noti.userInfo?["todo"] as? String{
+        NotificationCenter.default.addObserver(
+            forName: .toDoDidInsert,
+            object: nil,
+            queue: .main
+        ) { noti in
+            if let todo = noti.userInfo?[Key.todo] as? String {
                 self.toDoList.append(todo)
                 self.toDoTableView.reloadData()
             }
@@ -48,15 +57,17 @@ extension ListViewController : UITableViewDataSource {
     }
 }
 
-//extension ListViewController : TodoDelegate {
-//    
-//    func addViewController(_ vc: UIViewController, didInsert todo: String) {
-//        toDoList.append(todo)
-//        toDoTableView.reloadData()
+/*
+extension ListViewController : TodoDelegate {
+    
+    func addViewController(_ vc: UIViewController, didInsert todo: String) {
+        toDoList.append(todo)
+        toDoTableView.reloadData()
+    }
+// 선택적 맴버일 경우 필요하지 않을시 사용하지 않을 수 있다.
+//    func addViewControllerDidCancel(_ vc: UIViewController) {
+//        
 //    }
-//// 선택적 맴버일 경우 필요하지 않을시 사용하지 않을 수 있다.
-////    func addViewControllerDidCancel(_ vc: UIViewController) {
-////        
-////    }
-//    
-//}
+    
+}
+*/

@@ -7,6 +7,14 @@
 
 import UIKit
 
+// 전역 상수로 선언 -> 코드의 가독성과 재사용성을 해치게 된다.
+//let toDoKey = "todo"
+
+enum Key {
+    case todo
+}
+
+
 class AddViewController: UIViewController {
     
 //    weak var delegate: TodoDelegate?
@@ -32,7 +40,7 @@ class AddViewController: UIViewController {
 //        delegate?.addViewController(self, didInsert: text)
         
         let center = NotificationCenter.default
-        center.post(name: NSNotification.Name("toDoDidInsert"), object: nil, userInfo: ["todo": text])
+        center.post(name: .toDoDidInsert, object: nil, userInfo: [Key.todo: text])
         dismiss(animated: true)
     }
 

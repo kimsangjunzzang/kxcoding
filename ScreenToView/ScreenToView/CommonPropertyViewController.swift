@@ -19,8 +19,13 @@ class CommonPropertyViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        imageView.isHidden = !toggleSwitch.isOn
-        imageView.alpha = CGFloat(alphaSlider.value)
+        
+        
+        if let imgView = view.viewWithTag(100) as? UIImageView {
+            imgView.isHidden = !toggleSwitch.isOn
+            imgView.alpha = CGFloat(alphaSlider.value)
+            
+        }
 
         // Do any additional setup after loading the view.
     }

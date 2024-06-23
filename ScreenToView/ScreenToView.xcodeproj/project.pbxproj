@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1D6A06472C289005003611CC /* CommonPropertyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D6A06462C289005003611CC /* CommonPropertyViewController.swift */; };
 		1DF7FE882C287268000F7D0A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DF7FE872C287268000F7D0A /* AppDelegate.swift */; };
 		1DF7FE8A2C287268000F7D0A /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DF7FE892C287268000F7D0A /* SceneDelegate.swift */; };
 		1DF7FE8C2C287268000F7D0A /* FirstViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DF7FE8B2C287268000F7D0A /* FirstViewController.swift */; };
@@ -17,6 +18,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		1D6A06462C289005003611CC /* CommonPropertyViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommonPropertyViewController.swift; sourceTree = "<group>"; };
 		1DF7FE842C287268000F7D0A /* ScreenToView.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ScreenToView.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1DF7FE872C287268000F7D0A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		1DF7FE892C287268000F7D0A /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -63,6 +65,7 @@
 				1DF7FE892C287268000F7D0A /* SceneDelegate.swift */,
 				1DF7FE8B2C287268000F7D0A /* FirstViewController.swift */,
 				1DF7FE9E2C28836B000F7D0A /* SecondViewController.swift */,
+				1D6A06462C289005003611CC /* CommonPropertyViewController.swift */,
 				1DF7FE8D2C287268000F7D0A /* Main.storyboard */,
 				1DF7FE922C287269000F7D0A /* LaunchScreen.storyboard */,
 				1DF7FE902C287269000F7D0A /* Assets.xcassets */,
@@ -144,6 +147,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				1DF7FE9F2C28836B000F7D0A /* SecondViewController.swift in Sources */,
+				1D6A06472C289005003611CC /* CommonPropertyViewController.swift in Sources */,
 				1DF7FE8C2C287268000F7D0A /* FirstViewController.swift in Sources */,
 				1DF7FE882C287268000F7D0A /* AppDelegate.swift in Sources */,
 				1DF7FE8A2C287268000F7D0A /* SceneDelegate.swift in Sources */,

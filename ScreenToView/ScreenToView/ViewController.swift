@@ -8,26 +8,43 @@
 import UIKit
 
 class ViewController: UIViewController {
+    // Life cycle method, 항상 상위 메서드 먼저 실행해야한다.
     
     override func viewDidLoad() {
+        // 한번만 실행하면 되는거다
         super.viewDidLoad()
-       
+        print(self, #function)
+    }
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        print(self,#function)
+    }
+    
+    override func viewIsAppearing(_ animated: Bool) {
+        super.viewIsAppearing(animated)
+        
+        print(self, #function)
     }
     
     override func viewDidAppear(_ animated: Bool) {
-        print( UIScreen.main.bounds)
-        print (view.window?.windowScene?.screen.bounds)
+        super.viewDidAppear(animated)
         
-        if let screen = view.window?.windowScene?.screen {
-            let width = screen.bounds.size.width * screen.scale // 스크린의 최적화 된 값을 구할 수 있다.
-            let height = screen.bounds.size.height * screen.scale
-            
-        }
+        print(self,#function)
        
     }
     
-    @IBAction func test(_ sender: Any) {
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        
+        print(self,#function)
+    }
+    
+    override func viewDidDisappear(_ animated: Bool) {
+        super.viewDidDisappear(animated)
+        
+        print(self,#function)
     }
     
 }

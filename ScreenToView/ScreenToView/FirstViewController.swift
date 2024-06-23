@@ -10,12 +10,18 @@ import UIKit
 class FirstViewController: UIViewController {
     // Life cycle method, 항상 상위 메서드 먼저 실행해야한다.
     
-    //    override func viewDidLoad() {
-    //        // 한번만 실행하면 되는거다
-    //        super.viewDidLoad()
-    //
-    //        print(self, #function, presentingViewController, presentedViewController)
-    //    }
+        override func viewDidLoad() {
+            // 한번만 실행하면 되는거다
+            super.viewDidLoad()
+            
+            let frame = CGRect(x: 50, y: 50, width: 100, height: 100)
+            
+            let v = UIView(frame: frame)
+            v.backgroundColor = UIColor.systemBlue
+            view.addSubview(v)
+    
+//            print(self, #function, presentingViewController, presentedViewController)
+        }
     //
     //    override func viewWillAppear(_ animated: Bool) {
     //        super.viewWillAppear(animated)

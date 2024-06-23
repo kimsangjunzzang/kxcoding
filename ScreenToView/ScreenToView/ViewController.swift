@@ -11,8 +11,8 @@ class ViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        print( UIScreen.main.bounds)
-        print (view.window?.windowScene?.screen.bounds)
+       
+    
     }
     
     override func viewDidAppear(_ animated: Bool) {

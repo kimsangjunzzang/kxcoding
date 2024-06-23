@@ -44,4 +44,7 @@ class ViewController: UIViewController {
  View Controller 마다 Root View가 하나씩 있다.
  Root View에는 view 속성으로 접근할 수 있다.
  스토리보드에서 추가하는 뷰는 Root View 아래쪽에 추가된다.
+ 
+ 뷰 컨트롤러는 UIViewController 클래스로 구현되어 있다.
+ 화면을 구현할 때는 새로운 클래스를 만들고 UIViewController를 상속한 다음 원하는 기능을 추가하는 방식으로 구현한다.
  */

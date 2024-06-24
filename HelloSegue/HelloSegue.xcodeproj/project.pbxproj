@@ -18,6 +18,8 @@
 		1D6A06C92C29C068003611CC /* ThirdViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D6A06C82C29C068003611CC /* ThirdViewController.swift */; };
 		1D6A06CB2C29C06F003611CC /* FourthViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D6A06CA2C29C06F003611CC /* FourthViewController.swift */; };
 		1D6A06CD2C29C3EC003611CC /* ValueViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D6A06CC2C29C3EC003611CC /* ValueViewController.swift */; };
+		1D6A06CF2C29C795003611CC /* HalfEmbedingSegue.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D6A06CE2C29C795003611CC /* HalfEmbedingSegue.swift */; };
+		1D6A06D12C29C935003611CC /* HalfEmbedingUnwindSegue.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D6A06D02C29C935003611CC /* HalfEmbedingUnwindSegue.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -34,6 +36,8 @@
 		1D6A06C82C29C068003611CC /* ThirdViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThirdViewController.swift; sourceTree = "<group>"; };
 		1D6A06CA2C29C06F003611CC /* FourthViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FourthViewController.swift; sourceTree = "<group>"; };
 		1D6A06CC2C29C3EC003611CC /* ValueViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ValueViewController.swift; sourceTree = "<group>"; };
+		1D6A06CE2C29C795003611CC /* HalfEmbedingSegue.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HalfEmbedingSegue.swift; sourceTree = "<group>"; };
+		1D6A06D02C29C935003611CC /* HalfEmbedingUnwindSegue.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HalfEmbedingUnwindSegue.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -78,6 +82,8 @@
 				1D6A06C82C29C068003611CC /* ThirdViewController.swift */,
 				1D6A06CA2C29C06F003611CC /* FourthViewController.swift */,
 				1D6A06CC2C29C3EC003611CC /* ValueViewController.swift */,
+				1D6A06CE2C29C795003611CC /* HalfEmbedingSegue.swift */,
+				1D6A06D02C29C935003611CC /* HalfEmbedingUnwindSegue.swift */,
 			);
 			path = HelloSegue;
 			sourceTree = "<group>";
@@ -161,6 +167,8 @@
 				1D6A06C72C29C062003611CC /* SecondViewController.swift in Sources */,
 				1D6A06C92C29C068003611CC /* ThirdViewController.swift in Sources */,
 				1D6A06C52C29C05B003611CC /* FirstViewController.swift in Sources */,
+				1D6A06D12C29C935003611CC /* HalfEmbedingUnwindSegue.swift in Sources */,
+				1D6A06CF2C29C795003611CC /* HalfEmbedingSegue.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

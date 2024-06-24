@@ -14,7 +14,7 @@ class FirstViewController: UIViewController {
     @IBAction func unwindToFisrt(_ unwindSegue: UIStoryboardSegue) {
         print(#function, type(of: unwindSegue.source), "=>", type(of: unwindSegue.destination))
         
-        if let vc = unwindSegue.source as? ValueViewController, let value = vc.value, let img = UIImage(systemName: value) { imageView.image = img
+        if let vc = unwindSegue.source as? ValueViewController, let value = vc.valueField.text, let img = UIImage(systemName: value) { imageView.image = img
             
         }
     }

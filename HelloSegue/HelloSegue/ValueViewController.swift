@@ -9,14 +9,9 @@ import UIKit
 
 class ValueViewController: UIViewController {
 
-    var value: String?
-    
-    
     @IBOutlet weak var valueField: UITextField!
     
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        value = valueField.text
-    }
+
     
     
     override func viewDidLoad() {

@@ -13,23 +13,18 @@ class ListViewController: UIViewController {
     
     @IBOutlet weak var toDoTableView: UITableView! // 자동으로 언래핑 되는 io
     
-    
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        //destination 에는 navigation Control View가 저장되어 있거 UIViewController로 업캐스팅 되었다.
+        //destination 에는 navigation Control View가 저장되어 있어 UIViewController로 업캐스팅 되었다.
         if let vc = segue.destination.children.first as? AddViewController {
             vc.listVC = self
         }
     }
     
-
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
     }
-
-
 }
-
 
 extension ListViewController : UITableViewDataSource{
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -41,7 +36,5 @@ extension ListViewController : UITableViewDataSource{
         cell.textLabel?.text = toDoList[indexPath.row]
         return cell
     }
-    
-    
 }
 

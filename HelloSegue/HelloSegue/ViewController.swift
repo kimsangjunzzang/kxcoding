@@ -13,7 +13,24 @@ class ViewController: UIViewController {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
     }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+  
+    }
+    
+    override func shouldPerformSegue(withIdentifier identifier: String, sender: Any?) -> Bool {
+        return true
+    }
+    
+    
+    
+    
 
-
+    @IBAction func performSegueManually(_ sender: Any) {
+        performSegue(withIdentifier: "manualSegue", sender: nil)
+    }
+    
+    
+    
 }
 

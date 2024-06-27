@@ -45,30 +45,20 @@
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="sU5-fN-2Ti">
-                                <rect key="frame" x="16" y="59" width="361" height="66"/>
-                                <color key="backgroundColor" systemColor="systemBrownColor"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="66" id="3LT-ZV-rOk"/>
-                                </constraints>
-                            </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="cpi-0z-F6h">
-                                <rect key="frame" x="16" y="376" width="361" height="100"/>
+                                <rect key="frame" x="16" y="344" width="361" height="100"/>
                                 <color key="backgroundColor" systemColor="systemPinkColor"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="100" id="alk-BG-ihh"/>
+                                    <constraint firstAttribute="height" constant="100" id="N98-Wv-15f"/>
+                                    <constraint firstAttribute="width" constant="361" id="xVb-N9-GA8"/>
                                 </constraints>
                             </view>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="MAB-Iv-0CU"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="cpi-0z-F6h" firstAttribute="centerX" secondItem="49u-3f-MCr" secondAttribute="centerX" id="43l-e2-xbn"/>
-                            <constraint firstItem="cpi-0z-F6h" firstAttribute="width" secondItem="sU5-fN-2Ti" secondAttribute="width" id="GL2-Hr-ycc"/>
-                            <constraint firstItem="sU5-fN-2Ti" firstAttribute="leading" secondItem="MAB-Iv-0CU" secondAttribute="leading" constant="16" id="Ife-O6-aF5"/>
-                            <constraint firstItem="sU5-fN-2Ti" firstAttribute="top" secondItem="MAB-Iv-0CU" secondAttribute="top" id="KcA-6D-9nI"/>
-                            <constraint firstItem="cpi-0z-F6h" firstAttribute="centerY" secondItem="49u-3f-MCr" secondAttribute="centerY" id="xPh-rL-Wty"/>
-                            <constraint firstItem="MAB-Iv-0CU" firstAttribute="trailing" secondItem="sU5-fN-2Ti" secondAttribute="trailing" constant="16" id="yCp-Tv-DvX"/>
+                            <constraint firstItem="cpi-0z-F6h" firstAttribute="top" secondItem="MAB-Iv-0CU" secondAttribute="top" constant="285" id="01x-fK-dtM"/>
+                            <constraint firstItem="cpi-0z-F6h" firstAttribute="leading" secondItem="MAB-Iv-0CU" secondAttribute="leading" constant="16" id="VC1-0n-Fnv"/>
                         </constraints>
                     </view>
                 </viewController>
@@ -83,9 +73,6 @@
         </systemColor>
         <systemColor name="systemBlueColor">
             <color red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-        </systemColor>
-        <systemColor name="systemBrownColor">
-            <color red="0.63529411759999999" green="0.51764705879999995" blue="0.36862745099999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
         <systemColor name="systemPinkColor">
             <color red="1" green="0.1764705882" blue="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>

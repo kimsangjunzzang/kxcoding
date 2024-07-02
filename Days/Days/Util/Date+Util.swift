@@ -18,7 +18,14 @@ extension Date {
     ) {
         let calender = Calendar.current
         
-        let components = DateComponents(year: year, month: month, day: day, hour: hour, minute: minute, second: second)
+        let components = DateComponents(
+            year: year,
+            month: month,
+            day: day,
+            hour: hour,
+            minute: minute,
+            second: second
+        )
         
         self = calender.date(from: components) ?? Date(timeIntervalSinceReferenceDate: 0)
     }

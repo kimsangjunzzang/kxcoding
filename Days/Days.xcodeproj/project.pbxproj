@@ -24,7 +24,6 @@
 		1DB1A31B2C342F0D00301A57 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		1DB1A31E2C342F0D00301A57 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		1DB1A3202C342F0D00301A57 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		1DB1A3272C3438EC00301A57 /* Date.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = Date.playground; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
 /* End PBXFileReference section */
 
 /* Begin PBXFileSystemSynchronizedBuildFileExceptionSet section */
@@ -42,11 +41,19 @@
 			);
 			target = 1DB1A30E2C342F0C00301A57 /* Days */;
 		};
+		1DB5D5D62C34581000373999 /* PBXFileSystemSynchronizedBuildFileExceptionSet */ = {
+			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
+			membershipExceptions = (
+				EventTableViewCell.swift,
+			);
+			target = 1DB1A30E2C342F0C00301A57 /* Days */;
+		};
 /* End PBXFileSystemSynchronizedBuildFileExceptionSet section */
 
 /* Begin PBXFileSystemSynchronizedRootGroup section */
 		1DB1A3282C343E7900301A57 /* Util */ = {isa = PBXFileSystemSynchronizedRootGroup; exceptions = (1DB1A32B2C343E9400301A57 /* PBXFileSystemSynchronizedBuildFileExceptionSet */, ); explicitFileTypes = {}; explicitFolders = (); path = Util; sourceTree = "<group>"; };
 		1DB1A32D2C34431300301A57 /* Model */ = {isa = PBXFileSystemSynchronizedRootGroup; exceptions = (1DB1A3302C34432100301A57 /* PBXFileSystemSynchronizedBuildFileExceptionSet */, ); explicitFileTypes = {}; explicitFolders = (); path = Model; sourceTree = "<group>"; };
+		1DB5D5D32C3457E900373999 /* Cell */ = {isa = PBXFileSystemSynchronizedRootGroup; exceptions = (1DB5D5D62C34581000373999 /* PBXFileSystemSynchronizedBuildFileExceptionSet */, ); explicitFileTypes = {}; explicitFolders = (); path = Cell; sourceTree = "<group>"; };
 /* End PBXFileSystemSynchronizedRootGroup section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -63,10 +70,7 @@
 		1DB1A3062C342F0C00301A57 = {
 			isa = PBXGroup;
 			children = (
-				1DB1A32D2C34431300301A57 /* Model */,
 				1DB1A3112C342F0C00301A57 /* Days */,
-				1DB1A3282C343E7900301A57 /* Util */,
-				1DB1A3272C3438EC00301A57 /* Date.playground */,
 				1DB1A3102C342F0C00301A57 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -82,6 +86,9 @@
 		1DB1A3112C342F0C00301A57 /* Days */ = {
 			isa = PBXGroup;
 			children = (
+				1DB5D5D32C3457E900373999 /* Cell */,
+				1DB1A32D2C34431300301A57 /* Model */,
+				1DB1A3282C343E7900301A57 /* Util */,
 				1DB1A3122C342F0C00301A57 /* AppDelegate.swift */,
 				1DB1A3142C342F0C00301A57 /* SceneDelegate.swift */,
 				1DB1A3162C342F0C00301A57 /* ViewController.swift */,

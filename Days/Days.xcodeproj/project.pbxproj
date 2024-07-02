@@ -35,10 +35,18 @@
 			);
 			target = 1DB1A30E2C342F0C00301A57 /* Days */;
 		};
+		1DB1A3302C34432100301A57 /* PBXFileSystemSynchronizedBuildFileExceptionSet */ = {
+			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
+			membershipExceptions = (
+				Event.swift,
+			);
+			target = 1DB1A30E2C342F0C00301A57 /* Days */;
+		};
 /* End PBXFileSystemSynchronizedBuildFileExceptionSet section */
 
 /* Begin PBXFileSystemSynchronizedRootGroup section */
 		1DB1A3282C343E7900301A57 /* Util */ = {isa = PBXFileSystemSynchronizedRootGroup; exceptions = (1DB1A32B2C343E9400301A57 /* PBXFileSystemSynchronizedBuildFileExceptionSet */, ); explicitFileTypes = {}; explicitFolders = (); path = Util; sourceTree = "<group>"; };
+		1DB1A32D2C34431300301A57 /* Model */ = {isa = PBXFileSystemSynchronizedRootGroup; exceptions = (1DB1A3302C34432100301A57 /* PBXFileSystemSynchronizedBuildFileExceptionSet */, ); explicitFileTypes = {}; explicitFolders = (); path = Model; sourceTree = "<group>"; };
 /* End PBXFileSystemSynchronizedRootGroup section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -55,6 +63,7 @@
 		1DB1A3062C342F0C00301A57 = {
 			isa = PBXGroup;
 			children = (
+				1DB1A32D2C34431300301A57 /* Model */,
 				1DB1A3112C342F0C00301A57 /* Days */,
 				1DB1A3282C343E7900301A57 /* Util */,
 				1DB1A3272C3438EC00301A57 /* Date.playground */,

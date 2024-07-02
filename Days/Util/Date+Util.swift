@@ -32,6 +32,7 @@ extension Date {
         return calendar.dateComponents([.day], from: from, to: to).day
     }
     
+    // 인스턴스에 직접 영향을 주지 않기에 Static으로 선언
     static var today: Date {
         let calendar = Calendar.current
         return calendar.startOfDay(for: .now)

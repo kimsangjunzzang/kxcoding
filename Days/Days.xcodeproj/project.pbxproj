@@ -24,6 +24,7 @@
 		1DB1A31B2C342F0D00301A57 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		1DB1A31E2C342F0D00301A57 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		1DB1A3202C342F0D00301A57 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		1DB1A3272C3438EC00301A57 /* Date.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = Date.playground; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -40,6 +41,7 @@
 		1DB1A3062C342F0C00301A57 = {
 			isa = PBXGroup;
 			children = (
+				1DB1A3272C3438EC00301A57 /* Date.playground */,
 				1DB1A3112C342F0C00301A57 /* Days */,
 				1DB1A3102C342F0C00301A57 /* Products */,
 			);

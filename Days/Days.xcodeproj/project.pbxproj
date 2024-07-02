@@ -13,6 +13,7 @@
 		1DB1A31A2C342F0C00301A57 /* Base in Resources */ = {isa = PBXBuildFile; fileRef = 1DB1A3192C342F0C00301A57 /* Base */; };
 		1DB1A31C2C342F0D00301A57 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1DB1A31B2C342F0D00301A57 /* Assets.xcassets */; };
 		1DB1A31F2C342F0D00301A57 /* Base in Resources */ = {isa = PBXBuildFile; fileRef = 1DB1A31E2C342F0D00301A57 /* Base */; };
+		1DB5D5DA2C346C3000373999 /* CategoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DB5D5D92C346C3000373999 /* CategoryViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +25,7 @@
 		1DB1A31B2C342F0D00301A57 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		1DB1A31E2C342F0D00301A57 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		1DB1A3202C342F0D00301A57 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		1DB5D5D92C346C3000373999 /* CategoryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFileSystemSynchronizedBuildFileExceptionSet section */
@@ -44,6 +46,7 @@
 		1DB5D5D62C34581000373999 /* PBXFileSystemSynchronizedBuildFileExceptionSet */ = {
 			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
 			membershipExceptions = (
+				CategoryCollectionViewCell.swift,
 				EventTableViewCell.swift,
 			);
 			target = 1DB1A30E2C342F0C00301A57 /* Days */;
@@ -92,6 +95,7 @@
 				1DB1A3122C342F0C00301A57 /* AppDelegate.swift */,
 				1DB1A3142C342F0C00301A57 /* SceneDelegate.swift */,
 				1DB1A3162C342F0C00301A57 /* ViewController.swift */,
+				1DB5D5D92C346C3000373999 /* CategoryViewController.swift */,
 				1DB1A3182C342F0C00301A57 /* Main.storyboard */,
 				1DB1A31B2C342F0D00301A57 /* Assets.xcassets */,
 				1DB1A31D2C342F0D00301A57 /* LaunchScreen.storyboard */,
@@ -172,6 +176,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				1DB1A3172C342F0C00301A57 /* ViewController.swift in Sources */,
+				1DB5D5DA2C346C3000373999 /* CategoryViewController.swift in Sources */,
 				1DB1A3132C342F0C00301A57 /* AppDelegate.swift in Sources */,
 				1DB1A3152C342F0C00301A57 /* SceneDelegate.swift in Sources */,
 			);

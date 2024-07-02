@@ -19,6 +19,8 @@ class ViewController: UIViewController {
     
     @IBOutlet weak var rightEqualWidthConstraint: NSLayoutConstraint!
     
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         

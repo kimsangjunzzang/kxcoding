@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 60;
+	objectVersion = 70;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -27,6 +27,20 @@
 		1DB1A3272C3438EC00301A57 /* Date.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = Date.playground; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
 /* End PBXFileReference section */
 
+/* Begin PBXFileSystemSynchronizedBuildFileExceptionSet section */
+		1DB1A32B2C343E9400301A57 /* PBXFileSystemSynchronizedBuildFileExceptionSet */ = {
+			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
+			membershipExceptions = (
+				"Date+Util.swift",
+			);
+			target = 1DB1A30E2C342F0C00301A57 /* Days */;
+		};
+/* End PBXFileSystemSynchronizedBuildFileExceptionSet section */
+
+/* Begin PBXFileSystemSynchronizedRootGroup section */
+		1DB1A3282C343E7900301A57 /* Util */ = {isa = PBXFileSystemSynchronizedRootGroup; exceptions = (1DB1A32B2C343E9400301A57 /* PBXFileSystemSynchronizedBuildFileExceptionSet */, ); explicitFileTypes = {}; explicitFolders = (); path = Util; sourceTree = "<group>"; };
+/* End PBXFileSystemSynchronizedRootGroup section */
+
 /* Begin PBXFrameworksBuildPhase section */
 		1DB1A30C2C342F0C00301A57 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
@@ -41,8 +55,9 @@
 		1DB1A3062C342F0C00301A57 = {
 			isa = PBXGroup;
 			children = (
-				1DB1A3272C3438EC00301A57 /* Date.playground */,
 				1DB1A3112C342F0C00301A57 /* Days */,
+				1DB1A3282C343E7900301A57 /* Util */,
+				1DB1A3272C3438EC00301A57 /* Date.playground */,
 				1DB1A3102C342F0C00301A57 /* Products */,
 			);
 			sourceTree = "<group>";

@@ -55,6 +55,10 @@ struct Event {
     let textColor: UIColor
     let icon: String
     
+    let daysString: String?
+    let dateString: String?
+    let iconImage: UIImage?
+    
     init(
         date: Date,
         title: String,
@@ -85,11 +89,16 @@ struct Event {
         iconImage = UIImage(named: icon)
     }
     
-    let daysString: String?
+    init(data: ComposeData) {
+        self.init(
+            date: data.date!,
+            title: data.title!,
+            backgroundColor: data.backgroundColor!,
+            textColor: data.textColor!,
+            icon: data.category!.rawValue
+        )
+    }
     
-    let dateString: String?
-    
-    let iconImage: UIImage?
 }
 
 var events = [

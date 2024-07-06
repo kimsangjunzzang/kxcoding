@@ -9,14 +9,22 @@ import UIKit
 
 class DateSelectionViewController: UIViewController {
     
+    var data: ComposeData?
+    
     @IBOutlet weak var daysLabel: UILabel!
     
     @IBOutlet weak var selectedDateLabel: UILabel!
     
     @IBOutlet weak var datePicker: UIDatePicker!
     
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        
+        if let vc = segue.destination as? ComposeViewController {
+            data?.date = datePicker.date
+            vc.data = data
+        }
+    }
     
-
     override func viewDidLoad() {
         super.viewDidLoad()
         dateSelected(datePicker)

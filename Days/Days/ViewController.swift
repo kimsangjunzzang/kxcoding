@@ -9,8 +9,16 @@ import UIKit
 
 class ViewController: UIViewController{
     
+    
+    @IBOutlet weak var eventTableView: UITableView!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        NotificationCenter.default.addObserver(forName: .eventDidInsert, object: nil, queue: .main) { _ in
+            self.eventTableView.reloadData()
+            
+        }
         
     }
 }

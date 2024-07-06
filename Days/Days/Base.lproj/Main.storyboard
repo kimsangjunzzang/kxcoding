@@ -150,6 +150,9 @@
                             <constraint firstItem="a9W-cX-qHl" firstAttribute="top" secondItem="yHM-bl-ZGN" secondAttribute="top" id="zLl-H3-Nry"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="eventTableView" destination="qHf-ZN-4r7" id="Csk-1T-BVj"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
@@ -463,7 +466,7 @@
                     <connections>
                         <outlet property="backgroundColorCollectionView" destination="rIa-K3-kAF" id="ITw-iY-k88"/>
                         <outlet property="textColorCollectionView" destination="ivb-i4-0y3" id="uwh-Jr-fHU"/>
-                        <outlet property="titleField" destination="G4s-ov-nkw" id="sZh-wQ-N7j"/>
+                        <outlet property="titleField" destination="JSE-Yv-mBu" id="qRM-GB-F0j"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ByP-hb-Nq7" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>

@@ -15,6 +15,9 @@ class ComposeViewController: UIViewController {
     
     var data: ComposeData?
     
+    var selectedBackgroundColorIndexPath: IndexPath?
+    var selectedTextColorIndexPath: IndexPath?
+    
     let colors: [UIColor] = [
         .systemRed,
         .systemOrange,
@@ -29,7 +32,7 @@ class ComposeViewController: UIViewController {
         .black,
         .white
     ]
-
+    
     @IBOutlet weak var backgroundColorCollectionView: UICollectionView!
     
     @IBOutlet weak var textColorCollectionView: UICollectionView!
@@ -41,11 +44,35 @@ class ComposeViewController: UIViewController {
         
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        var item = Int.random(in: 0 ..< colors.count)
+        selectedBackgroundColorIndexPath = IndexPath(item: item, section: 0)
+        backgroundColorCollectionView.reloadData()
+        data?.backgroundColor = colors[item]
+        
+        item = Int.random(in: 0 ..< colors.count)
+        selectedTextColorIndexPath = IndexPath(item: item, section: 0)
+        textColorCollectionView.reloadData()
+        data?.textColor = colors[item]
+        
+        titleField.becomeFirstResponder()
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        
+        if titleField.isFirstResponder {
+            titleField.resignFirstResponder()
+        }
+    }
+    
     @IBAction func save(_ sender: Any) {
         guard let title = titleField.text else {return}
         
         data?.title = title
-
+        
         if let data {
             let event = Event(data: data)
             events.append(event)
@@ -73,12 +100,27 @@ extension ComposeViewController : UICollectionViewDataSource {
             cell.colorImageView.image = UIImage(named: "color-picker")?.withRenderingMode(.alwaysTemplate)
             cell.colorImageView.tintColor = target
         }
+        
+        cell.checkmarkImageView.isHidden = true
+        
+        if let selectedBackgroundColorIndexPath, selectedBackgroundColorIndexPath == indexPath, collectionView == backgroundColorCollectionView {
+            cell.checkmarkImageView.isHidden = false
+        } else if let selectedTextColorIndexPath, selectedTextColorIndexPath == indexPath, collectionView == textColorCollectionView {
+            cell.checkmarkImageView.isHidden = false
+        }
+        if indexPath.item == colors.count - 1 {
+            cell.checkmarkImageView.tintColor = .black
+        } else {
+            cell.checkmarkImageView.tintColor = .white
+        }
+        
         return cell
     }
 }
 
 extension ComposeViewController: UICollectionViewDelegate {
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        
         if indexPath.item == colors.count {
             let colorPicker = UIColorPickerViewController()
             colorPicker.title = collectionView == backgroundColorCollectionView ? "배경색" : "글자색"
@@ -94,7 +136,28 @@ extension ComposeViewController: UICollectionViewDelegate {
             } else {
                 data?.textColor = target
             }
+            if collectionView == backgroundColorCollectionView {
+                if let selectedBackgroundColorIndexPath, selectedBackgroundColorIndexPath != indexPath {
+                    if let cell = collectionView.cellForItem(at: selectedBackgroundColorIndexPath) as? ColorCollectionViewCell {
+                        cell.checkmarkImageView.isHidden = true
+                    }
+                }
+                selectedBackgroundColorIndexPath = indexPath
+            } else {
+                if let selectedTextColorIndexPath, selectedTextColorIndexPath != indexPath {
+                    if let cell = collectionView.cellForItem(at: selectedTextColorIndexPath) as? ColorCollectionViewCell {
+                        cell.checkmarkImageView.isHidden = true
+                    }
+                }
+                selectedTextColorIndexPath = indexPath
+            }
+            
+            if let cell = collectionView.cellForItem(at: indexPath) as? ColorCollectionViewCell {
+                cell.checkmarkImageView.isHidden = false
+                
+            }
         }
+        
     }
 }
 
@@ -105,11 +168,53 @@ extension ComposeViewController: UIColorPickerViewControllerDelegate {
     
     func colorPickerViewController(_ viewController: UIColorPickerViewController, didSelect color: UIColor, continuously: Bool) {
         if !continuously {
+            let indexPath = IndexPath(item: colors.count, section: 0)
+            
             if viewController.title == "배경색" {
                 data?.backgroundColor = color
+                
+                
+                if let selectedBackgroundColorIndexPath, selectedBackgroundColorIndexPath != indexPath {
+                    if let cell = backgroundColorCollectionView.cellForItem(at: selectedBackgroundColorIndexPath) as? ColorCollectionViewCell {
+                        cell.checkmarkImageView.isHidden = true
+                    }
+                    
+                    
+                }
+                
+                selectedBackgroundColorIndexPath = indexPath
+                
+                if let cell = backgroundColorCollectionView.cellForItem(at: indexPath) as?
+                    ColorCollectionViewCell {
+                    cell.checkmarkImageView.isHidden = false
+                }
+                
+                
             } else {
                 data?.textColor = color
+                
+                if let selectedTextColorIndexPath, selectedTextColorIndexPath != indexPath {
+                    if let cell = textColorCollectionView.cellForItem(at: selectedTextColorIndexPath) as? ColorCollectionViewCell {
+                        cell.checkmarkImageView.isHidden = true
+                    }
+                    
+                }
+                selectedTextColorIndexPath = indexPath
+                
+                if let cell = textColorCollectionView.cellForItem(at: indexPath) as?
+                    ColorCollectionViewCell {
+                    cell.checkmarkImageView.isHidden = false
+                }
+                
             }
         }
+    }
+}
+
+extension ComposeViewController: UITextFieldDelegate {
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        save(self)
+        
+        return true
     }
 }

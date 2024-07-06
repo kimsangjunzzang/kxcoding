@@ -207,6 +207,7 @@
                                         <connections>
                                             <outlet property="categoryImageView" destination="RxF-Cp-DS2" id="aZg-6H-oXL"/>
                                             <outlet property="titleLabel" destination="Du8-QF-X93" id="0NM-QH-Fee"/>
+                                            <segue destination="uma-qZ-1IV" kind="show" id="dd8-4x-shV"/>
                                         </connections>
                                     </collectionViewCell>
                                 </cells>
@@ -234,6 +235,72 @@
             </objects>
             <point key="canvasLocation" x="1840.4580152671756" y="-2.1126760563380285"/>
         </scene>
+        <!--날짜 선택-->
+        <scene sceneID="egZ-DR-z3o">
+            <objects>
+                <viewController id="uma-qZ-1IV" customClass="DateSelectionViewController" customModule="Days" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="1to-RY-xBM">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="842"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ivc-he-ycg">
+                                <rect key="frame" x="20" y="76" width="353" height="41"/>
+                                <fontDescription key="fontDescription" style="UICTFontTextStyleTitle0"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9ar-0d-Qhy">
+                                <rect key="frame" x="20" y="125" width="353" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" systemColor="secondaryLabelColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="45q-qo-SvA">
+                                <rect key="frame" x="20" y="560.66666666666663" width="353" height="35"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="filled" title="선택 완료"/>
+                            </button>
+                            <datePicker contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="date" style="inline" translatesAutoresizingMaskIntoConstraints="NO" id="uWc-u0-DD3">
+                                <rect key="frame" x="0.0" y="165" width="393" height="375"/>
+                                <connections>
+                                    <action selector="dateSelected:" destination="uma-qZ-1IV" eventType="valueChanged" id="qDd-se-NOZ"/>
+                                </connections>
+                            </datePicker>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="WJ1-y5-xOb"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="45q-qo-SvA" firstAttribute="leading" secondItem="WJ1-y5-xOb" secondAttribute="leading" constant="20" id="QfX-wR-MlE"/>
+                            <constraint firstItem="45q-qo-SvA" firstAttribute="top" secondItem="uWc-u0-DD3" secondAttribute="bottom" constant="20" id="SzY-Sn-N4O"/>
+                            <constraint firstItem="9ar-0d-Qhy" firstAttribute="trailing" secondItem="Ivc-he-ycg" secondAttribute="trailing" id="UWe-fr-gNf"/>
+                            <constraint firstItem="Ivc-he-ycg" firstAttribute="leading" secondItem="WJ1-y5-xOb" secondAttribute="leading" constant="20" id="cI4-hy-2GW"/>
+                            <constraint firstItem="9ar-0d-Qhy" firstAttribute="leading" secondItem="Ivc-he-ycg" secondAttribute="leading" id="gTU-R0-pIA"/>
+                            <constraint firstItem="WJ1-y5-xOb" firstAttribute="trailing" secondItem="uWc-u0-DD3" secondAttribute="trailing" id="hKm-hK-gd8"/>
+                            <constraint firstItem="9ar-0d-Qhy" firstAttribute="top" secondItem="Ivc-he-ycg" secondAttribute="bottom" constant="8" symbolic="YES" id="iUJ-af-OqE"/>
+                            <constraint firstItem="uWc-u0-DD3" firstAttribute="top" secondItem="9ar-0d-Qhy" secondAttribute="bottom" constant="20" id="iXi-bd-7tL"/>
+                            <constraint firstItem="uWc-u0-DD3" firstAttribute="leading" secondItem="1to-RY-xBM" secondAttribute="leading" id="kMV-RP-Z2V"/>
+                            <constraint firstItem="WJ1-y5-xOb" firstAttribute="trailing" secondItem="45q-qo-SvA" secondAttribute="trailing" constant="20" id="wop-91-JtC"/>
+                            <constraint firstItem="WJ1-y5-xOb" firstAttribute="trailing" secondItem="Ivc-he-ycg" secondAttribute="trailing" constant="20" id="xZh-Dx-iCM"/>
+                            <constraint firstItem="Ivc-he-ycg" firstAttribute="top" secondItem="WJ1-y5-xOb" secondAttribute="top" constant="20" id="y3O-DD-oJr"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" title="날짜 선택" id="Dr3-FH-3DO">
+                        <barButtonItem key="rightBarButtonItem" image="line.3.horizontal.circle" catalog="system" id="kbF-PA-NMP">
+                            <connections>
+                                <action selector="toggleCalendarMode:" destination="uma-qZ-1IV" id="qXb-GT-RRc"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="datePicker" destination="uWc-u0-DD3" id="QWF-CA-RzH"/>
+                        <outlet property="daysLabel" destination="Ivc-he-ycg" id="02N-1h-kqz"/>
+                        <outlet property="selectedDateLabel" destination="9ar-0d-Qhy" id="1Ot-Ar-2Eo"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="che-UE-bgJ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2831.2977099236641" y="-2.1126760563380285"/>
+        </scene>
         <!--Navigation Controller-->
         <scene sceneID="GhA-eW-PEF">
             <objects>
@@ -255,7 +322,11 @@
     </scenes>
     <resources>
         <image name="arrow.up.arrow.down" catalog="system" width="128" height="97"/>
+        <image name="line.3.horizontal.circle" catalog="system" width="128" height="123"/>
         <image name="plus" catalog="system" width="128" height="113"/>
+        <systemColor name="secondaryLabelColor">
+            <color red="0.23529411759999999" green="0.23529411759999999" blue="0.26274509800000001" alpha="0.59999999999999998" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>

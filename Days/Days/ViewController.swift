@@ -8,22 +8,24 @@
 import UIKit
 
 class ViewController: UIViewController{
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
+        
     }
-
-
 }
 
 extension ViewController: UITableViewDataSource,UITableViewDelegate {
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int
+    ) -> Int {
         return events.count
     }
     
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: String(describing: EventTableViewCell.self), for:indexPath) as! EventTableViewCell
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath
+    ) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(
+            withIdentifier: String(describing: EventTableViewCell.self),
+            for:indexPath) as! EventTableViewCell
         
         let target = events[indexPath.row]
         cell.iconImageView.image = target.iconImage

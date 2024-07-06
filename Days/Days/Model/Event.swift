@@ -48,9 +48,6 @@ struct Event {
         }
     }
     
-    
-    
-    
     let date: Date
     let title: String
     
@@ -58,7 +55,13 @@ struct Event {
     let textColor: UIColor
     let icon: String
     
-    init(date: Date, title: String, backgroundColor: UIColor, textColor: UIColor, icon: String) {
+    init(
+        date: Date,
+        title: String,
+        backgroundColor: UIColor,
+        textColor: UIColor,
+        icon: String
+    ) {
         self.date = date
         self.title = title
         self.backgroundColor = backgroundColor
@@ -68,10 +71,10 @@ struct Event {
         if let day = date.days(from: Date.today) {
             daysString =  if day >= 0 {
                 "D-\(abs(day))"
-            }else {
+            } else {
                 "D+\(abs(day))"
             }
-        }else {
+        } else {
             daysString = nil
         }
         

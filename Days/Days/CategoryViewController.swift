@@ -27,22 +27,25 @@ class CategoryViewController: UIViewController {
         
         categoryCollectionView.collectionViewLayout = layout
     }
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
         setUpLayout()
     }
     
 }
 
 extension CategoryViewController: UICollectionViewDataSource {
-    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int
+    ) -> Int {
         return Event.Category.allCases.count
     }
     
-    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: String(describing: CategoryCollectionViewCell.self), for: indexPath) as! CategoryCollectionViewCell
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath
+    ) -> UICollectionViewCell {
+        let cell = collectionView.dequeueReusableCell(
+            withReuseIdentifier: String(describing: CategoryCollectionViewCell.self),
+            for: indexPath) as! CategoryCollectionViewCell
         
         let category = Event.Category.allCases[indexPath.row]
         cell.categoryImageView.image = UIImage(named: category.rawValue)
@@ -51,7 +54,7 @@ extension CategoryViewController: UICollectionViewDataSource {
         return cell
     }
     
-   
+    
     
     
 }

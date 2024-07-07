@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 60;
+	objectVersion = 70;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -25,6 +25,20 @@
 		1DF8E1A32C3A7EE40051D2DD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		1DF8E1A92C3A81BB0051D2DD /* WorldClockViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorldClockViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
+
+/* Begin PBXFileSystemSynchronizedBuildFileExceptionSet section */
+		1DF8E1AE2C3B5EDB0051D2DD /* PBXFileSystemSynchronizedBuildFileExceptionSet */ = {
+			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
+			membershipExceptions = (
+				WorldClockTableViewCell.swift,
+			);
+			target = 1DF8E1912C3A7EE30051D2DD /* AppleClock */;
+		};
+/* End PBXFileSystemSynchronizedBuildFileExceptionSet section */
+
+/* Begin PBXFileSystemSynchronizedRootGroup section */
+		1DF8E1AB2C3B5E9E0051D2DD /* Cell */ = {isa = PBXFileSystemSynchronizedRootGroup; exceptions = (1DF8E1AE2C3B5EDB0051D2DD /* PBXFileSystemSynchronizedBuildFileExceptionSet */, ); explicitFileTypes = {}; explicitFolders = (); path = Cell; sourceTree = "<group>"; };
+/* End PBXFileSystemSynchronizedRootGroup section */
 
 /* Begin PBXFrameworksBuildPhase section */
 		1DF8E18F2C3A7EE30051D2DD /* Frameworks */ = {
@@ -56,6 +70,7 @@
 		1DF8E1942C3A7EE30051D2DD /* AppleClock */ = {
 			isa = PBXGroup;
 			children = (
+				1DF8E1AB2C3B5E9E0051D2DD /* Cell */,
 				1DF8E1952C3A7EE30051D2DD /* AppDelegate.swift */,
 				1DF8E1972C3A7EE30051D2DD /* SceneDelegate.swift */,
 				1DF8E19B2C3A7EE30051D2DD /* Main.storyboard */,

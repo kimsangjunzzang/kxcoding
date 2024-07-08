@@ -56,6 +56,7 @@ class CitySelectionViewController: UIViewController {
     @objc func closeVC() {
         dismiss(animated: true)
     }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -106,7 +107,7 @@ extension CitySelectionViewController : UISearchBarDelegate {
     }
 }
 
-extension CitySelectionViewController : UITableViewDelegate, UITableViewDataSource {
+extension CitySelectionViewController :UITableViewDataSource {
     
     func numberOfSections(in tableView: UITableView) -> Int {
         return filteredList.count
@@ -138,4 +139,19 @@ extension CitySelectionViewController : UITableViewDelegate, UITableViewDataSour
         return filteredList.firstIndex(where: {$0.title.uppercased() == title.uppercased()}) ?? 0
     }
     
+}
+
+extension CitySelectionViewController: UITableViewDelegate {
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let target = filteredList[indexPath.section].items[indexPath.row]
+        
+        NotificationCenter.default.post(name: .timeZoneDidSelect, object: nil,userInfo: ["timeZone": target.timeZone])
+        
+        dismiss(animated: true)
+        
+        
+    }
+}
+extension Notification.Name {
+    static let timeZoneDidSelect = Notification.Name(rawValue: "timeZoneDidSelect")
 }

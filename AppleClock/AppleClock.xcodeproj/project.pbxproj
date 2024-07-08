@@ -39,6 +39,7 @@
 		1DF8E1B42C3C03200051D2DD /* PBXFileSystemSynchronizedBuildFileExceptionSet */ = {
 			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
 			membershipExceptions = (
+				"Data+Util.swift",
 				"String+Hangeul.swift",
 				"TimeZone+Util.swift",
 			);

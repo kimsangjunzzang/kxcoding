@@ -19,15 +19,20 @@ class WorldClockViewController: UIViewController {
         TimeZone(identifier: "Asia/Vladivostok")!
     ]
     
-    
+    override func setEditing(_ editing: Bool, animated: Bool) {
+        super.setEditing(editing, animated: animated)
+        
+        worldClockTableView.setEditing(editing, animated: animated)
+    }
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        navigationItem.leftBarButtonItem = editButtonItem
         
         NotificationCenter.default.addObserver(forName: .timeZoneDidSelect,object: nil, queue: .main) { [weak self] noti in
             guard let self, let timeZone = noti.userInfo?["timeZone"] as? TimeZone else {
                 return
             }
-            
             // 중복 제거
             guard !self.list.contains(where: { $0.identifier == timeZone.identifier }) else {
                 return
@@ -57,5 +62,10 @@ extension WorldClockViewController: UITableViewDelegate,UITableViewDataSource {
         return cell
     }
     
-    
+    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
+        if editingStyle == .delete {
+            list.remove(at: indexPath.row)
+            tableView.deleteRows(at: [indexPath], with: .automatic)
+        }
+    }
 }

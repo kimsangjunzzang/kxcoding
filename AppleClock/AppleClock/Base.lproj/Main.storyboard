@@ -94,9 +94,6 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="세계 시계" id="3TL-dW-Bic">
-                        <barButtonItem key="leftBarButtonItem" title="Edit" id="xfg-Yd-GFZ">
-                            <color key="tintColor" systemColor="systemOrangeColor"/>
-                        </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="LfX-fu-Heg">
                             <color key="tintColor" systemColor="systemOrangeColor"/>
                             <connections>

@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 60;
+	objectVersion = 70;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -25,6 +25,20 @@
 		1DC2C88C2C3D7BDF00C3BBCB /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		1DC2C88E2C3D7BDF00C3BBCB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
+
+/* Begin PBXFileSystemSynchronizedBuildFileExceptionSet section */
+		1DC2C8972C3D7CB700C3BBCB /* PBXFileSystemSynchronizedBuildFileExceptionSet */ = {
+			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
+			membershipExceptions = (
+				Planet.swift,
+			);
+			target = 1DC2C87C2C3D7BDE00C3BBCB /* PlanetPedia */;
+		};
+/* End PBXFileSystemSynchronizedBuildFileExceptionSet section */
+
+/* Begin PBXFileSystemSynchronizedRootGroup section */
+		1DC2C8942C3D7CA800C3BBCB /* Model */ = {isa = PBXFileSystemSynchronizedRootGroup; exceptions = (1DC2C8972C3D7CB700C3BBCB /* PBXFileSystemSynchronizedBuildFileExceptionSet */, ); explicitFileTypes = {}; explicitFolders = (); path = Model; sourceTree = "<group>"; };
+/* End PBXFileSystemSynchronizedRootGroup section */
 
 /* Begin PBXFrameworksBuildPhase section */
 		1DC2C87A2C3D7BDE00C3BBCB /* Frameworks */ = {
@@ -56,6 +70,7 @@
 		1DC2C87F2C3D7BDE00C3BBCB /* PlanetPedia */ = {
 			isa = PBXGroup;
 			children = (
+				1DC2C8942C3D7CA800C3BBCB /* Model */,
 				1DC2C8802C3D7BDE00C3BBCB /* AppDelegate.swift */,
 				1DC2C8822C3D7BDE00C3BBCB /* SceneDelegate.swift */,
 				1DC2C8842C3D7BDE00C3BBCB /* ViewController.swift */,

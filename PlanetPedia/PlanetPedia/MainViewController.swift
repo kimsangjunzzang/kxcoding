@@ -39,3 +39,17 @@ extension MainViewController: UICollectionViewDataSource {
     
     
 }
+extension MainViewController: UICollectionViewDelegateFlowLayout {
+    func collectionView(_ collectionView: UICollectionView,
+                        layout collectionViewLayout: UICollectionViewLayout,
+                        sizeForItemAt indexPath: IndexPath
+    ) -> CGSize {
+        guard let flowlayout = collectionViewLayout as? UICollectionViewFlowLayout else {
+            return .zero
+        }
+        let width = Int((collectionView.bounds.width - (flowlayout.minimumInteritemSpacing + flowlayout.sectionInset.left + flowlayout.sectionInset.right)) / 2)
+        
+        
+        return CGSize(width: width, height: width)
+    }
+}

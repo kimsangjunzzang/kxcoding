@@ -58,6 +58,7 @@
                                         <connections>
                                             <outlet property="planetImageView" destination="xhQ-60-6Ut" id="mDr-19-25X"/>
                                             <outlet property="planetNameLabel" destination="mPH-un-rMc" id="clO-i1-3hF"/>
+                                            <segue destination="Q4Y-Xu-RwG" kind="show" id="5YQ-O3-rsU"/>
                                         </connections>
                                     </collectionViewCell>
                                 </cells>
@@ -85,6 +86,36 @@
             </objects>
             <point key="canvasLocation" x="1064.885496183206" y="-2.1126760563380285"/>
         </scene>
+        <!--Planet Detail View Controller-->
+        <scene sceneID="0aL-q4-sza">
+            <objects>
+                <viewController id="Q4Y-Xu-RwG" customClass="PlanetDetailViewController" customModule="PlanetPedia" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Qyn-Sx-1Jo">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="mars" translatesAutoresizingMaskIntoConstraints="NO" id="AxX-Cd-Ory">
+                                <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                            </imageView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="nsE-FR-D3m"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="AxX-Cd-Ory" firstAttribute="top" secondItem="Qyn-Sx-1Jo" secondAttribute="top" id="GjB-I4-50C"/>
+                            <constraint firstItem="AxX-Cd-Ory" firstAttribute="trailing" secondItem="nsE-FR-D3m" secondAttribute="trailing" id="OG0-Mz-Ied"/>
+                            <constraint firstAttribute="bottom" secondItem="AxX-Cd-Ory" secondAttribute="bottom" id="V2q-if-GHf"/>
+                            <constraint firstItem="AxX-Cd-Ory" firstAttribute="leading" secondItem="Qyn-Sx-1Jo" secondAttribute="leading" id="VBp-go-0K2"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="h8r-dA-Wn8"/>
+                    <connections>
+                        <outlet property="backgroundImageView" destination="AxX-Cd-Ory" id="OhA-by-s9y"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="KNb-2S-cpK" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1936.6412213740457" y="-2.1126760563380285"/>
+        </scene>
         <!--Navigation Controller-->
         <scene sceneID="0S0-ys-MKQ">
             <objects>
@@ -105,6 +136,7 @@
         </scene>
     </scenes>
     <resources>
+        <image name="mars" width="960" height="720"/>
         <image name="mars-icon" width="256" height="256"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>

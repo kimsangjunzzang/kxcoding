@@ -13,6 +13,7 @@
 		1DC2C8882C3D7BDE00C3BBCB /* Base in Resources */ = {isa = PBXBuildFile; fileRef = 1DC2C8872C3D7BDE00C3BBCB /* Base */; };
 		1DC2C88A2C3D7BDF00C3BBCB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1DC2C8892C3D7BDF00C3BBCB /* Assets.xcassets */; };
 		1DC2C88D2C3D7BDF00C3BBCB /* Base in Resources */ = {isa = PBXBuildFile; fileRef = 1DC2C88C2C3D7BDF00C3BBCB /* Base */; };
+		1DC2C89D2C3D880D00C3BBCB /* PlanetDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DC2C89C2C3D880D00C3BBCB /* PlanetDetailViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +25,7 @@
 		1DC2C8892C3D7BDF00C3BBCB /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		1DC2C88C2C3D7BDF00C3BBCB /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		1DC2C88E2C3D7BDF00C3BBCB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		1DC2C89C2C3D880D00C3BBCB /* PlanetDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlanetDetailViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFileSystemSynchronizedBuildFileExceptionSet section */
@@ -83,6 +85,7 @@
 				1DC2C8802C3D7BDE00C3BBCB /* AppDelegate.swift */,
 				1DC2C8822C3D7BDE00C3BBCB /* SceneDelegate.swift */,
 				1DC2C8842C3D7BDE00C3BBCB /* MainViewController.swift */,
+				1DC2C89C2C3D880D00C3BBCB /* PlanetDetailViewController.swift */,
 				1DC2C8862C3D7BDE00C3BBCB /* Main.storyboard */,
 				1DC2C8892C3D7BDF00C3BBCB /* Assets.xcassets */,
 				1DC2C88B2C3D7BDF00C3BBCB /* LaunchScreen.storyboard */,
@@ -165,6 +168,7 @@
 				1DC2C8852C3D7BDE00C3BBCB /* MainViewController.swift in Sources */,
 				1DC2C8812C3D7BDE00C3BBCB /* AppDelegate.swift in Sources */,
 				1DC2C8832C3D7BDE00C3BBCB /* SceneDelegate.swift in Sources */,
+				1DC2C89D2C3D880D00C3BBCB /* PlanetDetailViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

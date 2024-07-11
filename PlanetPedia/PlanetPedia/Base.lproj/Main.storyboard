@@ -284,6 +284,7 @@
                                 </cells>
                                 <connections>
                                     <outlet property="dataSource" destination="Q4Y-Xu-RwG" id="7O4-An-WPZ"/>
+                                    <outlet property="delegate" destination="Q4Y-Xu-RwG" id="l2q-Gt-aOG"/>
                                 </connections>
                             </collectionView>
                         </subviews>

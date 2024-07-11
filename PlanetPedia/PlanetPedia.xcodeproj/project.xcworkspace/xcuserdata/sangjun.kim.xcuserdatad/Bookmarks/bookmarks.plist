@@ -12,13 +12,13 @@
 					<key>EndingColumnNumber</key>
 					<string>0</string>
 					<key>EndingLineNumber</key>
-					<string>182</string>
+					<string>196</string>
 					<key>StartingColumnNumber</key>
 					<string>0</string>
 					<key>StartingLineNumber</key>
-					<string>182</string>
+					<string>195</string>
 					<key>Timestamp</key>
-					<string>742425066.963647</string>
+					<string>742425494.42425</string>
 				</dict>
 				<key>rebasable-url</key>
 				<dict>
@@ -34,13 +34,17 @@
 			<key>text-context</key>
 			<dict>
 				<key>focused</key>
-				<string></string>
+				<string>extension PlanetDetailViewController : UIScrollViewDelegate {
+</string>
 				<key>leading</key>
 				<string>    
 }
 </string>
 				<key>trailing</key>
-				<string></string>
+				<string>    func scrollViewDidScroll(_ scrollView: UIScrollView) {
+        
+        let y = scrollView.contentOffset.y
+</string>
 			</dict>
 			<key>type</key>
 			<string>bookmark</string>
@@ -53,13 +57,13 @@
 					<key>EndingColumnNumber</key>
 					<string>0</string>
 					<key>EndingLineNumber</key>
-					<string>182</string>
+					<string>196</string>
 					<key>StartingColumnNumber</key>
 					<string>0</string>
 					<key>StartingLineNumber</key>
-					<string>182</string>
+					<string>195</string>
 					<key>Timestamp</key>
-					<string>742425066.963667</string>
+					<string>742425494.424184</string>
 				</dict>
 				<key>rebasable-url</key>
 				<dict>
@@ -75,13 +79,17 @@
 			<key>text-context</key>
 			<dict>
 				<key>focused</key>
-				<string></string>
+				<string>extension PlanetDetailViewController : UIScrollViewDelegate {
+</string>
 				<key>leading</key>
 				<string>    
 }
 </string>
 				<key>trailing</key>
-				<string></string>
+				<string>    func scrollViewDidScroll(_ scrollView: UIScrollView) {
+        
+        let y = scrollView.contentOffset.y
+</string>
 			</dict>
 			<key>type</key>
 			<string>bookmark</string>

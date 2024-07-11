@@ -28,6 +28,7 @@ class PlanetDetailViewController: UIViewController {
         
         let layout = UICollectionViewCompositionalLayout { sectionIndex, environment in
             switch sectionIndex {
+                
             case 1:
                 var size = NSCollectionLayoutSize(widthDimension: .fractionalWidth(0.5), heightDimension: .estimated(130))
                 var item = NSCollectionLayoutItem(layoutSize: size)
@@ -49,6 +50,7 @@ class PlanetDetailViewController: UIViewController {
                 section.interGroupSpacing = 20
                 
                 return section
+                
             case 2:
                 var size = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1), heightDimension: .estimated(200))
                 let item = NSCollectionLayoutItem(layoutSize: size)
@@ -82,12 +84,16 @@ class PlanetDetailViewController: UIViewController {
         detailCollectionView.collectionViewLayout = layout
     }
     
+    var initialOffsetY = CGFloat(0)
+    
     func adjustContentInset() {
         let indexPath = IndexPath(item: 0, section: 0)
         if let first = detailCollectionView.cellForItem(at: indexPath) {
             let topInset = detailCollectionView.frame.height - first.frame.height - view.safeAreaInsets.top - view.safeAreaInsets.bottom - 20
             detailCollectionView.contentInset = UIEdgeInsets(top: topInset, left: 0, bottom: 0, right: 0)
             detailCollectionView.selectItem(at: indexPath, animated: false, scrollPosition: .bottom)
+            
+            initialOffsetY = detailCollectionView.contentOffset.y
         }
         
     }
@@ -101,6 +107,7 @@ class PlanetDetailViewController: UIViewController {
         setupLayout()
         
     }
+    
     override func viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews()
         adjustContentInset()
@@ -109,10 +116,14 @@ class PlanetDetailViewController: UIViewController {
 }
 extension PlanetDetailViewController: UICollectionViewDataSource {
     
-    func numberOfSections(in collectionView: UICollectionView) -> Int {
+    func numberOfSections(in collectionView: UICollectionView
+    ) -> Int {
         return 3
     }
-    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+    
+    func collectionView(_ collectionView: UICollectionView,
+                        numberOfItemsInSection section: Int
+    ) -> Int {
         switch section {
         case 0:
             return 1
@@ -125,7 +136,9 @@ extension PlanetDetailViewController: UICollectionViewDataSource {
         }
     }
     
-    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+    func collectionView(_ collectionView: UICollectionView,
+                        cellForItemAt indexPath: IndexPath
+    ) -> UICollectionViewCell {
         switch indexPath.section {
         case 0:
             let cell = collectionView.dequeueReusableCell(withReuseIdentifier: String(describing: PlanetSummaryCollectionViewCell.self), for: indexPath) as! PlanetSummaryCollectionViewCell
@@ -179,4 +192,20 @@ extension PlanetDetailViewController: UICollectionViewDataSource {
     }
     
     
+}
+extension PlanetDetailViewController : UIScrollViewDelegate {
+    func scrollViewDidScroll(_ scrollView: UIScrollView) {
+        
+        let y = scrollView.contentOffset.y
+        let half = scrollView.bounds.size.height / 2
+        
+        if y <= initialOffsetY {
+            dimView.alpha = 0.0
+        }else if y <= -half {
+            let progress = (initialOffsetY - y) / (initialOffsetY + half)
+            dimView.alpha = progress * 0.4
+        }else {
+            dimView.alpha = 0.4
+        }
+    }
 }

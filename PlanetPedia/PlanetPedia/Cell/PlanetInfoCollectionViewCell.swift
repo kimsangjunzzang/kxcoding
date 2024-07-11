@@ -7,7 +7,7 @@
 
 import UIKit
 
-class PlanetInfoCollectionViewCell: UICollectionViewCell {
+class PlanetInfoCollectionViewCell: RoundedCollectionViewCell {
     
     @IBOutlet weak var titileImageView: UIImageView!
     
@@ -16,6 +16,5 @@ class PlanetInfoCollectionViewCell: UICollectionViewCell {
     @IBOutlet weak var valueLabel: UILabel!
     
     @IBOutlet weak var unitLabel: UILabel!
-    
-    
+   
 }

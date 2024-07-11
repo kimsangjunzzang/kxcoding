@@ -11,7 +11,6 @@ class PlanetDetailViewController: UIViewController {
     
     @IBOutlet weak var detailCollectionView: UICollectionView!
     @IBOutlet weak var backgroundImageView: UIImageView!
-    
     private let planet: Planet
     
     init?(planet: Planet, coder: NSCoder) {
@@ -87,7 +86,6 @@ class PlanetDetailViewController: UIViewController {
         
         let img = UIImage(named: planet.englishName.lowercased())
         backgroundImageView.image = img
-        
         setupLayout()
     }
 }

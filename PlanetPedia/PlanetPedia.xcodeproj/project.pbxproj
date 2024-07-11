@@ -42,6 +42,7 @@
 				PlanetCollectionViewCell.swift,
 				PlanetInfoCollectionViewCell.swift,
 				PlanetSummaryCollectionViewCell.swift,
+				RoundedCollectionViewCell.swift,
 				SatelliteCollectionViewCell.swift,
 			);
 			target = 1DC2C87C2C3D7BDE00C3BBCB /* PlanetPedia */;

@@ -7,7 +7,7 @@
 
 import UIKit
 
-class PlanetCollectionViewCell: UICollectionViewCell {
+class PlanetCollectionViewCell: RoundedCollectionViewCell {
     
     
     @IBOutlet weak var planetImageView: UIImageView!

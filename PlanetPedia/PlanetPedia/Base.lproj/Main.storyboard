@@ -97,6 +97,10 @@
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="mars" translatesAutoresizingMaskIntoConstraints="NO" id="AxX-Cd-Ory">
                                 <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                             </imageView>
+                            <view alpha="0.0" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="xiY-0W-sdN">
+                                <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </view>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="hS3-fq-VSt">
                                 <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -290,16 +294,21 @@
                             <constraint firstItem="AxX-Cd-Ory" firstAttribute="top" secondItem="Qyn-Sx-1Jo" secondAttribute="top" id="GjB-I4-50C"/>
                             <constraint firstItem="hS3-fq-VSt" firstAttribute="top" secondItem="Qyn-Sx-1Jo" secondAttribute="top" id="Iay-wH-RUH"/>
                             <constraint firstItem="AxX-Cd-Ory" firstAttribute="trailing" secondItem="nsE-FR-D3m" secondAttribute="trailing" id="OG0-Mz-Ied"/>
+                            <constraint firstItem="xiY-0W-sdN" firstAttribute="top" secondItem="AxX-Cd-Ory" secondAttribute="top" id="S9G-w2-ogL"/>
                             <constraint firstAttribute="trailing" secondItem="hS3-fq-VSt" secondAttribute="trailing" id="Ulk-qc-Dvj"/>
                             <constraint firstAttribute="bottom" secondItem="AxX-Cd-Ory" secondAttribute="bottom" id="V2q-if-GHf"/>
                             <constraint firstItem="AxX-Cd-Ory" firstAttribute="leading" secondItem="Qyn-Sx-1Jo" secondAttribute="leading" id="VBp-go-0K2"/>
                             <constraint firstAttribute="bottom" secondItem="hS3-fq-VSt" secondAttribute="bottom" id="WNV-rF-9UN"/>
+                            <constraint firstItem="xiY-0W-sdN" firstAttribute="bottom" secondItem="AxX-Cd-Ory" secondAttribute="bottom" id="a7a-eq-94T"/>
+                            <constraint firstItem="xiY-0W-sdN" firstAttribute="trailing" secondItem="AxX-Cd-Ory" secondAttribute="trailing" id="uCI-hi-jVm"/>
+                            <constraint firstItem="xiY-0W-sdN" firstAttribute="leading" secondItem="AxX-Cd-Ory" secondAttribute="leading" id="zr7-Cr-25L"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="h8r-dA-Wn8"/>
                     <connections>
                         <outlet property="backgroundImageView" destination="AxX-Cd-Ory" id="OhA-by-s9y"/>
                         <outlet property="detailCollectionView" destination="hS3-fq-VSt" id="Vd4-ki-Z2Z"/>
+                        <outlet property="dimView" destination="xiY-0W-sdN" id="9La-WU-Hjk"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="KNb-2S-cpK" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>

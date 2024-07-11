@@ -9,6 +9,7 @@ import UIKit
 
 class PlanetDetailViewController: UIViewController {
     
+    @IBOutlet weak var dimView: UIView!
     @IBOutlet weak var detailCollectionView: UICollectionView!
     @IBOutlet weak var backgroundImageView: UIImageView!
     private let planet: Planet
@@ -71,7 +72,7 @@ class PlanetDetailViewController: UIViewController {
                 let group = NSCollectionLayoutGroup.vertical(layoutSize: size, subitems: [item])
                 
                 let section = NSCollectionLayoutSection(group: group)
-                section.contentInsets = NSDirectionalEdgeInsets(top: 20, leading: 20, bottom: 20, trailing: 20)
+                section.contentInsets = NSDirectionalEdgeInsets(top: 500, leading: 20, bottom: 20, trailing: 20)
                 section.interGroupSpacing = 20
                 
                 return section
@@ -81,13 +82,30 @@ class PlanetDetailViewController: UIViewController {
         detailCollectionView.collectionViewLayout = layout
     }
     
+    func adjustContentInset() {
+        let indexPath = IndexPath(item: 0, section: 0)
+        if let first = detailCollectionView.cellForItem(at: indexPath) {
+            let topInset = detailCollectionView.frame.height - first.frame.height - view.safeAreaInsets.top - view.safeAreaInsets.bottom - 20
+            detailCollectionView.contentInset = UIEdgeInsets(top: topInset, left: 0, bottom: 0, right: 0)
+            detailCollectionView.selectItem(at: indexPath, animated: false, scrollPosition: .bottom)
+        }
+        
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
         let img = UIImage(named: planet.englishName.lowercased())
         backgroundImageView.image = img
+        
         setupLayout()
+        
     }
+    override func viewDidLayoutSubviews() {
+        super.viewDidLayoutSubviews()
+        adjustContentInset()
+    }
+    
 }
 extension PlanetDetailViewController: UICollectionViewDataSource {
     

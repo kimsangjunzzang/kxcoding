@@ -13,7 +13,6 @@ class PlanetDetailViewController: UIViewController {
     
     var planet: Planet?
     
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         

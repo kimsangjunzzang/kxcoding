@@ -58,7 +58,7 @@
                                         <connections>
                                             <outlet property="planetImageView" destination="xhQ-60-6Ut" id="mDr-19-25X"/>
                                             <outlet property="planetNameLabel" destination="mPH-un-rMc" id="clO-i1-3hF"/>
-                                            <segue destination="Q4Y-Xu-RwG" kind="show" id="5YQ-O3-rsU"/>
+                                            <segue destination="Q4Y-Xu-RwG" kind="show" destinationCreationSelector="makeDetailVC:sender:" id="5YQ-O3-rsU"/>
                                         </connections>
                                     </collectionViewCell>
                                 </cells>

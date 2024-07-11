@@ -11,16 +11,26 @@ class MainViewController: UIViewController {
 
     @IBOutlet weak var planetCollectionView: UICollectionView!
     
-    // 의존성 주입 Dependency Injection : ID
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if let cell = sender as? UICollectionViewCell, let indexPath = planetCollectionView.indexPath(for: cell) {
-            let selected = solarSystemPlanets[indexPath.item]
-            
-            if let vc = segue.destination as? PlanetDetailViewController {
-                vc.planet = selected // 프로퍼티 인젝션, 세터 인젝션
-            }
+    
+    @IBSegueAction func makeDetailVC(_ coder: NSCoder, sender: Any?) -> PlanetDetailViewController? {
+        guard let cell = sender as? UICollectionViewCell, let indexPath = planetCollectionView.indexPath(for: cell) else {
+            return nil
         }
+        
+        let selected = solarSystemPlanets[indexPath.item]
+        return PlanetDetailViewController(planet: selected, coder: coder)
     }
+    
+    // 의존성 주입 Dependency Injection : ID
+//    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+//        if let cell = sender as? UICollectionViewCell, let indexPath = planetCollectionView.indexPath(for: cell) {
+//            let selected = solarSystemPlanets[indexPath.item]
+//            
+//            if let vc = segue.destination as? PlanetDetailViewController {
+//                vc.planet = selected // 프로퍼티 인젝션, 세터 인젝션
+//            }
+//        }
+//    }
     
     override func viewDidLoad() {
         super.viewDidLoad()

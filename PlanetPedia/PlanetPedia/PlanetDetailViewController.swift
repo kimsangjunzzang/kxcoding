@@ -8,19 +8,29 @@
 import UIKit
 
 class PlanetDetailViewController: UIViewController {
-
+    
     @IBOutlet weak var backgroundImageView: UIImageView!
     
-    var planet: Planet?
+    private let planet: Planet
+    
+    init?(planet: Planet, coder: NSCoder) {
+        self.planet = planet
+        
+        super.init(coder: coder)
+    }
+    
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        if let planet {
-            let img = UIImage(named: planet.englishName.lowercased())
-            backgroundImageView.image = img
-        }
-
+        
+        let img = UIImage(named: planet.englishName.lowercased())
+        backgroundImageView.image = img
+        
+        
     }
     
 }

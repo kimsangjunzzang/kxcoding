@@ -24,12 +24,56 @@ class PlanetDetailViewController: UIViewController {
         fatalError("init(coder:) has not been implemented")
     }
     
+    func setupLayout() {
+        
+        let layout = UICollectionViewCompositionalLayout { sectionIndex, environment in
+            switch sectionIndex {
+            case 1:
+                var size = NSCollectionLayoutSize(widthDimension: .fractionalWidth(0.5), heightDimension: .estimated(130))
+                var item = NSCollectionLayoutItem(layoutSize: size)
+                
+                size = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1), heightDimension: .estimated(130))
+                
+                var group = NSCollectionLayoutGroup.horizontal(layoutSize: size, subitems: [item])
+                
+                group.interItemSpacing = NSCollectionLayoutSpacing.flexible(20)
+                
+                size = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1), heightDimension: .estimated(130))
+                item = NSCollectionLayoutItem(layoutSize: size)
+                
+                group = NSCollectionLayoutGroup.vertical(layoutSize: size, subitems: [group,item])
+                group.interItemSpacing = NSCollectionLayoutSpacing.fixed(20)
+                
+                let section = NSCollectionLayoutSection(group: group)
+                section.contentInsets = NSDirectionalEdgeInsets(top: 20, leading: 20, bottom: 20, trailing: 20)
+                section.interGroupSpacing = 20
+                
+                return section
+                
+            default:
+                let size = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1), heightDimension: .estimated(200))
+                let item = NSCollectionLayoutItem(layoutSize: size)
+                
+                let group = NSCollectionLayoutGroup.vertical(layoutSize: size, subitems: [item])
+                
+                let section = NSCollectionLayoutSection(group: group)
+                section.contentInsets = NSDirectionalEdgeInsets(top: 20, leading: 20, bottom: 20, trailing: 20)
+                section.interGroupSpacing = 20
+                
+                return section
+            }
+            
+        }
+        detailCollectionView.collectionViewLayout = layout
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
         let img = UIImage(named: planet.englishName.lowercased())
         backgroundImageView.image = img
         
+        setupLayout()
     }
 }
 extension PlanetDetailViewController: UICollectionViewDataSource {

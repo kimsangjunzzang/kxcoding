@@ -89,6 +89,8 @@ class PlanetDetailViewController: UIViewController {
     func adjustContentInset() {
         let indexPath = IndexPath(item: 0, section: 0)
         if let first = detailCollectionView.cellForItem(at: indexPath) {
+            
+            
             let topInset = detailCollectionView.frame.height - first.frame.height - view.safeAreaInsets.top - view.safeAreaInsets.bottom - 20
             detailCollectionView.contentInset = UIEdgeInsets(top: topInset, left: 0, bottom: 0, right: 0)
             detailCollectionView.selectItem(at: indexPath, animated: false, scrollPosition: .bottom)
@@ -110,6 +112,10 @@ class PlanetDetailViewController: UIViewController {
     
     override func viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews()
+        
+        DispatchQueue.main.async {
+            self.adjustContentInset()
+        }
         adjustContentInset()
     }
     

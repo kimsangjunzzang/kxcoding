@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 60;
+	objectVersion = 70;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -14,6 +14,7 @@
 		1D38E5E62C45466F0056D8AE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1D38E5E52C45466F0056D8AE /* Assets.xcassets */; };
 		1D38E5E92C45466F0056D8AE /* Base in Resources */ = {isa = PBXBuildFile; fileRef = 1D38E5E82C45466F0056D8AE /* Base */; };
 		1D38E5F12C4548040056D8AE /* EmojiPrintOperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D38E5F02C4548040056D8AE /* EmojiPrintOperation.swift */; };
+		1D38E5F72C454A8F0056D8AE /* ImageListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D38E5F62C454A8F0056D8AE /* ImageListViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,7 +27,31 @@
 		1D38E5E82C45466F0056D8AE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		1D38E5EA2C45466F0056D8AE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		1D38E5F02C4548040056D8AE /* EmojiPrintOperation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmojiPrintOperation.swift; sourceTree = "<group>"; };
+		1D38E5F62C454A8F0056D8AE /* ImageListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageListViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
+
+/* Begin PBXFileSystemSynchronizedBuildFileExceptionSet section */
+		1D38E5F52C454A390056D8AE /* PBXFileSystemSynchronizedBuildFileExceptionSet */ = {
+			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
+			membershipExceptions = (
+				ImageCollectionViewCell.swift,
+			);
+			target = 1D38E5D82C45466D0056D8AE /* HelloOperation */;
+		};
+		1D38E5FB2C454AF40056D8AE /* PBXFileSystemSynchronizedBuildFileExceptionSet */ = {
+			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
+			membershipExceptions = (
+				PhotoData.swift,
+				PhotoDataSource.swift,
+			);
+			target = 1D38E5D82C45466D0056D8AE /* HelloOperation */;
+		};
+/* End PBXFileSystemSynchronizedBuildFileExceptionSet section */
+
+/* Begin PBXFileSystemSynchronizedRootGroup section */
+		1D38E5F22C454A290056D8AE /* Cell */ = {isa = PBXFileSystemSynchronizedRootGroup; exceptions = (1D38E5F52C454A390056D8AE /* PBXFileSystemSynchronizedBuildFileExceptionSet */, ); explicitFileTypes = {}; explicitFolders = (); path = Cell; sourceTree = "<group>"; };
+		1D38E5F82C454ADF0056D8AE /* Model */ = {isa = PBXFileSystemSynchronizedRootGroup; exceptions = (1D38E5FB2C454AF40056D8AE /* PBXFileSystemSynchronizedBuildFileExceptionSet */, ); explicitFileTypes = {}; explicitFolders = (); path = Model; sourceTree = "<group>"; };
+/* End PBXFileSystemSynchronizedRootGroup section */
 
 /* Begin PBXFrameworksBuildPhase section */
 		1D38E5D62C45466D0056D8AE /* Frameworks */ = {
@@ -58,14 +83,17 @@
 		1D38E5DB2C45466D0056D8AE /* HelloOperation */ = {
 			isa = PBXGroup;
 			children = (
+				1D38E5F82C454ADF0056D8AE /* Model */,
+				1D38E5F22C454A290056D8AE /* Cell */,
 				1D38E5DC2C45466D0056D8AE /* AppDelegate.swift */,
 				1D38E5DE2C45466D0056D8AE /* SceneDelegate.swift */,
 				1D38E5E02C45466D0056D8AE /* ViewController.swift */,
+				1D38E5F02C4548040056D8AE /* EmojiPrintOperation.swift */,
+				1D38E5F62C454A8F0056D8AE /* ImageListViewController.swift */,
 				1D38E5E22C45466D0056D8AE /* Main.storyboard */,
 				1D38E5E52C45466F0056D8AE /* Assets.xcassets */,
 				1D38E5E72C45466F0056D8AE /* LaunchScreen.storyboard */,
 				1D38E5EA2C45466F0056D8AE /* Info.plist */,
-				1D38E5F02C4548040056D8AE /* EmojiPrintOperation.swift */,
 			);
 			path = HelloOperation;
 			sourceTree = "<group>";
@@ -141,6 +169,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1D38E5F72C454A8F0056D8AE /* ImageListViewController.swift in Sources */,
 				1D38E5E12C45466D0056D8AE /* ViewController.swift in Sources */,
 				1D38E5DD2C45466D0056D8AE /* AppDelegate.swift in Sources */,
 				1D38E5F12C4548040056D8AE /* EmojiPrintOperation.swift in Sources */,

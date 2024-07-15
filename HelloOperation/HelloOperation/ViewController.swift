@@ -14,7 +14,6 @@ class ViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
     }
 
     @IBAction func startOperation(_ sender: Any) {
@@ -45,7 +44,6 @@ class ViewController: UIViewController {
         
         let op2 = EmojiPrintOperation(type: "🗓️")
         queue.addOperation(op2)
-        
         op2.completionBlock = {
             print("Done")
         }

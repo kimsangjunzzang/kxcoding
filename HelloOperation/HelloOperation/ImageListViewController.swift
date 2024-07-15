@@ -14,11 +14,15 @@ class ImageListViewController: UIViewController {
     var ds = PhotoDataSource()
     
     func setupLayout() {
-        let itemSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(0.3), heightDimension: .estimated(100))
+        
+        let itemSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(0.3),
+                                              heightDimension: .estimated(100))
         let item = NSCollectionLayoutItem(layoutSize: itemSize)
         
-        let groupSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1), heightDimension: .estimated(100))
-        let group = NSCollectionLayoutGroup.horizontal(layoutSize: groupSize,subitems: [item])
+        let groupSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1),
+                                               heightDimension: .estimated(100))
+        let group = NSCollectionLayoutGroup.horizontal(layoutSize: groupSize,
+                                                       subitems: [item])
         group.interItemSpacing = .flexible(10)
         
         let section = NSCollectionLayoutSection(group: group)
@@ -34,23 +38,21 @@ class ImageListViewController: UIViewController {
         
         setupLayout()
     }
-    
 }
 
 extension ImageListViewController : UICollectionViewDataSource {
-    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int
+    func collectionView(_ collectionView: UICollectionView,
+                        numberOfItemsInSection section: Int
     ) -> Int {
         return ds.list.count
     }
     
-    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath
+    func collectionView(_ collectionView: UICollectionView,
+                        cellForItemAt indexPath: IndexPath
     ) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: String(describing: ImageCollectionViewCell.self), for: indexPath) as! ImageCollectionViewCell
-        
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: String(describing: ImageCollectionViewCell.self),
+                                                      for: indexPath) as! ImageCollectionViewCell
         cell.imageView.image = ds.list[indexPath.item].data
-        
         return cell
     }
-    
-    
 }

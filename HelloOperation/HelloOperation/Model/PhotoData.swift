@@ -5,7 +5,6 @@
 //  Created by 김상준 on 7/15/24.
 //
 
-import Foundation
 import UIKit
 
 class PhotoData {
@@ -14,6 +13,5 @@ class PhotoData {
     
     init(url: String) {
         self.url = URL(string: url)!
-        
     }
 }

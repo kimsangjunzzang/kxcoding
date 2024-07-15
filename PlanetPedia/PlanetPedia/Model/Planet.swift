@@ -10,6 +10,7 @@ import UIKit
 fileprivate let numberFormatter = NumberFormatter()
 
 struct Planet {
+    
     struct Satellite {
         let koreanName: String
         let englishName: String
@@ -17,11 +18,11 @@ struct Planet {
         let summary: String
         let description: String
     }
-
+    
     let koreanName: String
     let englishName: String
-    let size: Double // 지름 기준 (km)
     
+    let size: Double // 지름 기준 (km)
     var sizeString: String? {
         numberFormatter.numberStyle = .decimal
         numberFormatter.minimumFractionDigits = 0
@@ -29,8 +30,8 @@ struct Planet {
         
         return numberFormatter.string(for: size)
     }
-    let orbitalPeriod: Double
     
+    let orbitalPeriod: Double
     var orbitalPeriodString: String? {
         let value = orbitalPeriod > 365 ? orbitalPeriod / 365 : orbitalPeriod
         
@@ -42,15 +43,14 @@ struct Planet {
     }
     
     let distanceFromEarthKM: Double // km 기준
-    
     var distanceString: String? {
         numberFormatter.numberStyle = .decimal
         numberFormatter.minimumFractionDigits = 0
         numberFormatter.maximumFractionDigits = 1
         
         return numberFormatter.string(for: distanceFromEarthKM)
-        
     }
+    
     let description: String
     let satellites: [Satellite]
 }
@@ -62,7 +62,8 @@ let solarSystemPlanets: [Planet] = [
            orbitalPeriod: 87.969,
            distanceFromEarthKM: 91_700_000,
            description: "수성은 태양에 가장 가까운 행성으로, 지구로부터는 약 9200만 킬로미터 떨어져 있습니다. 그 크기는 지구의 약 38%에 불과하며, 태양계에서 가장 작은 행성 중 하나입니다.",
-           satellites: []),
+           satellites: []
+          ),
 
     Planet(koreanName: "금성",
            englishName: "Venus",
@@ -70,7 +71,8 @@ let solarSystemPlanets: [Planet] = [
            orbitalPeriod: 224.7,
            distanceFromEarthKM: 41_400_000,
            description: "금성은 지구에 가장 가까운 이웃 행성으로, 지름은 지구의 95%에 불과합니다. 그러나 그 표면은 지구와 매우 다르며, 매우 뜨겁고 거칠며 가시적인 활동이 없습니다.",
-           satellites: []),
+           satellites: []
+          ),
 
     Planet(koreanName: "지구",
            englishName: "Earth",
@@ -98,7 +100,8 @@ let solarSystemPlanets: [Planet] = [
 
                                 아직 달에 대해 알아야 할 많은 것들이 남아있으며, 이를 위해 미래의 탐사 미션들이 계획되어 있습니다. 특히 물의 존재 여부, 그리고 달이 어떻게 형성되었는지에 대한 이해는 지구와 태양계의 역사를 이해하는 데 중요한 열쇠가 될 수 있습니다.
                                 """)
-           ]),
+           ]
+          ),
 
     Planet(koreanName: "화성",
            englishName: "Mars",
@@ -135,7 +138,8 @@ let solarSystemPlanets: [Planet] = [
 
                                 데이모스에 대한 많은 연구가 진행 중이며, 일부 연구자들은 이 위성이 캡처된 소행성일 가능성을 제기하고 있습니다. 이러한 이론은 데이모스의 불규칙한 모양과 저밀도를 설명할 수 있습니다. 하지만 이는 아직 확정적인 것이 아니며 더 많은 탐사와 연구가 필요합니다.
                                 """)
-           ]),
+           ]
+          ),
 
     Planet(koreanName: "목성",
            englishName: "Jupiter",
@@ -206,7 +210,8 @@ let solarSystemPlanets: [Planet] = [
 
                                 칼리스토에 대한 연구는 여전히 진행 중이며, 이 위성의 진정한 복잡성과 그것이 우리 태양계의 이해에 어떻게 기여할 수 있는지에 대해 더 알아가고 있습니다.
                                 """)
-           ]),
+           ]
+          ),
 
     Planet(koreanName: "토성",
            englishName: "Saturn",
@@ -292,7 +297,8 @@ let solarSystemPlanets: [Planet] = [
 
                                 테티스는 토성 주변을 약 1.9 지구일에 한 바퀴 돌며, 항상 같은 면이 토성을 향하도록 동기 회전을 합니다. 테티스와 같은 위성들에 대한 연구는 태양계의 초기 역사와 다른 천체의 진화 과정에 대한 이해를 높이는데 중요한 역할을 합니다.
                                 """)
-           ]),
+           ]
+          ),
 
     Planet(koreanName: "천왕성",
            englishName: "Uranus",
@@ -378,7 +384,8 @@ let solarSystemPlanets: [Planet] = [
 
                                 오베론에 대한 대부분의 지식은 1986년의 보이저 2호의 비행 때 얻어진 것이며, 그 이후로는 큰 관측이 이루어지지 않았습니다. 따라서 오베론과 천왕성 시스템에 대한 이해는 여전히 미미한 상태입니다. 하지만 오베론과 같은 위성에 대한 연구는 태양계의 외곽 부분에 대한 이해를 높이는데 중요한 역할을 합니다.
                                 """)
-           ]),
+           ]
+          ),
 
     Planet(koreanName: "해왕성",
            englishName: "Neptune",
@@ -488,5 +495,6 @@ let solarSystemPlanets: [Planet] = [
 
                                 그러나 현재까지 탈라사에 대한 우리의 지식은 매우 제한적이며, 이 위성에 대한 더 많은 정보를 얻기 위해서는 추가적인 관측과 탐사가 필요합니다.
                                 """)
-           ])
+           ]
+          )
 ]

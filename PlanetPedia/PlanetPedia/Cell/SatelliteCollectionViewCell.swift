@@ -9,9 +9,7 @@ import UIKit
 
 class SatelliteCollectionViewCell: RoundedCollectionViewCell {
     
-    
     @IBOutlet weak var satelliteNameLabel: UILabel!
-    
     @IBOutlet weak var satelliteSummarylabel: UILabel!
     
 }

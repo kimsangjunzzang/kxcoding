@@ -1,8 +1,8 @@
 //
 //  SceneDelegate.swift
-//  PlanetPedia
+//  HelloConcurrency
 //
-//  Created by 김상준 on 7/9/24.
+//  Created by 김상준 on 7/15/24.
 //
 
 import UIKit
@@ -10,6 +10,7 @@ import UIKit
 class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 
     var window: UIWindow?
+
 
     func scene(_ scene: UIScene, willConnectTo session: UISceneSession, options connectionOptions: UIScene.ConnectionOptions) {
         // Use this method to optionally configure and attach the UIWindow `window` to the provided UIWindowScene `scene`.

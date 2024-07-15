@@ -11,6 +11,5 @@ class PlanetCollectionViewCell: RoundedCollectionViewCell {
     
     
     @IBOutlet weak var planetImageView: UIImageView!
-    
     @IBOutlet weak var planetNameLabel: UILabel!
 }

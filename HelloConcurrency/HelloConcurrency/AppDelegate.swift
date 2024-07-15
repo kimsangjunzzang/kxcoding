@@ -1,14 +1,16 @@
 //
 //  AppDelegate.swift
-//  PlanetPedia
+//  HelloConcurrency
 //
-//  Created by 김상준 on 7/9/24.
+//  Created by 김상준 on 7/15/24.
 //
 
 import UIKit
 
 @main
 class AppDelegate: UIResponder, UIApplicationDelegate {
+
+
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.

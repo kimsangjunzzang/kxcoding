@@ -42,4 +42,12 @@ func test() throws {
         }
     }
 }
-try test()
+//try test()
+if let _ = try? parsing(data: [:]) {
+    print("success")
+} else {
+    print("fail")
+}
+
+try? parsing(data: [:])
+//try! parsing(data: [:])

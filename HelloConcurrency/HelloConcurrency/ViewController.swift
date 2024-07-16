@@ -22,12 +22,12 @@ class ViewController: UIViewController {
         
         DispatchQueue.global().async {
             for num in 1...100 {
+                
                 DispatchQueue.main.async{
                     self.countLabel.text = "\(num)"
                 }
                 Thread.sleep(forTimeInterval: 0.1)
             }
-            
         }
     }
     

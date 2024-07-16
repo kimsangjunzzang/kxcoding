@@ -64,9 +64,58 @@ class ViewController: UIViewController {
         print("serial: \(end.timeIntervalSinceReferenceDate - start.timeIntervalSinceReferenceDate)")
         
     }
+    var currentWorkItem: DispatchWorkItem?
     
-   
+    @IBAction func submitWorkItem(_ sender: Any) {
+        currentWorkItem = DispatchWorkItem(block: { [weak self] in
+          
+            for num in 0 ..< 100 {
+                guard let item = self?.currentWorkItem, !item.isCancelled else { return }
+                print(num,separator: "",terminator: " ")
+                Thread.sleep(forTimeInterval: 0.1)
+            }
+        })
+        
+        if let currentWorkItem {
+            concurrentQueue.async(execute: currentWorkItem)
+        }
+        
+        currentWorkItem?.notify(queue: concurrentQueue) {
+            print("DONE")
+        }
+    }
     
+    @IBAction func cancelWorkItem(_ sender: Any) {
+        currentWorkItem?.cancel()
+    }
+    let group = DispatchGroup()
+    
+    @IBAction func runGroup(_ sender: Any) {
+        concurrentQueue.async(group: group) {
+            for _ in 0 ..< 10 {
+                print("🍏",separator: "",terminator: "")
+                Thread.sleep(forTimeInterval: 0.1)
+            }
+        }
+        
+        concurrentQueue.async(group: group) {
+            for _ in 0 ..< 10 {
+                print("🍎",separator: "",terminator: "")
+                Thread.sleep(forTimeInterval: 0.2)
+            }
+        }
+        
+        serialQueue.async(group: group) {
+            for _ in 0 ..< 10 {
+                print("🥕",separator: "",terminator: "")
+                Thread.sleep(forTimeInterval: 0.3)
+            }
+        }
+        
+        group.notify(queue: DispatchQueue.main) {
+            print("DONE")
+        }
+    }
     
 }
 

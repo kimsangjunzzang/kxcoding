@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 60;
+	objectVersion = 70;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -13,6 +13,7 @@
 		1D28462A2C465B9900C9697F /* Base in Resources */ = {isa = PBXBuildFile; fileRef = 1D2846292C465B9900C9697F /* Base */; };
 		1D28462C2C465B9A00C9697F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1D28462B2C465B9A00C9697F /* Assets.xcassets */; };
 		1D28462F2C465B9A00C9697F /* Base in Resources */ = {isa = PBXBuildFile; fileRef = 1D28462E2C465B9A00C9697F /* Base */; };
+		1D28464B2C466BBE00C9697F /* ImageListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D28464A2C466BBE00C9697F /* ImageListViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,7 +25,30 @@
 		1D28462B2C465B9A00C9697F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		1D28462E2C465B9A00C9697F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		1D2846302C465B9A00C9697F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		1D28464A2C466BBE00C9697F /* ImageListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageListViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
+
+/* Begin PBXFileSystemSynchronizedBuildFileExceptionSet section */
+		1D2846452C466A8100C9697F /* PBXFileSystemSynchronizedBuildFileExceptionSet */ = {
+			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
+			membershipExceptions = (
+				Model.swift,
+			);
+			target = 1D28461E2C465B9900C9697F /* HelloGCD */;
+		};
+		1D2846492C466B6A00C9697F /* PBXFileSystemSynchronizedBuildFileExceptionSet */ = {
+			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
+			membershipExceptions = (
+				ImageCollectionViewCell.swift,
+			);
+			target = 1D28461E2C465B9900C9697F /* HelloGCD */;
+		};
+/* End PBXFileSystemSynchronizedBuildFileExceptionSet section */
+
+/* Begin PBXFileSystemSynchronizedRootGroup section */
+		1D2846422C466A7600C9697F /* Model */ = {isa = PBXFileSystemSynchronizedRootGroup; exceptions = (1D2846452C466A8100C9697F /* PBXFileSystemSynchronizedBuildFileExceptionSet */, ); explicitFileTypes = {}; explicitFolders = (); path = Model; sourceTree = "<group>"; };
+		1D2846462C466B4C00C9697F /* Cell */ = {isa = PBXFileSystemSynchronizedRootGroup; exceptions = (1D2846492C466B6A00C9697F /* PBXFileSystemSynchronizedBuildFileExceptionSet */, ); explicitFileTypes = {}; explicitFolders = (); path = Cell; sourceTree = "<group>"; };
+/* End PBXFileSystemSynchronizedRootGroup section */
 
 /* Begin PBXFrameworksBuildPhase section */
 		1D28461C2C465B9900C9697F /* Frameworks */ = {
@@ -56,9 +80,12 @@
 		1D2846212C465B9900C9697F /* HelloGCD */ = {
 			isa = PBXGroup;
 			children = (
+				1D2846462C466B4C00C9697F /* Cell */,
+				1D2846422C466A7600C9697F /* Model */,
 				1D2846222C465B9900C9697F /* AppDelegate.swift */,
 				1D2846242C465B9900C9697F /* SceneDelegate.swift */,
 				1D2846262C465B9900C9697F /* ViewController.swift */,
+				1D28464A2C466BBE00C9697F /* ImageListViewController.swift */,
 				1D2846282C465B9900C9697F /* Main.storyboard */,
 				1D28462B2C465B9A00C9697F /* Assets.xcassets */,
 				1D28462D2C465B9A00C9697F /* LaunchScreen.storyboard */,
@@ -138,6 +165,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1D28464B2C466BBE00C9697F /* ImageListViewController.swift in Sources */,
 				1D2846272C465B9900C9697F /* ViewController.swift in Sources */,
 				1D2846232C465B9900C9697F /* AppDelegate.swift in Sources */,
 				1D2846252C465B9900C9697F /* SceneDelegate.swift in Sources */,

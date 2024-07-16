@@ -112,7 +112,18 @@
                             <constraint firstItem="qLP-Zi-DRi" firstAttribute="top" secondItem="CJC-c7-fJR" secondAttribute="top" id="tOE-LS-uaE"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" title="Photos" id="1PZ-Hr-Y07"/>
+                    <navigationItem key="navigationItem" title="Photos" id="1PZ-Hr-Y07">
+                        <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="ILX-7s-uWV">
+                            <connections>
+                                <action selector="cancelOperation:" destination="fF1-nv-xfv" id="9FS-hM-oh4"/>
+                            </connections>
+                        </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" systemItem="play" id="ukc-La-zLg">
+                            <connections>
+                                <action selector="startOperation:" destination="fF1-nv-xfv" id="6Rw-aH-ISx"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
                         <outlet property="imageCollectionView" destination="qLP-Zi-DRi" id="cPr-D5-NVW"/>
                     </connections>

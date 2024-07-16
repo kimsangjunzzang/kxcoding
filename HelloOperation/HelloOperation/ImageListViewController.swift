@@ -11,6 +11,9 @@ class ImageListViewController: UIViewController {
     
     @IBOutlet weak var imageCollectionView: UICollectionView!
     
+    let backgroundQueue = OperationQueue()
+    let mainQueue = OperationQueue.main
+    
     var ds = PhotoDataSource()
     
     func setupLayout() {
@@ -37,7 +40,44 @@ class ImageListViewController: UIViewController {
         super.viewDidLoad()
         
         setupLayout()
+        
+        backgroundQueue.maxConcurrentOperationCount = 100000
     }
+    
+    
+    @IBAction func cancelOperation(_ sender: Any) {
+        mainQueue.cancelAllOperations()
+        backgroundQueue.cancelAllOperations()
+    }
+    
+    @IBAction func startOperation(_ sender: Any) {
+        
+        var uiOperations = [Operation]()
+        var backgroundOperations = [Operation]()
+        
+        let reloadOp = ReloadOperation(collectionView: imageCollectionView)
+        uiOperations.append(reloadOp)
+        
+        for index in 0...20 {
+            let data = ds.list[index]
+            
+            let downloadOp = DownloadOperation(target: data)
+            reloadOp.addDependency(downloadOp)
+            backgroundOperations.append(downloadOp)
+            
+            let filterOp = FilterOperation(target: data)
+            filterOp.addDependency(reloadOp)
+            backgroundOperations.append(filterOp)
+            
+            let reloadItemOp = ReloadOperation(collectionView: imageCollectionView, indexPath: IndexPath(item: index, section: 0))
+            
+            reloadItemOp.addDependency(filterOp)
+            uiOperations.append(reloadItemOp)
+        }
+        backgroundQueue.addOperations(backgroundOperations,waitUntilFinished: false)
+        mainQueue.addOperations(uiOperations, waitUntilFinished: false)
+    }
+    
 }
 
 extension ImageListViewController : UICollectionViewDataSource {

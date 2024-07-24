@@ -76,8 +76,8 @@
 				1DB4EDC82C5150FC00D653CA /* SceneDelegate.swift */,
 				1DB4EDDA2C51521500D653CA /* DirectoryTableViewController.swift */,
 				1DB4EDCC2C5150FC00D653CA /* Main.storyboard */,
-				1DB4EDCF2C5150FE00D653CA /* Assets.xcassets */,
 				1DB4EDD12C5150FE00D653CA /* LaunchScreen.storyboard */,
+				1DB4EDCF2C5150FE00D653CA /* Assets.xcassets */,
 				1DB4EDD42C5150FE00D653CA /* Info.plist */,
 			);
 			path = FileManager;

@@ -11,32 +11,102 @@ class DirectoryTableViewController: UITableViewController {
 
     @IBOutlet weak var menuButton: UIBarButtonItem!
     
+    var currentDirectoryUrl: URL?
+    
+    var contents = [Content]()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        if currentDirectoryUrl == nil {
+            currentDirectoryUrl = URL(fileURLWithPath: NSHomeDirectory())
+        }
 
+    }
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        refreshContents()
+        updateNavigationTitle()
+    }
+    func updateNavigationTitle() {
+        guard let url = currentDirectoryUrl else {
+            navigationItem.title = "???"
+            return
+        }
+        do {
+            let values = try url.resourceValues(forKeys: [.localizedNameKey])
+            navigationItem.title = values.localizedName
+        } catch {
+            print(error)
+            
+        }
+        
+    }
+    func refreshContents() {
+        contents.removeAll()
+        
+        defer {
+            tableView.reloadData()
+        }
+        guard let url = currentDirectoryUrl else {
+            fatalError("empty url")
+        }
+        do {
+            let properties: [URLResourceKey] = [.localizedNameKey,.isDirectoryKey,.fileSizeKey,.isExcludedFromBackupKey]
+            
+            let currentContentUrls = try FileManager.default.contentsOfDirectory(at: url, includingPropertiesForKeys: properties, options: FileManager.DirectoryEnumerationOptions.skipsHiddenFiles)
+            
+            for url in currentContentUrls {
+                let content = Content(url: url)
+                contents.append(content)
+            }
+            
+            contents.sort {
+                if $0.type == $1.type {
+                    return $0.name.lowercased() < $1.name.lowercased()
+                }
+                return $0.type.rawValue < $1.type.rawValue
+            }
+            
+        }catch {
+            print(error)
+        }
     }
 
     // MARK: - Table view data source
 
-    override func numberOfSections(in tableView: UITableView) -> Int {
-        // #warning Incomplete implementation, return the number of sections
-        return 0
-    }
-
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        // #warning Incomplete implementation, return the number of rows
-        return 0
+      
+        return contents.count
     }
 
-    /*
+    
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "reuseIdentifier", for: indexPath)
-
-        // Configure the cell...
-
+        let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath)
+        
+        let target = contents[indexPath.row]
+        cell.imageView?.image = target.image
+        
+        switch target.type {
+        case .directory:
+            cell.textLabel?.text = "[\(target.name)]"
+            cell.detailTextLabel?.text = nil
+            cell.accessoryType = .disclosureIndicator
+        case .file:
+            cell.textLabel?.text = target.name
+            cell.detailTextLabel?.text = "\(target.size)"
+            cell.accessoryType = .none
+        }
+        
+        if target.isExcludedFromBackup {
+            cell.textLabel?.textColor = .secondaryLabel
+        } else {
+            cell.textLabel?.textColor = .label
+        }
+        cell.detailTextLabel?.textColor = cell.textLabel?.textColor
+        
         return cell
     }
-    */
 
     /*
     // Override to support conditional editing of the table view.

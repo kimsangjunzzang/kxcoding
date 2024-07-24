@@ -8,7 +8,7 @@
 import Foundation
 
 enum Type: Int {
-
+    
 case directory
 case file
     

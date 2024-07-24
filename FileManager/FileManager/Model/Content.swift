@@ -11,14 +11,25 @@ struct Content {
     let url: URL
     
     var name: String {
-        return ""
+        let values = try? url.resourceValues(forKeys: [.localizedNameKey])
+        return values?.localizedName ?? "???"
     }
+    
     var size: Int {
-        return 0
+        let values = try? url.resourceValues(forKeys: [.fileSizeKey])
+        return values?.fileSize ?? 0
     }
+    
     var type: Type {
-        return .file
+        let values = try? url.resourceValues(forKeys: [.isDirectoryKey])
+        return values?.isDirectory == true ? .directory : .file
     }
+    
+    var isExcludedFromBackup: Bool {
+        let values = try? url.resourceValues(forKeys: [.isExcludedFromBackupKey])
+        return values?.isExcludedFromBackup ?? false
+    }
+    
     var image: UIImage? {
         switch type {
             

@@ -10,6 +10,7 @@ import UIKit
 class DirectoryTableViewController: UITableViewController {
 
     @IBOutlet weak var menuButton: UIBarButtonItem!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 

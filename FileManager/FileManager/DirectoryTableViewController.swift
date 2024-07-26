@@ -4,29 +4,98 @@
 //
 //  Created by 김상준 on 7/25/24.
 //
-
 import UIKit
 
 class DirectoryTableViewController: UITableViewController {
     
     @IBOutlet weak var menuButton: UIBarButtonItem!
-    
     var currentDirectoryUrl: URL?
-    
     var contents = [Content]()
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if let cell = sender as? UITableViewCell, let indexPath = tableView.indexPath(for: cell) {
+            if let vc = segue.destination as? DirectoryTableViewController {
+                vc.currentDirectoryUrl = contents[indexPath.row].url
+            }
+        }
+    }
+    
+    override func shouldPerformSegue(withIdentifier identifier: String, sender: Any?) -> Bool {
+        if identifier == "drectorySegue" {
+            if let cell = sender as? UITableViewCell, let indexPath = tableView.indexPath(for: cell) {
+                
+                do {
+                    let url = contents[indexPath.row].url
+                    let reachable = try url.checkResourceIsReachable()
+                    if !reachable {
+                        return false
+                    }
+                } catch {
+                    print(error)
+                    return false
+                }
+                return contents[indexPath.row].type == .directory
+            }
+        }
+        return true
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
         if currentDirectoryUrl == nil {
             currentDirectoryUrl = URL(fileURLWithPath: NSHomeDirectory())
         }
+        setupMenu()
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         refreshContents()
         updateNavigationTitle()
+    }
+    func showNameInputAlert() {
+        let inputAlert = UIAlertController(title: "새 디렉토리", message: nil, preferredStyle: .alert)
+        inputAlert.addTextField{ nameField in
+            nameField.placeholder = "디렉토리 이름을 입력해 주세요"
+            nameField.clearButtonMode = .whileEditing
+            nameField.autocapitalizationType = .none
+            nameField.autocorrectionType = .no
+        }
+        let createAction = UIAlertAction(title: "추가", style: .default) { _ in
+            if let name = inputAlert.textFields?.first?.text {
+                self.addDirectory(named: name)
+            }
+        }
+        inputAlert.addAction(createAction)
+        
+        let cancelAction = UIAlertAction(title: "취소", style: .cancel)
+        inputAlert.addAction(cancelAction)
+        
+        present(inputAlert, animated: true)
+    }
+    func addDirectory(named: String) {
+        guard let url = currentDirectoryUrl?.appendingPathComponent(named, isDirectory: true) else {
+            return
+        }
+        do {
+            try FileManager.default.createDirectory(at: url, withIntermediateDirectories: true,attributes: nil)
+        } catch {
+            print(error)
+        }
+        refreshContents()
+    }
+    func setupMenu() {
+        menuButton.menu = UIMenu(children: [
+            UIAction(title: "새 디렉토리",image: UIImage(systemName: "folder"), handler: { _ in
+                self.showNameInputAlert()
+            }),
+            UIAction(title: "새 텍스트 파일", image: UIImage(systemName: "doc.text"), handler: { _ in
+                
+            }),
+            UIAction(title: "새 이미지 파일", image: UIImage(systemName: "photo"), handler: { _ in
+                
+            })
+        ])
     }
     
     func updateNavigationTitle() {
@@ -37,15 +106,14 @@ class DirectoryTableViewController: UITableViewController {
         let values = try? url.resourceValues(forKeys: [.localizedNameKey])
         navigationItem.title = values?.localizedName
         
-        /*
-         do {
-         let values = try url.resourceValues(forKeys: [.localizedNameKey])
-         navigationItem.title = values.localizedName
-         } catch {
-         print(error)
-         }
-         */
         
+//        do {
+//            let values = try url.resourceValues(forKeys: [.localizedNameKey])
+//            navigationItem.title = values.localizedName
+//        } catch {
+//            print(error)
+//        }
+         
     }
     
     func refreshContents() {
@@ -74,13 +142,20 @@ class DirectoryTableViewController: UITableViewController {
             return $0.type.rawValue < $1.type.rawValue
         }
         
-        
+        if contents.isEmpty {
+            let label = UILabel(frame: .zero)
+            label.text = "빈 디렉토리"
+            label.textAlignment = .center
+            label.textColor = .secondaryLabel
+            tableView.backgroundView = label
+        } else {
+            tableView.backgroundView = nil
+        } 
     }
     
     // MARK: - Table view data source
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        
         return contents.count
     }
     

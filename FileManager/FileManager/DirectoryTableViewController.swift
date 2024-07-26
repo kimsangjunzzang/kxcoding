@@ -92,7 +92,22 @@ class DirectoryTableViewController: UITableViewController {
         
         try? content.write(to: targetUrl, atomically: true, encoding: .utf8)
         refreshContents()
+    }
+    
+    func addImageFile() {
+        let name = Int.random(in: 1...30)
+        guard let imageUril = URL(string: "https://kxcodingblob.blob.core.windows.net/mastering-ios/\(name).jpg") else { return }
         
+        guard let targetUrl = currentDirectoryUrl?.appendingPathComponent("\(name)").appendingPathExtension("jpg") else { return }
+        
+        DispatchQueue.global().async {
+            let data = try? Data(contentsOf: imageUril)
+            try? data?.write(to: targetUrl,options: .atomic)
+            
+            DispatchQueue.main.async {
+                self.refreshContents()
+            }
+        }
         
     }
     
@@ -105,7 +120,7 @@ class DirectoryTableViewController: UITableViewController {
                 self.addTextFile()
             }),
             UIAction(title: "새 이미지 파일", image: UIImage(systemName: "photo"), handler: { _ in
-                
+                self.addImageFile()
             })
         ])
     }

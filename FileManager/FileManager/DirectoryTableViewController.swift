@@ -13,27 +13,26 @@ class DirectoryTableViewController: UITableViewController {
     var contents = [Content]()
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if let cell = sender as? UITableViewCell, let indexPath = tableView.indexPath(for: cell) {
-            if let vc = segue.destination as? DirectoryTableViewController {
-                vc.currentDirectoryUrl = contents[indexPath.row].url
+        if segue.identifier == "directorySegue" {
+            if let cell = sender as? UITableViewCell, let indexPath = tableView.indexPath(for: cell) {
+                if let vc = segue.destination as? DirectoryTableViewController {
+                    vc.currentDirectoryUrl = contents[indexPath.row].url
+                }
+            }
+        } else if segue.identifier == "textSegue" {
+            if let vc = segue.destination.children.first as? TextViewController {
+                vc.url = sender as? URL
             }
         }
     }
     
-    override func shouldPerformSegue(withIdentifier identifier: String, sender: Any?) -> Bool {
-        if identifier == "drectorySegue" {
+    override func shouldPerformSegue(withIdentifier identifier: String, sender: Any?
+    ) -> Bool {
+        if identifier == "directorySegue" {
             if let cell = sender as? UITableViewCell, let indexPath = tableView.indexPath(for: cell) {
-                
-                do {
-                    let url = contents[indexPath.row].url
-                    let reachable = try url.checkResourceIsReachable()
-                    if !reachable {
-                        return false
-                    }
-                } catch {
-                    print(error)
-                    return false
-                }
+                let url = contents[indexPath.row].url
+                let reachable = (try? url.checkResourceIsReachable()) ?? true
+                if !reachable { return false }
                 return contents[indexPath.row].type == .directory
             }
         }
@@ -53,15 +52,18 @@ class DirectoryTableViewController: UITableViewController {
         refreshContents()
         updateNavigationTitle()
     }
+    
     func showNameInputAlert() {
-        let inputAlert = UIAlertController(title: "새 디렉토리", message: nil, preferredStyle: .alert)
+        let inputAlert = UIAlertController(title: "새 디렉토리",
+                                           message: nil,
+                                           preferredStyle: .alert)
         inputAlert.addTextField{ nameField in
             nameField.placeholder = "디렉토리 이름을 입력해 주세요"
             nameField.clearButtonMode = .whileEditing
             nameField.autocapitalizationType = .none
             nameField.autocorrectionType = .no
         }
-        let createAction = UIAlertAction(title: "추가", style: .default) { _ in
+        let createAction = UIAlertAction(title: "추가",style: .default) { _ in
             if let name = inputAlert.textFields?.first?.text {
                 self.addDirectory(named: name)
             }
@@ -73,23 +75,16 @@ class DirectoryTableViewController: UITableViewController {
         
         present(inputAlert, animated: true)
     }
+    
     func addDirectory(named: String) {
-        guard let url = currentDirectoryUrl?.appendingPathComponent(named, isDirectory: true) else {
-            return
-        }
-        do {
-            try FileManager.default.createDirectory(at: url, withIntermediateDirectories: true,attributes: nil)
-        } catch {
-            print(error)
-        }
+        guard let url = currentDirectoryUrl?.appendingPathComponent(named, isDirectory: true) else { return }
+        try? FileManager.default.createDirectory(at: url, withIntermediateDirectories: true,attributes: nil)
         refreshContents()
     }
     
     func addTextFile() {
         let content = Date.now.description
-        
         guard let targetUrl = currentDirectoryUrl?.appendingPathComponent("current-time").appendingPathExtension("txt") else { return }
-        
         try? content.write(to: targetUrl, atomically: true, encoding: .utf8)
         refreshContents()
     }
@@ -97,7 +92,6 @@ class DirectoryTableViewController: UITableViewController {
     func addImageFile() {
         let name = Int.random(in: 1...30)
         guard let imageUril = URL(string: "https://kxcodingblob.blob.core.windows.net/mastering-ios/\(name).jpg") else { return }
-        
         guard let targetUrl = currentDirectoryUrl?.appendingPathComponent("\(name)").appendingPathExtension("jpg") else { return }
         
         DispatchQueue.global().async {
@@ -134,13 +128,13 @@ class DirectoryTableViewController: UITableViewController {
         navigationItem.title = values?.localizedName
         
         
-//        do {
-//            let values = try url.resourceValues(forKeys: [.localizedNameKey])
-//            navigationItem.title = values.localizedName
-//        } catch {
-//            print(error)
-//        }
-         
+        //        do {
+        //            let values = try url.resourceValues(forKeys: [.localizedNameKey])
+        //            navigationItem.title = values.localizedName
+        //        } catch {
+        //            print(error)
+        //        }
+        
     }
     
     func refreshContents() {
@@ -214,50 +208,14 @@ class DirectoryTableViewController: UITableViewController {
         
         return cell
     }
-    
-    /*
-     // Override to support conditional editing of the table view.
-     override func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
-     // Return false if you do not want the specified item to be editable.
-     return true
-     }
-     */
-    
-    /*
-     // Override to support editing the table view.
-     override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
-     if editingStyle == .delete {
-     // Delete the row from the data source
-     tableView.deleteRows(at: [indexPath], with: .fade)
-     } else if editingStyle == .insert {
-     // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
-     }
-     }
-     */
-    
-    /*
-     // Override to support rearranging the table view.
-     override func tableView(_ tableView: UITableView, moveRowAt fromIndexPath: IndexPath, to: IndexPath) {
-     
-     }
-     */
-    
-    /*
-     // Override to support conditional rearranging of the table view.
-     override func tableView(_ tableView: UITableView, canMoveRowAt indexPath: IndexPath) -> Bool {
-     // Return false if you do not want the item to be re-orderable.
-     return true
-     }
-     */
-    
-    /*
-     // MARK: - Navigation
-     
-     // In a storyboard-based application, you will often want to do a little preparation before navigation
-     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-     // Get the new view controller using segue.destination.
-     // Pass the selected object to the new view controller.
-     }
-     */
-    
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        tableView.deselectRow(at: indexPath, animated: true) // 회색 뜨는거 제거한다.
+        let target = contents[indexPath.row]
+        guard target.type == .file else { return }
+        switch target.url.pathExtension {
+        case "txt": performSegue(withIdentifier: "textSegue", sender: target.url)
+        default:
+            break
+        }
+    }
 }

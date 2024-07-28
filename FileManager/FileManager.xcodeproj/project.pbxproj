@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1D2CD29B2C56A39D00E9BC72 /* TextViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D2CD29A2C56A39D00E9BC72 /* TextViewController.swift */; };
 		1DB4EDC72C5150FC00D653CA /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DB4EDC62C5150FC00D653CA /* AppDelegate.swift */; };
 		1DB4EDC92C5150FC00D653CA /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DB4EDC82C5150FC00D653CA /* SceneDelegate.swift */; };
 		1DB4EDCE2C5150FC00D653CA /* Base in Resources */ = {isa = PBXBuildFile; fileRef = 1DB4EDCD2C5150FC00D653CA /* Base */; };
@@ -16,6 +17,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		1D2CD29A2C56A39D00E9BC72 /* TextViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextViewController.swift; sourceTree = "<group>"; };
 		1DB4EDC32C5150FC00D653CA /* FileManager.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FileManager.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1DB4EDC62C5150FC00D653CA /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		1DB4EDC82C5150FC00D653CA /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -75,6 +77,7 @@
 				1DB4EDC62C5150FC00D653CA /* AppDelegate.swift */,
 				1DB4EDC82C5150FC00D653CA /* SceneDelegate.swift */,
 				1DB4EDDA2C51521500D653CA /* DirectoryTableViewController.swift */,
+				1D2CD29A2C56A39D00E9BC72 /* TextViewController.swift */,
 				1DB4EDCC2C5150FC00D653CA /* Main.storyboard */,
 				1DB4EDD12C5150FE00D653CA /* LaunchScreen.storyboard */,
 				1DB4EDCF2C5150FE00D653CA /* Assets.xcassets */,
@@ -157,6 +160,7 @@
 				1DB4EDC72C5150FC00D653CA /* AppDelegate.swift in Sources */,
 				1DB4EDDB2C51521500D653CA /* DirectoryTableViewController.swift in Sources */,
 				1DB4EDC92C5150FC00D653CA /* SceneDelegate.swift in Sources */,
+				1D2CD29B2C56A39D00E9BC72 /* TextViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

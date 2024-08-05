@@ -15,6 +15,7 @@
 		1DB4EDD32C5150FE00D653CA /* Base in Resources */ = {isa = PBXBuildFile; fileRef = 1DB4EDD22C5150FE00D653CA /* Base */; };
 		1DB4EDDB2C51521500D653CA /* DirectoryTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DB4EDDA2C51521500D653CA /* DirectoryTableViewController.swift */; };
 		1DD84F582C613B8F00903867 /* ImageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DD84F572C613B8F00903867 /* ImageViewController.swift */; };
+		1DD84F5C2C61487000903867 /* ImagePreviewViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DD84F5B2C61487000903867 /* ImagePreviewViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -28,6 +29,7 @@
 		1DB4EDD42C5150FE00D653CA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		1DB4EDDA2C51521500D653CA /* DirectoryTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DirectoryTableViewController.swift; sourceTree = "<group>"; };
 		1DD84F572C613B8F00903867 /* ImageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageViewController.swift; sourceTree = "<group>"; };
+		1DD84F5B2C61487000903867 /* ImagePreviewViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagePreviewViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFileSystemSynchronizedBuildFileExceptionSet section */
@@ -82,6 +84,7 @@
 				1DB4EDDA2C51521500D653CA /* DirectoryTableViewController.swift */,
 				1D2CD29A2C56A39D00E9BC72 /* TextViewController.swift */,
 				1DD84F572C613B8F00903867 /* ImageViewController.swift */,
+				1DD84F5B2C61487000903867 /* ImagePreviewViewController.swift */,
 				1DB4EDCC2C5150FC00D653CA /* Main.storyboard */,
 				1DB4EDD12C5150FE00D653CA /* LaunchScreen.storyboard */,
 				1DB4EDCF2C5150FE00D653CA /* Assets.xcassets */,
@@ -162,6 +165,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				1DB4EDC72C5150FC00D653CA /* AppDelegate.swift in Sources */,
+				1DD84F5C2C61487000903867 /* ImagePreviewViewController.swift in Sources */,
 				1DB4EDDB2C51521500D653CA /* DirectoryTableViewController.swift in Sources */,
 				1DB4EDC92C5150FC00D653CA /* SceneDelegate.swift in Sources */,
 				1DD84F582C613B8F00903867 /* ImageViewController.swift in Sources */,

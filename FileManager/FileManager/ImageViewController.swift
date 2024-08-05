@@ -28,7 +28,11 @@ class ImageViewController: UIViewController {
    
     @IBAction func share(_ sender: Any) {
         guard let dataToShare = imageView.image else { return }
-        let activityViewController = UIActivityViewController(activityItems: [dataToShare], applicationActivities: nil)
+        
+        let item = ImageActivityItem(image: dataToShare, title: "Image Title", subtitle: navigationItem.title)
+        
+        let activityViewController = UIActivityViewController(activityItems: [item],
+                                                              applicationActivities: nil)
         present(activityViewController,animated: true)
     }
     

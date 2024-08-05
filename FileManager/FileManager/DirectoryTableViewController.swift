@@ -7,7 +7,7 @@
 import UIKit
 
 class DirectoryTableViewController: UITableViewController {
-      
+    
     @IBOutlet weak var menuButton: UIBarButtonItem!
     var currentDirectoryUrl: URL?
     var contents = [Content]()
@@ -124,6 +124,16 @@ class DirectoryTableViewController: UITableViewController {
         ])
     }
     
+    func removeItem(at url: URL) -> Bool {
+        do {
+            try FileManager.default.removeItem(at: url)
+            return true
+        } catch {
+            print(error)
+        }
+        return false
+    }
+    
     func updateNavigationTitle() {
         guard let url = currentDirectoryUrl else {
             navigationItem.title = "???"
@@ -223,6 +233,17 @@ class DirectoryTableViewController: UITableViewController {
             performSegue(withIdentifier: "imageSegue", sender: target.url)
         default:
             break
+        }
+    }
+    
+    override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
+        if editingStyle == .delete {
+            let target = contents[indexPath.row]
+            
+            if removeItem(at: target.url) {
+                contents.remove(at: indexPath.row)
+                tableView.deleteRows(at: [indexPath], with: .automatic)
+            }
         }
     }
 }

@@ -319,4 +319,33 @@ class DirectoryTableViewController: UITableViewController {
         let configuration = UISwipeActionsConfiguration(actions: [backupAction,renameAction])
         return configuration
     }
+    
+    override func tableView(_ tableView: UITableView, contextMenuConfigurationForRowAt indexPath: IndexPath, point: CGPoint) -> UIContextMenuConfiguration? {
+        var children = [UIAction]()
+        
+        let renameAction = UIAction(title: "이름 바꾸기", image: UIImage(systemName: "square.and.pencil")){
+            _ in
+            self.showRenameAlert(at: indexPath.row)
+        }
+        children.append(renameAction)
+        
+        let target = contents[indexPath.row]
+        
+        if target.isExcludedFromBackup {
+            let includeAction = UIAction(title: "백업 대상에 추가",image: UIImage(systemName: "icloud.and.arrow.up")) { _ in
+                target.toggleBackupFlag()
+                tableView.reloadRows(at: [indexPath], with: .automatic)
+            }
+            children.append(includeAction)
+        } else {
+            let excludeAction = UIAction(title: "백업 대상에서 제외", image: UIImage(systemName: "icloud.slash")) { _ in
+                target.toggleBackupFlag()
+                tableView.reloadRows(at: [indexPath], with: .automatic)
+            }
+            children.append(excludeAction)
+        }
+        return UIContextMenuConfiguration{ elements in
+            UIMenu(children: children)
+        }
+    }
 }

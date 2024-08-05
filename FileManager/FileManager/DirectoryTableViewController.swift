@@ -7,7 +7,7 @@
 import UIKit
 
 class DirectoryTableViewController: UITableViewController {
-    
+      
     @IBOutlet weak var menuButton: UIBarButtonItem!
     var currentDirectoryUrl: URL?
     var contents = [Content]()
@@ -21,6 +21,11 @@ class DirectoryTableViewController: UITableViewController {
             }
         } else if segue.identifier == "textSegue" {
             if let vc = segue.destination.children.first as? TextViewController {
+                vc.url = sender as? URL
+            }
+        }
+        else if segue.identifier == "imageSegue" {
+            if let vc = segue.destination.children.first as? ImageViewController {
                 vc.url = sender as? URL
             }
         }
@@ -214,6 +219,8 @@ class DirectoryTableViewController: UITableViewController {
         guard target.type == .file else { return }
         switch target.url.pathExtension {
         case "txt": performSegue(withIdentifier: "textSegue", sender: target.url)
+        case "jpg","png":
+            performSegue(withIdentifier: "imageSegue", sender: target.url)
         default:
             break
         }

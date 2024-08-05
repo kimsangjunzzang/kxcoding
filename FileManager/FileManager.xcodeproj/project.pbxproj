@@ -14,6 +14,7 @@
 		1DB4EDD02C5150FE00D653CA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1DB4EDCF2C5150FE00D653CA /* Assets.xcassets */; };
 		1DB4EDD32C5150FE00D653CA /* Base in Resources */ = {isa = PBXBuildFile; fileRef = 1DB4EDD22C5150FE00D653CA /* Base */; };
 		1DB4EDDB2C51521500D653CA /* DirectoryTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DB4EDDA2C51521500D653CA /* DirectoryTableViewController.swift */; };
+		1DD84F582C613B8F00903867 /* ImageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DD84F572C613B8F00903867 /* ImageViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +27,7 @@
 		1DB4EDD22C5150FE00D653CA /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		1DB4EDD42C5150FE00D653CA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		1DB4EDDA2C51521500D653CA /* DirectoryTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DirectoryTableViewController.swift; sourceTree = "<group>"; };
+		1DD84F572C613B8F00903867 /* ImageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFileSystemSynchronizedBuildFileExceptionSet section */
@@ -79,6 +81,7 @@
 				1DB4EDDA2C51521500D653CA /* DirectoryTableViewController.swift */,
 				1D2CD29A2C56A39D00E9BC72 /* TextViewController.swift */,
 				1DB4EDCC2C5150FC00D653CA /* Main.storyboard */,
+				1DD84F572C613B8F00903867 /* ImageViewController.swift */,
 				1DB4EDD12C5150FE00D653CA /* LaunchScreen.storyboard */,
 				1DB4EDCF2C5150FE00D653CA /* Assets.xcassets */,
 				1DB4EDD42C5150FE00D653CA /* Info.plist */,
@@ -160,6 +163,7 @@
 				1DB4EDC72C5150FC00D653CA /* AppDelegate.swift in Sources */,
 				1DB4EDDB2C51521500D653CA /* DirectoryTableViewController.swift in Sources */,
 				1DB4EDC92C5150FC00D653CA /* SceneDelegate.swift in Sources */,
+				1DD84F582C613B8F00903867 /* ImageViewController.swift in Sources */,
 				1D2CD29B2C56A39D00E9BC72 /* TextViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

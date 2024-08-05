@@ -295,10 +295,28 @@ class DirectoryTableViewController: UITableViewController {
             completion(true)
         }
         
+        
         renameAction.backgroundColor = .systemBlue
         renameAction.image = UIImage(systemName: "square.and.pencil")
         
-        let configuration = UISwipeActionsConfiguration(actions: [renameAction])
+        let target = contents[indexPath.row]
+        
+        let backupAction = UIContextualAction(style: .normal, title: nil) { action, view, completion in
+            target.toggleBackupFlag()
+            DispatchQueue.main.asyncAfter(deadline: .now() + 0.6) {
+                tableView.reloadRows(at: [indexPath], with: .automatic)
+            }
+            
+            completion(true)
+        }
+        
+        if target.isExcludedFromBackup {
+            backupAction.image = UIImage(systemName: "icloud.and.arrow.up")
+        } else {
+            backupAction.image = UIImage(systemName: "icloud.slash")
+        }
+        
+        let configuration = UISwipeActionsConfiguration(actions: [backupAction,renameAction])
         return configuration
     }
 }

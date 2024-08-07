@@ -8,25 +8,92 @@
 import UIKit
 
 class ViewController: UIViewController {
-
-    @IBOutlet weak var logoImageView: UIImageView!
     
-    @IBOutlet weak var nameLabel: UILabel!
-    
-    @IBOutlet weak var versionLabel: UILabel!
-    
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        // Do any additional setup after loading the view.
-    }
     
     let fileUrl: URL = {
         let documentsDirectory = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first!
         return documentsDirectory.appendingPathComponent("swift").appendingPathExtension("data")
         
     }()
+    
+    private var logoImageView: UIImageView = {
+        var view = UIImageView()
+        view.contentMode = .scaleAspectFit
+        return view
+    }()
+    private var nameLabel: UILabel = {
+        var label = UILabel()
+        label.font = .preferredFont(forTextStyle: .largeTitle)
+        return label
+    }()
+    private var versionLabel: UILabel = {
+        var label = UILabel()
+        label.font = .preferredFont(forTextStyle: .largeTitle)
+        return label
+    }()
+    
+    private var vstackView: UIStackView = {
+        var view = UIStackView()
+        view.axis = .vertical
+        view.spacing = 30
+        view.alignment = .center
 
-    @IBAction func encodeObject(_ sender: Any) {
+        return view
+    }()
+    
+    private var encodeBtn: UIButton = {
+       var btn = UIButton()
+        btn.setTitle("Encode", for: .normal)
+        btn.addTarget(self, action: #selector(encodeObject), for: .touchUpInside)
+        return btn
+    }()
+    
+    private var decodeBtn: UIButton = {
+       var btn = UIButton()
+        btn.setTitle("Decode", for: .normal)
+        btn.addTarget(self, action: #selector(decodeObject), for: .touchUpInside)
+        return btn
+    }()
+    
+    private var hstackView: UIStackView = {
+        var view = UIStackView()
+        view.axis = .horizontal
+        view.spacing = 30
+        return view
+    }()
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        view.backgroundColor = .white
+        
+        setConstraint()
+    }
+    
+    func setConstraint() {
+    
+        view.addSubview(vstackView)
+        view.addSubview(hstackView)
+        vstackView.addArrangedSubview(logoImageView)
+        vstackView.addArrangedSubview(nameLabel)
+        vstackView.addArrangedSubview(versionLabel)
+        hstackView.addArrangedSubview(encodeBtn)
+        hstackView.addArrangedSubview(decodeBtn)
+        
+        vstackView.translatesAutoresizingMaskIntoConstraints = false
+        hstackView.translatesAutoresizingMaskIntoConstraints = false
+
+        NSLayoutConstraint.activate([
+        
+            vstackView.centerXAnchor.constraint(equalTo: view.centerXAnchor),
+            vstackView.centerYAnchor.constraint(equalTo: view.centerYAnchor),
+            
+            hstackView.leadingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leadingAnchor,constant: 20),
+            hstackView.trailingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor,constant: 20),
+            hstackView.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor)
+        ])
+    }
+
+   @objc private func encodeObject() {
         do {
             guard let img = UIImage(named: "swift")?.pngData() else { return }
             
@@ -48,7 +115,8 @@ class ViewController: UIViewController {
         }
     }
     
-    @IBAction func decodeObject(_ sender: Any) {
+    @objc private func decodeObject() {
+        
         do {
             let data = try Data(contentsOf: fileUrl)
             
@@ -62,7 +130,6 @@ class ViewController: UIViewController {
                 
                 unarchiver.finishDecoding()
             }
-            
         } catch {
             print(error)
         }

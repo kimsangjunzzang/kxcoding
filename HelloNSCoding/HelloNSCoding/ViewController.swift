@@ -28,13 +28,19 @@ class ViewController: UIViewController {
 
     @IBAction func encodeObject(_ sender: Any) {
         do {
-            guard let img = UIImage(named: "swift") else { return }
+            guard let img = UIImage(named: "swift")?.pngData() else { return }
             
             let obj = Language(name: "Swift", version: 5.9, logo: img)
             
-            let data = try NSKeyedArchiver.archivedData(withRootObject: obj, requiringSecureCoding: false)
+            let archiver = NSKeyedArchiver(requiringSecureCoding: true)
+            try archiver.encodeEncodable(obj, forKey: NSKeyedArchiveRootObjectKey)
+            try archiver.encodedData.write(to: fileUrl, options: .atomic)
             
-            try data.write(to: fileUrl,options: .atomic)
+            archiver.finishEncoding()
+            
+//            let data = try NSKeyedArchiver.archivedData(withRootObject: obj, requiringSecureCoding: true)
+//            
+//            try data.write(to: fileUrl,options: .atomic)
             
             print("Done")
         } catch {
@@ -46,10 +52,15 @@ class ViewController: UIViewController {
         do {
             let data = try Data(contentsOf: fileUrl)
             
-            if let language = NSKeyedUnarchiver.unarchiveObject(with: data) as? Language {
-                logoImageView.image = language.logo
+            let unarchiver = try NSKeyedUnarchiver(forReadingFrom: data)
+            unarchiver.requiresSecureCoding = true
+            
+            if let language = unarchiver.decodeDecodable(Language.self, forKey: NSKeyedArchiveRootObjectKey) {
+                logoImageView.image = UIImage(data: language.logo)
                 nameLabel.text = language.name
                 versionLabel.text = "\(language.version)"
+                
+                unarchiver.finishDecoding()
             }
             
         } catch {

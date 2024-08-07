@@ -61,11 +61,11 @@
 				0775FE492C63B75D00A91084 /* AppDelegate.swift */,
 				0775FE4B2C63B75D00A91084 /* SceneDelegate.swift */,
 				0775FE4D2C63B75D00A91084 /* ViewController.swift */,
+				0775FE5D2C63B8AA00A91084 /* Language.swift */,
 				0775FE4F2C63B75D00A91084 /* Main.storyboard */,
 				0775FE522C63B75E00A91084 /* Assets.xcassets */,
 				0775FE542C63B75E00A91084 /* LaunchScreen.storyboard */,
 				0775FE572C63B75E00A91084 /* Info.plist */,
-				0775FE5D2C63B8AA00A91084 /* Language.swift */,
 			);
 			path = HelloNSCoding;
 			sourceTree = "<group>";

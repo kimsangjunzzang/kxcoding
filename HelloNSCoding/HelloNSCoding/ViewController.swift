@@ -9,7 +9,6 @@ import UIKit
 
 class ViewController: UIViewController {
     
-    
     let fileUrl: URL = {
         let documentsDirectory = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first!
         return documentsDirectory.appendingPathComponent("swift").appendingPathExtension("data")
@@ -18,14 +17,17 @@ class ViewController: UIViewController {
     
     private var logoImageView: UIImageView = {
         var view = UIImageView()
+        view.image = UIImage(systemName: "star.fill")
         view.contentMode = .scaleAspectFit
         return view
     }()
+    
     private var nameLabel: UILabel = {
         var label = UILabel()
         label.font = .preferredFont(forTextStyle: .largeTitle)
         return label
     }()
+    
     private var versionLabel: UILabel = {
         var label = UILabel()
         label.font = .preferredFont(forTextStyle: .largeTitle)
@@ -44,6 +46,8 @@ class ViewController: UIViewController {
     private var encodeBtn: UIButton = {
        var btn = UIButton()
         btn.setTitle("Encode", for: .normal)
+        btn.backgroundColor = .blue
+        btn.layer.cornerRadius = 10
         btn.addTarget(self, action: #selector(encodeObject), for: .touchUpInside)
         return btn
     }()
@@ -51,6 +55,8 @@ class ViewController: UIViewController {
     private var decodeBtn: UIButton = {
        var btn = UIButton()
         btn.setTitle("Decode", for: .normal)
+        btn.backgroundColor = .red
+        btn.layer.cornerRadius = 10
         btn.addTarget(self, action: #selector(decodeObject), for: .touchUpInside)
         return btn
     }()
@@ -58,6 +64,7 @@ class ViewController: UIViewController {
     private var hstackView: UIStackView = {
         var view = UIStackView()
         view.axis = .horizontal
+        view.distribution = .fillEqually
         view.spacing = 30
         return view
     }()
@@ -83,12 +90,16 @@ class ViewController: UIViewController {
         hstackView.translatesAutoresizingMaskIntoConstraints = false
 
         NSLayoutConstraint.activate([
+            
+            logoImageView.widthAnchor.constraint(equalToConstant: 200),
+            logoImageView.heightAnchor.constraint(equalToConstant: 200),
         
             vstackView.centerXAnchor.constraint(equalTo: view.centerXAnchor),
             vstackView.centerYAnchor.constraint(equalTo: view.centerYAnchor),
+       
             
             hstackView.leadingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leadingAnchor,constant: 20),
-            hstackView.trailingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor,constant: 20),
+            hstackView.trailingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor,constant: -20),
             hstackView.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor)
         ])
     }
@@ -129,7 +140,9 @@ class ViewController: UIViewController {
                 versionLabel.text = "\(language.version)"
                 
                 unarchiver.finishDecoding()
+                print(language)
             }
+            
         } catch {
             print(error)
         }

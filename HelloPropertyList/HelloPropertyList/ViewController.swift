@@ -8,7 +8,7 @@
 import UIKit
 
 class ViewController: UIViewController {
-
+    
     private var languageTitle: UILabel = {
         var languageTitle = UILabel()
         languageTitle.text = "Language"
@@ -27,7 +27,7 @@ class ViewController: UIViewController {
         osTitle.text = "OS"
         return osTitle
     }()
-   
+    
     private var osLabel: UILabel = {
         var label = UILabel()
         label.font = .preferredFont(forTextStyle: .largeTitle)
@@ -112,6 +112,7 @@ class ViewController: UIViewController {
         let documentsDirectory = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first!
         return documentsDirectory.appendingPathComponent("data").appendingPathExtension("plist")
     }()
+    
     @objc func loadFromBundle() {
         guard let url = Bundle.main.url(forResource: "data", withExtension: "plist") else { fatalError() }
         
@@ -120,6 +121,7 @@ class ViewController: UIViewController {
         languageLabel.text = arr.first
         osLabel.text = arr.last
     }
+    
     @objc func loadFromDocuments() {
         do {
             let data = try Data(contentsOf: fileUrl)
@@ -135,18 +137,15 @@ class ViewController: UIViewController {
         
         
     }
+    
     @objc func saveToDocuments() {
-        do {
-            let dev = Development(language: "Swift", os: "macOS")
-            
-            let encoder = PropertyListEncoder()
-            let data = try encoder.encode(dev)
-            try data.write(to: fileUrl)
-            print("Done")
-        } catch {
-            print(error)
-        }
         
+        let dev = Development(language: "Swift", os: "macOS")
+        
+        let encoder = PropertyListEncoder()
+        let data = try? encoder.encode(dev)
+        try? data?.write(to: fileUrl)
+        print("Done")
     }
 }
 

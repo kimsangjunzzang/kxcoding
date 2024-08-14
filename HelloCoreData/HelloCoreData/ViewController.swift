@@ -22,12 +22,11 @@ class ViewController: UIViewController {
     
     @IBOutlet weak var ageField: UITextField!
     
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
     }
-
+    
     @IBAction func createEntity(_ sender: Any) {
         guard let name = nameField.text else { return }
         guard let val = ageField.text, let age = Int(val) else { return }
@@ -37,15 +36,12 @@ class ViewController: UIViewController {
         newEntity.setValue(age, forKey: "age")
         
         if context.hasChanges {
-            do {
-                try context.save() // 영구 저장을 위해 필요
-                print("Saved")
-                
-                nameField.text = ""
-                ageField.text = ""
-            } catch {
-                print(error)
-            }
+            
+            try? context.save() // 영구 저장을 위해 필요
+            print("Saved")
+            
+            nameField.text = ""
+            ageField.text = ""
         }
         
     }
@@ -53,22 +49,20 @@ class ViewController: UIViewController {
     @IBAction func readEntity(_ sender: Any) {
         let request = NSFetchRequest<NSManagedObject>(entityName: "Person")
         
-        do {
-            let list = try context.fetch(request)
+        
+        let list = try? context.fetch(request)
+        
+        if let first = list?.first {
+            nameField.text = first.value(forKey: "name") as? String
             
-            if let first = list.first {
-                nameField.text = first.value(forKey: "name") as? String
-                
-                if let age = first.value(forKey: "age") as? Int {
-                    ageField.text = "\(age)"
-                }
-                editTarget = first
-            } else {
-                print("Not Found")
+            if let age = first.value(forKey: "age") as? Int {
+                ageField.text = "\(age)"
             }
-        } catch {
-            print(error)
+            editTarget = first
+        } else {
+            print("Not Found")
         }
+        
         
     }
     
@@ -84,15 +78,13 @@ class ViewController: UIViewController {
         }
         
         if context.hasChanges {
-            do {
-                try context.save()
-                print("Saved")
-                
-                nameField.text = ""
-                ageField.text = ""
-            } catch {
-                print(error)
-            }
+            
+            try? context.save()
+            print("Saved")
+            
+            nameField.text = ""
+            ageField.text = ""
+            
         }
         
     }
@@ -102,17 +94,14 @@ class ViewController: UIViewController {
         }
         
         if context.hasChanges {
-            do {
-                try context.save()
-                print("Saved")
-                
-                nameField.text = ""
-                ageField.text = ""
-            } catch {
-                print(error)
-            }
+            
+            try? context.save()
+            print("Saved")
+            
+            nameField.text = ""
+            ageField.text = ""
+            
         }
-        
     }
 }
 

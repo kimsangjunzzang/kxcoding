@@ -14,6 +14,9 @@
 		07EF37422C6CFD2600D23E1C /* Memo.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 07EF37402C6CFD2600D23E1C /* Memo.xcdatamodeld */; };
 		07EF37442C6CFD2600D23E1C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 07EF37432C6CFD2600D23E1C /* Assets.xcassets */; };
 		07EF37472C6CFD2600D23E1C /* Base in Resources */ = {isa = PBXBuildFile; fileRef = 07EF37462C6CFD2600D23E1C /* Base */; };
+		07EF375B2C73B20200D23E1C /* MemoEntity+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07EF37592C73B20200D23E1C /* MemoEntity+CoreDataClass.swift */; };
+		07EF375C2C73B20200D23E1C /* MemoEntity+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07EF375A2C73B20200D23E1C /* MemoEntity+CoreDataProperties.swift */; };
+		07EF375E2C73B23B00D23E1C /* DataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07EF375D2C73B23B00D23E1C /* DataManager.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +29,9 @@
 		07EF37432C6CFD2600D23E1C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		07EF37462C6CFD2600D23E1C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		07EF37482C6CFD2600D23E1C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		07EF37592C73B20200D23E1C /* MemoEntity+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "MemoEntity+CoreDataClass.swift"; sourceTree = "<group>"; };
+		07EF375A2C73B20200D23E1C /* MemoEntity+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "MemoEntity+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		07EF375D2C73B23B00D23E1C /* DataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataManager.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,6 +64,7 @@
 		07EF37362C6CFD2600D23E1C /* Memo */ = {
 			isa = PBXGroup;
 			children = (
+				07EF37562C73B12C00D23E1C /* Model */,
 				07EF37372C6CFD2600D23E1C /* AppDelegate.swift */,
 				07EF37392C6CFD2600D23E1C /* SceneDelegate.swift */,
 				07EF373B2C6CFD2600D23E1C /* ListViewController.swift */,
@@ -65,9 +72,19 @@
 				07EF37432C6CFD2600D23E1C /* Assets.xcassets */,
 				07EF37452C6CFD2600D23E1C /* LaunchScreen.storyboard */,
 				07EF37482C6CFD2600D23E1C /* Info.plist */,
-				07EF37402C6CFD2600D23E1C /* Memo.xcdatamodeld */,
 			);
 			path = Memo;
+			sourceTree = "<group>";
+		};
+		07EF37562C73B12C00D23E1C /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				07EF37592C73B20200D23E1C /* MemoEntity+CoreDataClass.swift */,
+				07EF375A2C73B20200D23E1C /* MemoEntity+CoreDataProperties.swift */,
+				07EF37402C6CFD2600D23E1C /* Memo.xcdatamodeld */,
+				07EF375D2C73B23B00D23E1C /* DataManager.swift */,
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -142,6 +159,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				07EF373C2C6CFD2600D23E1C /* ListViewController.swift in Sources */,
+				07EF375B2C73B20200D23E1C /* MemoEntity+CoreDataClass.swift in Sources */,
+				07EF375C2C73B20200D23E1C /* MemoEntity+CoreDataProperties.swift in Sources */,
+				07EF375E2C73B23B00D23E1C /* DataManager.swift in Sources */,
 				07EF37382C6CFD2600D23E1C /* AppDelegate.swift in Sources */,
 				07EF373A2C6CFD2600D23E1C /* SceneDelegate.swift in Sources */,
 				07EF37422C6CFD2600D23E1C /* Memo.xcdatamodeld in Sources */,

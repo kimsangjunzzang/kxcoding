@@ -2,6 +2,6 @@
 <model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="22758" systemVersion="23G93" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
     <entity name="Memo" representedClassName="MemoEntity" syncable="YES">
         <attribute name="content" attributeType="String"/>
-        <attribute name="insertData" attributeType="Date" usesScalarValueType="NO"/>
+        <attribute name="insertDate" attributeType="Date" usesScalarValueType="NO"/>
     </entity>
 </model>

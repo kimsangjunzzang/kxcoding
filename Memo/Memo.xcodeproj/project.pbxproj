@@ -17,6 +17,7 @@
 		07EF375B2C73B20200D23E1C /* MemoEntity+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07EF37592C73B20200D23E1C /* MemoEntity+CoreDataClass.swift */; };
 		07EF375C2C73B20200D23E1C /* MemoEntity+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07EF375A2C73B20200D23E1C /* MemoEntity+CoreDataProperties.swift */; };
 		07EF375E2C73B23B00D23E1C /* DataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07EF375D2C73B23B00D23E1C /* DataManager.swift */; };
+		07EF37632C7573EA00D23E1C /* lipsum.txt in Resources */ = {isa = PBXBuildFile; fileRef = 07EF37622C7573EA00D23E1C /* lipsum.txt */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -32,6 +33,7 @@
 		07EF37592C73B20200D23E1C /* MemoEntity+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "MemoEntity+CoreDataClass.swift"; sourceTree = "<group>"; };
 		07EF375A2C73B20200D23E1C /* MemoEntity+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "MemoEntity+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		07EF375D2C73B23B00D23E1C /* DataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataManager.swift; sourceTree = "<group>"; };
+		07EF37622C7573EA00D23E1C /* lipsum.txt */ = {isa = PBXFileReference; lastKnownFileType = text; path = lipsum.txt; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -72,6 +74,7 @@
 				07EF37432C6CFD2600D23E1C /* Assets.xcassets */,
 				07EF37452C6CFD2600D23E1C /* LaunchScreen.storyboard */,
 				07EF37482C6CFD2600D23E1C /* Info.plist */,
+				07EF37622C7573EA00D23E1C /* lipsum.txt */,
 			);
 			path = Memo;
 			sourceTree = "<group>";
@@ -147,6 +150,7 @@
 			files = (
 				07EF37442C6CFD2600D23E1C /* Assets.xcassets in Resources */,
 				07EF37472C6CFD2600D23E1C /* Base in Resources */,
+				07EF37632C7573EA00D23E1C /* lipsum.txt in Resources */,
 				07EF373F2C6CFD2600D23E1C /* Base in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

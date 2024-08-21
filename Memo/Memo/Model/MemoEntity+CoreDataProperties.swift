@@ -17,7 +17,7 @@ extension MemoEntity {
     }
 
     @NSManaged public var content: String?
-    @NSManaged public var insertData: Date?
+    @NSManaged public var insertDate: Date?
 
 }
 

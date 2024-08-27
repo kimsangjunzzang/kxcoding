@@ -29,7 +29,6 @@ extension ListViewController : UITableViewDataSource {
         let target = DataManager.shared.list[indexPath.row]
         cell.textLabel?.text = target.content
         cell.detailTextLabel?.text = target.dateString
-        
         return cell
     }
     

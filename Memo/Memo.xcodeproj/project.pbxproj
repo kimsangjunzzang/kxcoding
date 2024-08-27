@@ -71,8 +71,8 @@
 				07EF37392C6CFD2600D23E1C /* SceneDelegate.swift */,
 				07EF373B2C6CFD2600D23E1C /* ListViewController.swift */,
 				07EF373D2C6CFD2600D23E1C /* Main.storyboard */,
-				07EF37432C6CFD2600D23E1C /* Assets.xcassets */,
 				07EF37452C6CFD2600D23E1C /* LaunchScreen.storyboard */,
+				07EF37432C6CFD2600D23E1C /* Assets.xcassets */,
 				07EF37482C6CFD2600D23E1C /* Info.plist */,
 				07EF37622C7573EA00D23E1C /* lipsum.txt */,
 			);

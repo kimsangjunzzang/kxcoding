@@ -23,3 +23,23 @@ class LinkViewController: UIViewController {
         }
     }
 }
+
+/* 로그인 api 강의
+ func sendLoginRequest(id: String, password: String){
+         guard let url = URL(...) else { return }
+         
+         let body = LoginPostBody(id: id, password: password)
+         
+         var request = URLRequest(url: url)
+         request.httpMethod = "POST"
+         request.httpBody = try? JSONEncoder().encode(body)
+         
+         let session = URLSession.shared
+         
+         let task = session.dataTask(with: request) { data, response, error in
+             
+         
+         }
+         task.resume()
+ }
+ */

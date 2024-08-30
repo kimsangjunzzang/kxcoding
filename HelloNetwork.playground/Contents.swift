@@ -1,19 +1,21 @@
 import UIKit
 
-let url = URL(string: "https://kxapi.azurewebsites.net/helloworld?apiKey=4TKFcdetA8Xw3NWVEgMd")!
+struct Books : Codable {
+    struct Book : Codable{
+        let id: Int
+        let title: String
+        let summary: String
+        let storeLink: String
+        let publicationDate: String
+    }
+    
+    let totalCount: Int
+    let list: [Book]
+    let code: Int
+    let message: String?
+}
 
-url.scheme
-// http, https(http + TLS), ftp, ftps, sftp, ssh
-url.host(percentEncoded: true)
-
-url.port // 논리적인 포트 0 ~ 65535, well-known port
-url.host
-url.path(percentEncoded: true) // 계층 구조로 반환
-url.lastPathComponent
-url.pathComponents
-
-url.query(percentEncoded: true)
-// ㅋㅣ = 값
+let url = URL(string: "https://kxapi.azurewebsites.net/books?apiKey=4TKFcdetA8Xw3NWVEgMd")!
 
 let session = URLSession.shared // 싱글톤 객체
 
@@ -36,8 +38,17 @@ let task = session.dataTask(with: url) { data, response, error in
         return
     }
     
-    let str = String(data: data, encoding: .utf8)
-    print(str)
+    do {
+        let decoder = JSONDecoder()
+        let books = try decoder.decode(Books.self, from: data)
+        
+        if let link = books.list.first?.storeLink, let url = URL(string: link){
+            print(url)
+        }
+        
+    } catch {
+        print(error)
+    }
 }
 
 task.resume() // task 실행

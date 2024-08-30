@@ -12,6 +12,7 @@ class DetailViewController: UIViewController {
     @IBOutlet weak var contentTextView: UITextView!
     
     var id: Int?
+    var url: URL?
     
     func fetchDetail() {
         guard let id else { return }
@@ -44,6 +45,7 @@ class DetailViewController: UIViewController {
                 decoder.dateDecodingStrategy = .formatted(formatter)
                 
                 let bookDetail = try decoder.decode(BookDetail.self, from: data)
+                self.url = bookDetail.data.storeLink
                
                 let content = "\(bookDetail.data.summary)\n\n\(bookDetail.data.publicationDate.formatted())"
                 
@@ -57,6 +59,13 @@ class DetailViewController: UIViewController {
         task.resume()
 
     }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if let vc = segue.destination as? LinkViewController {
+            vc.url = self.url
+        }
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 

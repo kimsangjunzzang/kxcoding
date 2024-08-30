@@ -110,7 +110,11 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="4G5-iA-mNo">
-                        <barButtonItem key="rightBarButtonItem" systemItem="bookmarks" id="5Fp-8Q-4fP"/>
+                        <barButtonItem key="rightBarButtonItem" systemItem="bookmarks" id="5Fp-8Q-4fP">
+                            <connections>
+                                <segue destination="ETz-4y-VcQ" kind="show" id="Zic-vw-tdb"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                     <connections>
                         <outlet property="contentTextView" destination="xj3-Ae-i7d" id="inf-SP-vK8"/>
@@ -119,6 +123,41 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="suJ-84-Yc1" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1780.916030534351" y="3.5211267605633805"/>
+        </scene>
+        <!--Link View Controller-->
+        <scene sceneID="10q-5t-UN9">
+            <objects>
+                <viewController id="ETz-4y-VcQ" customClass="LinkViewController" customModule="Books" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="N8G-nx-GUq">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <wkWebView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="GvL-5S-bZq">
+                                <rect key="frame" x="0.0" y="155" width="393" height="697"/>
+                                <color key="backgroundColor" red="0.36078431370000003" green="0.38823529410000002" blue="0.4039215686" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <wkWebViewConfiguration key="configuration">
+                                    <audiovisualMediaTypes key="mediaTypesRequiringUserActionForPlayback" none="YES"/>
+                                    <wkPreferences key="preferences"/>
+                                </wkWebViewConfiguration>
+                            </wkWebView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="Lc5-cg-ibZ"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="GvL-5S-bZq" firstAttribute="leading" secondItem="Lc5-cg-ibZ" secondAttribute="leading" id="TBn-bv-McH"/>
+                            <constraint firstItem="GvL-5S-bZq" firstAttribute="top" secondItem="Lc5-cg-ibZ" secondAttribute="top" id="lDO-KE-ffy"/>
+                            <constraint firstItem="Lc5-cg-ibZ" firstAttribute="trailing" secondItem="GvL-5S-bZq" secondAttribute="trailing" id="miq-Sl-Ymh"/>
+                            <constraint firstAttribute="bottom" secondItem="GvL-5S-bZq" secondAttribute="bottom" id="nHg-fd-Dir"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="zPr-Uc-v01"/>
+                    <connections>
+                        <outlet property="webView" destination="GvL-5S-bZq" id="cMe-JO-jEP"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="zC6-TZ-LgP" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2684.7328244274809" y="3.5211267605633805"/>
         </scene>
     </scenes>
     <resources>

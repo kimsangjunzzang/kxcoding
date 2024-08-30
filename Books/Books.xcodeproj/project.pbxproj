@@ -16,6 +16,7 @@
 		07EF37862C81C3D100D23E1C /* Books.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07EF37852C81C3D100D23E1C /* Books.swift */; };
 		07EF37882C81C67E00D23E1C /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07EF37872C81C67E00D23E1C /* DetailViewController.swift */; };
 		07EF378A2C81C6DD00D23E1C /* BookDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07EF37892C81C6DD00D23E1C /* BookDetail.swift */; };
+		07EF378C2C81CA0D00D23E1C /* LinkViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07EF378B2C81CA0D00D23E1C /* LinkViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -30,6 +31,7 @@
 		07EF37852C81C3D100D23E1C /* Books.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Books.swift; sourceTree = "<group>"; };
 		07EF37872C81C67E00D23E1C /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
 		07EF37892C81C6DD00D23E1C /* BookDetail.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookDetail.swift; sourceTree = "<group>"; };
+		07EF378B2C81CA0D00D23E1C /* LinkViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LinkViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -67,6 +69,7 @@
 				07EF37722C81C2DE00D23E1C /* SceneDelegate.swift */,
 				07EF37742C81C2DE00D23E1C /* ViewController.swift */,
 				07EF37872C81C67E00D23E1C /* DetailViewController.swift */,
+				07EF378B2C81CA0D00D23E1C /* LinkViewController.swift */,
 				07EF37762C81C2DE00D23E1C /* Main.storyboard */,
 				07EF37792C81C2E000D23E1C /* Assets.xcassets */,
 				07EF377B2C81C2E000D23E1C /* LaunchScreen.storyboard */,
@@ -158,6 +161,7 @@
 				07EF37862C81C3D100D23E1C /* Books.swift in Sources */,
 				07EF37752C81C2DE00D23E1C /* ViewController.swift in Sources */,
 				07EF37882C81C67E00D23E1C /* DetailViewController.swift in Sources */,
+				07EF378C2C81CA0D00D23E1C /* LinkViewController.swift in Sources */,
 				07EF37712C81C2DE00D23E1C /* AppDelegate.swift in Sources */,
 				07EF37732C81C2DE00D23E1C /* SceneDelegate.swift in Sources */,
 				07EF378A2C81C6DD00D23E1C /* BookDetail.swift in Sources */,
@@ -320,6 +324,7 @@
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -348,6 +353,7 @@
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

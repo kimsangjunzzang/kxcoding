@@ -10,7 +10,6 @@ import UIKit
 class ViewController: UIViewController{
     
     var books = [Books.BookSummary]()
-    
     @IBOutlet weak var booksTableView: UITableView!
     
     func fetchBooks() {

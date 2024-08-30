@@ -1,12 +1,13 @@
 import UIKit
 
 struct Books : Codable {
+    
     struct Book : Codable{
         let id: Int
         let title: String
         let summary: String
-        let storeLink: String
-        let publicationDate: String
+        let storeLink: URL
+        let publicationDate: Date
     }
     
     let totalCount: Int
@@ -42,9 +43,9 @@ let task = session.dataTask(with: url) { data, response, error in
         let decoder = JSONDecoder()
         let books = try decoder.decode(Books.self, from: data)
         
-        if let link = books.list.first?.storeLink, let url = URL(string: link){
-            print(url)
-        }
+//        if let link = books.list.first?.storeLink, let url = URL(string: link){
+//            print(url)
+//        }
         
     } catch {
         print(error)

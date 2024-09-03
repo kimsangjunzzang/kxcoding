@@ -7,7 +7,7 @@ struct Books : Codable {
         let title: String
         
     }
-    let data: [BookSummary]
+    let list: [BookSummary]
     let code : Int
     let message : String?
     
@@ -36,8 +36,6 @@ let task = session.dataTask(with: request) { data, response, error in
     guard let data else {
         return
     }
-    print(String(data: data, encoding: .utf8)!)
-    
     do {
         let formatter = DateFormatter()
         formatter.dateFormat = "yyyy-MM-dd'T'HH:mm:ss"
@@ -46,7 +44,7 @@ let task = session.dataTask(with: request) { data, response, error in
         decoder.dateDecodingStrategy = .formatted(formatter)
         
         let books = try decoder.decode(Books.self, from: data)
-        dump(books)
+       
         
     } catch {
         print(error)

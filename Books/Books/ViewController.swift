@@ -20,6 +20,7 @@ class ViewController: UIViewController{
         
         let session = URLSession.shared
         
+        // https Header
         var request = URLRequest(url: url)
         request.addValue("2.0", forHTTPHeaderField: "kxcoding-api-version")
         
@@ -36,7 +37,6 @@ class ViewController: UIViewController{
             guard let data else {
                 return
             }
-            print(String(data: data, encoding: .utf8)!)
             
             do {
                 let formatter = DateFormatter()

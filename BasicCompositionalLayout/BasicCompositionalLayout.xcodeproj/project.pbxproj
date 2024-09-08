@@ -17,6 +17,7 @@
 		072791162C8D8E1A002364EF /* BannerCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 072791152C8D8E1A002364EF /* BannerCollectionViewCell.swift */; };
 		072791192C8D8EA8002364EF /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = 072791182C8D8EA8002364EF /* SnapKit */; };
 		0727911E2C8DC030002364EF /* Kingfisher in Frameworks */ = {isa = PBXBuildFile; productRef = 0727911D2C8DC030002364EF /* Kingfisher */; };
+		072791202C8DDA5B002364EF /* NormalCarouselCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0727911F2C8DDA5B002364EF /* NormalCarouselCollectionViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -30,6 +31,7 @@
 		0727910D2C8D8AC4002364EF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		072791132C8D8D92002364EF /* Item.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Item.swift; sourceTree = "<group>"; };
 		072791152C8D8E1A002364EF /* BannerCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BannerCollectionViewCell.swift; sourceTree = "<group>"; };
+		0727911F2C8DDA5B002364EF /* NormalCarouselCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NormalCarouselCollectionViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -66,9 +68,10 @@
 			children = (
 				072790FF2C8D8AC2002364EF /* AppDelegate.swift */,
 				072791012C8D8AC2002364EF /* SceneDelegate.swift */,
+				072791132C8D8D92002364EF /* Item.swift */,
 				072791032C8D8AC2002364EF /* ViewController.swift */,
 				072791152C8D8E1A002364EF /* BannerCollectionViewCell.swift */,
-				072791132C8D8D92002364EF /* Item.swift */,
+				0727911F2C8DDA5B002364EF /* NormalCarouselCollectionViewCell.swift */,
 				072791052C8D8AC2002364EF /* Main.storyboard */,
 				072791082C8D8AC4002364EF /* Assets.xcassets */,
 				0727910A2C8D8AC4002364EF /* LaunchScreen.storyboard */,
@@ -159,6 +162,7 @@
 				072791142C8D8D92002364EF /* Item.swift in Sources */,
 				072791042C8D8AC2002364EF /* ViewController.swift in Sources */,
 				072791002C8D8AC2002364EF /* AppDelegate.swift in Sources */,
+				072791202C8DDA5B002364EF /* NormalCarouselCollectionViewCell.swift in Sources */,
 				072791162C8D8E1A002364EF /* BannerCollectionViewCell.swift in Sources */,
 				072791022C8D8AC2002364EF /* SceneDelegate.swift in Sources */,
 			);

@@ -6,6 +6,14 @@
 
 import UIKit
 
+/*
+ 1. 컬렉션 뷰 cell UI - 등록
+ 2. 레이아웃 구현 - 3가지
+ 3. datasource -> cellProvider
+ 4. snapshot -> datasource.apply(snapshot)
+ */
+
+
 class ViewController: UIViewController {
     let imageUrl = "https://img.khan.co.kr/news/2021/11/18/l_2021111801002540300224911.jpg"
     
@@ -19,6 +27,7 @@ class ViewController: UIViewController {
         
         collectionView.register(BannerCollectionViewCell.self, forCellWithReuseIdentifier: BannerCollectionViewCell.id)
         collectionView.register(NormalCarouselCollectionViewCell.self, forCellWithReuseIdentifier: NormalCarouselCollectionViewCell.id)
+        collectionView.register(ListCarouselCollectionViewCell.self, forCellWithReuseIdentifier: ListCarouselCollectionViewCell.id)
         collectionView.setCollectionViewLayout(createLayout(), animated: true)
         
         setDataSource()
@@ -55,6 +64,19 @@ class ViewController: UIViewController {
             Item.normalCarousel(HomeItem(title: "BHC",subTitle:"뿌링클 치킨" ,imageUrl: imageUrl))
         ]
         snapshot.appendItems(normalItems, toSection: normalSection)
+        
+        let listSection = Section(id: "ListCarosel")
+        snapshot.appendSections([listSection])
+        let listItems = [
+            Item.listCarousel(HomeItem(title: "교촌 치킨",subTitle:"간장 치킨" ,imageUrl: imageUrl)),
+            Item.listCarousel(HomeItem(title: "굽네 치킨",subTitle:"오븐 치킨" ,imageUrl: imageUrl)),
+            Item.listCarousel(HomeItem(title: "푸라닥 치킨",subTitle:"차이니즈 치킨" ,imageUrl: imageUrl)),
+            Item.listCarousel(HomeItem(title: "후라이드 참 잘하는 집",subTitle:"후라이드 치킨" ,imageUrl: imageUrl)),
+            Item.listCarousel(HomeItem(title: "페리카나",subTitle:"양념 후라이드 반반 치킨" ,imageUrl: imageUrl)),
+            Item.listCarousel(HomeItem(title: "BHC",subTitle:"뿌링클 치킨" ,imageUrl: imageUrl))
+            
+        ]
+        snapshot.appendItems(listItems, toSection: listSection)
         dataSource?.apply(snapshot)
     }
     
@@ -128,7 +150,7 @@ class ViewController: UIViewController {
         item.contentInsets = NSDirectionalEdgeInsets(top: 0, leading: 0, bottom: 0, trailing: 15)
         
         // group
-        let groupSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(0.7), heightDimension: .absolute(180))
+        let groupSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(0.7), heightDimension: .absolute(120))
         let group = NSCollectionLayoutGroup.horizontal(layoutSize: groupSize, subitems: [item])
         
         //section
@@ -143,22 +165,18 @@ class ViewController: UIViewController {
         //item
         let itemSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1.0), heightDimension: .fractionalHeight(1.0))
         let item = NSCollectionLayoutItem(layoutSize: itemSize)
+        item.contentInsets = NSDirectionalEdgeInsets(top: 15, leading: 0, bottom: 0, trailing: 0)
+        
         
         
         // group
         let groupSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1.0), heightDimension: .absolute(250))
-        let group = NSCollectionLayoutGroup.vertical(layoutSize: groupSize, repeatingSubitem: item, count: 3)
+        let group = NSCollectionLayoutGroup.vertical(layoutSize: groupSize, subitem: item, count: 3)
         
         //section
         let section = NSCollectionLayoutSection(group: group)
+        section.contentInsets = NSDirectionalEdgeInsets(top: 0, leading: 20, bottom: 0, trailing: 20)
         section.orthogonalScrollingBehavior = .continuous
         return section
     }
 }
-/*
- 1. 추가적으로 해야할 일
- 2. 컬렉션 뷰 cell UI - 등록
- 3. 레이아웃 구현 - 3가지
- 4. datasource -> cellProvider
- 5. snapshot -> datasource.apply(snapshot)
- */

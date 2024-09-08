@@ -70,6 +70,12 @@ class ViewController: UIViewController {
                 guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: NormalCarouselCollectionViewCell.id, for: indexPath) as? NormalCarouselCollectionViewCell else { return UICollectionViewCell()}
                 cell.config(imageUrl: item.imageUrl, title: item.title, subTitle: item.subTitle)
                 return cell
+                
+            case .listCarousel(let item):
+                guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: ListCarouselCollectionViewCell.id, for: indexPath) as? ListCarouselCollectionViewCell else { return UICollectionViewCell()}
+                cell.config(imageUrl: item.imageUrl, title: item.title, subTitle: item.subTitle)
+                return cell
+                
             default:
                 return UICollectionViewCell()
                 
@@ -90,6 +96,8 @@ class ViewController: UIViewController {
                 return self?.createBannerSection()
             case 1:
                 return self?.createNormalCarouselSection()
+            case 2:
+                return self?.createListCarouselSection()
             default:
                 return self?.createBannerSection()
             }
@@ -126,6 +134,23 @@ class ViewController: UIViewController {
         //section
         let section = NSCollectionLayoutSection(group: group)
         section.contentInsets = NSDirectionalEdgeInsets(top: 0, leading: 20, bottom: 0, trailing: 20)
+        section.orthogonalScrollingBehavior = .continuous
+        return section
+    }
+    
+    private func createListCarouselSection() -> NSCollectionLayoutSection {
+        
+        //item
+        let itemSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1.0), heightDimension: .fractionalHeight(1.0))
+        let item = NSCollectionLayoutItem(layoutSize: itemSize)
+        
+        
+        // group
+        let groupSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1.0), heightDimension: .absolute(250))
+        let group = NSCollectionLayoutGroup.vertical(layoutSize: groupSize, repeatingSubitem: item, count: 3)
+        
+        //section
+        let section = NSCollectionLayoutSection(group: group)
         section.orthogonalScrollingBehavior = .continuous
         return section
     }

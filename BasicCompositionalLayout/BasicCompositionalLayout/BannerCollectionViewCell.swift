@@ -9,7 +9,7 @@ import UIKit
 import SnapKit
 
 class BannerCollectionViewCell: UICollectionViewCell {
-    static id = "BannerCell"
+    static let id = "BannerCell"
     
     let titleLabel = UILabel()
     let backgroundImage = UIImageView()

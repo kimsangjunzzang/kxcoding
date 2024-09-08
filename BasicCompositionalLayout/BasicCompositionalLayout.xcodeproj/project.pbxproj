@@ -67,12 +67,12 @@
 				072790FF2C8D8AC2002364EF /* AppDelegate.swift */,
 				072791012C8D8AC2002364EF /* SceneDelegate.swift */,
 				072791032C8D8AC2002364EF /* ViewController.swift */,
+				072791152C8D8E1A002364EF /* BannerCollectionViewCell.swift */,
 				072791132C8D8D92002364EF /* Item.swift */,
 				072791052C8D8AC2002364EF /* Main.storyboard */,
 				072791082C8D8AC4002364EF /* Assets.xcassets */,
 				0727910A2C8D8AC4002364EF /* LaunchScreen.storyboard */,
 				0727910D2C8D8AC4002364EF /* Info.plist */,
-				072791152C8D8E1A002364EF /* BannerCollectionViewCell.swift */,
 			);
 			path = BasicCompositionalLayout;
 			sourceTree = "<group>";

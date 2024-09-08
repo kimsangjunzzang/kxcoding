@@ -16,6 +16,8 @@ import UIKit
 
 class ViewController: UIViewController {
     let imageUrl = "https://img.khan.co.kr/news/2021/11/18/l_2021111801002540300224911.jpg"
+    let imageUrl2 = "https://m.ftscrt.com/food/3449ea66-01a9-45bc-aee4-a5c0227626b0_lg_sq.jpg"
+    let imageUrl3 = "https://www.puradakchicken.com/upload/menu/마불로_악마_web0.jpg"
     
     let collectionView = UICollectionView(frame: .zero, collectionViewLayout: .init())
     private var dataSource: UICollectionViewDiffableDataSource<Section,Item>?
@@ -44,24 +46,24 @@ class ViewController: UIViewController {
     private func setSnapShot() {
         var snapshot = NSDiffableDataSourceSnapshot<Section,Item>()
         
-        snapshot.appendSections([Section(id: "Banner")])
+        let bannserSection = Section(id: "Banner")
+        snapshot.appendSections([bannserSection])
         let bannerItems = [
-            Item.banner(HomeItem(title: "교촌 치킨", imageUrl: "https://img.khan.co.kr/news/2021/11/18/l_2021111801002540300224911.jpg")),
-            Item.banner(HomeItem(title: "굽네 치킨", imageUrl: "https://m.ftscrt.com/food/3449ea66-01a9-45bc-aee4-a5c0227626b0_lg_sq.jpg")),
-            Item.banner(HomeItem(title: "푸라닥 치킨", imageUrl: "https://www.puradakchicken.com/upload/menu/마불로_악마_web0.jpg")),
+            Item.banner(HomeItem(title: "교촌 치킨", imageUrl: imageUrl)),
+            Item.banner(HomeItem(title: "굽네 치킨", imageUrl: imageUrl2)),
+            Item.banner(HomeItem(title: "푸라닥 치킨", imageUrl: imageUrl3)),
         ]
-        
-        snapshot.appendItems(bannerItems,toSection: Section(id: "Banner"))
+        snapshot.appendItems(bannerItems,toSection: bannserSection)
         
         let normalSection = Section(id: "NormalCarosel")
         snapshot.appendSections([normalSection])
         let normalItems = [
             Item.normalCarousel(HomeItem(title: "교촌 치킨",subTitle:"간장 치킨" ,imageUrl: imageUrl)),
-            Item.normalCarousel(HomeItem(title: "굽네 치킨",subTitle:"오븐 치킨" ,imageUrl: imageUrl)),
-            Item.normalCarousel(HomeItem(title: "푸라닥 치킨",subTitle:"차이니즈 치킨" ,imageUrl: imageUrl)),
+            Item.normalCarousel(HomeItem(title: "굽네 치킨",subTitle:"오븐 치킨" ,imageUrl: imageUrl2)),
+            Item.normalCarousel(HomeItem(title: "푸라닥 치킨",subTitle:"차이니즈 치킨" ,imageUrl: imageUrl3)),
             Item.normalCarousel(HomeItem(title: "후라이드 참 잘하는 집",subTitle:"후라이드 치킨" ,imageUrl: imageUrl)),
-            Item.normalCarousel(HomeItem(title: "페리카나",subTitle:"양념 후라이드 반반 치킨" ,imageUrl: imageUrl)),
-            Item.normalCarousel(HomeItem(title: "BHC",subTitle:"뿌링클 치킨" ,imageUrl: imageUrl))
+            Item.normalCarousel(HomeItem(title: "페리카나",subTitle:"양념 후라이드 반반 치킨" ,imageUrl: imageUrl2)),
+            Item.normalCarousel(HomeItem(title: "BHC",subTitle:"뿌링클 치킨" ,imageUrl: imageUrl3))
         ]
         snapshot.appendItems(normalItems, toSection: normalSection)
         
@@ -69,14 +71,15 @@ class ViewController: UIViewController {
         snapshot.appendSections([listSection])
         let listItems = [
             Item.listCarousel(HomeItem(title: "교촌 치킨",subTitle:"간장 치킨" ,imageUrl: imageUrl)),
-            Item.listCarousel(HomeItem(title: "굽네 치킨",subTitle:"오븐 치킨" ,imageUrl: imageUrl)),
-            Item.listCarousel(HomeItem(title: "푸라닥 치킨",subTitle:"차이니즈 치킨" ,imageUrl: imageUrl)),
+            Item.listCarousel(HomeItem(title: "굽네 치킨",subTitle:"오븐 치킨" ,imageUrl: imageUrl2)),
+            Item.listCarousel(HomeItem(title: "푸라닥 치킨",subTitle:"차이니즈 치킨" ,imageUrl: imageUrl3)),
             Item.listCarousel(HomeItem(title: "후라이드 참 잘하는 집",subTitle:"후라이드 치킨" ,imageUrl: imageUrl)),
-            Item.listCarousel(HomeItem(title: "페리카나",subTitle:"양념 후라이드 반반 치킨" ,imageUrl: imageUrl)),
-            Item.listCarousel(HomeItem(title: "BHC",subTitle:"뿌링클 치킨" ,imageUrl: imageUrl))
+            Item.listCarousel(HomeItem(title: "페리카나",subTitle:"양념 후라이드 반반 치킨" ,imageUrl: imageUrl2)),
+            Item.listCarousel(HomeItem(title: "BHC",subTitle:"뿌링클 치킨" ,imageUrl: imageUrl3))
             
         ]
         snapshot.appendItems(listItems, toSection: listSection)
+        
         dataSource?.apply(snapshot)
     }
     

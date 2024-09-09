@@ -15,7 +15,6 @@
 		072791782C8F27C2002364EF /* Base in Resources */ = {isa = PBXBuildFile; fileRef = 072791772C8F27C2002364EF /* Base */; };
 		072791812C8F27DA002364EF /* RxAlamofire in Frameworks */ = {isa = PBXBuildFile; productRef = 072791802C8F27DA002364EF /* RxAlamofire */; };
 		072791842C8F27F2002364EF /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = 072791832C8F27F2002364EF /* SnapKit */; };
-		072791862C8F27F2002364EF /* SnapKit-Dynamic in Frameworks */ = {isa = PBXBuildFile; productRef = 072791852C8F27F2002364EF /* SnapKit-Dynamic */; };
 		072791892C8F27FE002364EF /* Kingfisher in Frameworks */ = {isa = PBXBuildFile; productRef = 072791882C8F27FE002364EF /* Kingfisher */; };
 		0727918C2C8F2AE8002364EF /* Const.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0727918B2C8F2AE8002364EF /* Const.swift */; };
 		0727918F2C8F2BC9002364EF /* TV.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0727918E2C8F2BC9002364EF /* TV.swift */; };
@@ -25,6 +24,7 @@
 		072791972C8F3A5C002364EF /* TVNetwork.swift in Sources */ = {isa = PBXBuildFile; fileRef = 072791962C8F3A5C002364EF /* TVNetwork.swift */; };
 		072791992C8F3B3C002364EF /* MovieNetwork.swift in Sources */ = {isa = PBXBuildFile; fileRef = 072791982C8F3B3C002364EF /* MovieNetwork.swift */; };
 		0727919B2C8F3C01002364EF /* NetworkProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0727919A2C8F3C01002364EF /* NetworkProvider.swift */; };
+		0727919D2C8F4183002364EF /* ButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0727919C2C8F4183002364EF /* ButtonView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -44,6 +44,7 @@
 		072791962C8F3A5C002364EF /* TVNetwork.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TVNetwork.swift; sourceTree = "<group>"; };
 		072791982C8F3B3C002364EF /* MovieNetwork.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieNetwork.swift; sourceTree = "<group>"; };
 		0727919A2C8F3C01002364EF /* NetworkProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkProvider.swift; sourceTree = "<group>"; };
+		0727919C2C8F4183002364EF /* ButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -54,7 +55,6 @@
 				072791892C8F27FE002364EF /* Kingfisher in Frameworks */,
 				072791812C8F27DA002364EF /* RxAlamofire in Frameworks */,
 				072791842C8F27F2002364EF /* SnapKit in Frameworks */,
-				072791862C8F27F2002364EF /* SnapKit-Dynamic in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -84,6 +84,7 @@
 				0727916B2C8F27C1002364EF /* AppDelegate.swift */,
 				0727916D2C8F27C1002364EF /* SceneDelegate.swift */,
 				0727916F2C8F27C1002364EF /* ViewController.swift */,
+				0727919C2C8F4183002364EF /* ButtonView.swift */,
 				072791712C8F27C1002364EF /* Main.storyboard */,
 				072791742C8F27C2002364EF /* Assets.xcassets */,
 				072791762C8F27C2002364EF /* LaunchScreen.storyboard */,
@@ -134,7 +135,6 @@
 			packageProductDependencies = (
 				072791802C8F27DA002364EF /* RxAlamofire */,
 				072791832C8F27F2002364EF /* SnapKit */,
-				072791852C8F27F2002364EF /* SnapKit-Dynamic */,
 				072791882C8F27FE002364EF /* Kingfisher */,
 			);
 			productName = TVMOVIE;
@@ -199,6 +199,7 @@
 			files = (
 				072791932C8F34D0002364EF /* MovieResult.swift in Sources */,
 				072791702C8F27C1002364EF /* ViewController.swift in Sources */,
+				0727919D2C8F4183002364EF /* ButtonView.swift in Sources */,
 				072791952C8F37F6002364EF /* Network.swift in Sources */,
 				072791972C8F3A5C002364EF /* TVNetwork.swift in Sources */,
 				0727918C2C8F2AE8002364EF /* Const.swift in Sources */,
@@ -468,11 +469,6 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 072791822C8F27F2002364EF /* XCRemoteSwiftPackageReference "SnapKit" */;
 			productName = SnapKit;
-		};
-		072791852C8F27F2002364EF /* SnapKit-Dynamic */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = 072791822C8F27F2002364EF /* XCRemoteSwiftPackageReference "SnapKit" */;
-			productName = "SnapKit-Dynamic";
 		};
 		072791882C8F27FE002364EF /* Kingfisher */ = {
 			isa = XCSwiftPackageProductDependency;

@@ -22,6 +22,9 @@
 		072791912C8F33AB002364EF /* Movie.swift in Sources */ = {isa = PBXBuildFile; fileRef = 072791902C8F33AB002364EF /* Movie.swift */; };
 		072791932C8F34D0002364EF /* MovieResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = 072791922C8F34D0002364EF /* MovieResult.swift */; };
 		072791952C8F37F6002364EF /* Network.swift in Sources */ = {isa = PBXBuildFile; fileRef = 072791942C8F37F6002364EF /* Network.swift */; };
+		072791972C8F3A5C002364EF /* TVNetwork.swift in Sources */ = {isa = PBXBuildFile; fileRef = 072791962C8F3A5C002364EF /* TVNetwork.swift */; };
+		072791992C8F3B3C002364EF /* MovieNetwork.swift in Sources */ = {isa = PBXBuildFile; fileRef = 072791982C8F3B3C002364EF /* MovieNetwork.swift */; };
+		0727919B2C8F3C01002364EF /* NetworkProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0727919A2C8F3C01002364EF /* NetworkProvider.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -38,6 +41,9 @@
 		072791902C8F33AB002364EF /* Movie.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Movie.swift; sourceTree = "<group>"; };
 		072791922C8F34D0002364EF /* MovieResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieResult.swift; sourceTree = "<group>"; };
 		072791942C8F37F6002364EF /* Network.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Network.swift; sourceTree = "<group>"; };
+		072791962C8F3A5C002364EF /* TVNetwork.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TVNetwork.swift; sourceTree = "<group>"; };
+		072791982C8F3B3C002364EF /* MovieNetwork.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieNetwork.swift; sourceTree = "<group>"; };
+		0727919A2C8F3C01002364EF /* NetworkProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkProvider.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -92,6 +98,9 @@
 				0727918B2C8F2AE8002364EF /* Const.swift */,
 				0727918D2C8F2BB4002364EF /* Entities */,
 				072791942C8F37F6002364EF /* Network.swift */,
+				072791962C8F3A5C002364EF /* TVNetwork.swift */,
+				072791982C8F3B3C002364EF /* MovieNetwork.swift */,
+				0727919A2C8F3C01002364EF /* NetworkProvider.swift */,
 			);
 			path = Network;
 			sourceTree = "<group>";
@@ -191,8 +200,11 @@
 				072791932C8F34D0002364EF /* MovieResult.swift in Sources */,
 				072791702C8F27C1002364EF /* ViewController.swift in Sources */,
 				072791952C8F37F6002364EF /* Network.swift in Sources */,
+				072791972C8F3A5C002364EF /* TVNetwork.swift in Sources */,
 				0727918C2C8F2AE8002364EF /* Const.swift in Sources */,
+				072791992C8F3B3C002364EF /* MovieNetwork.swift in Sources */,
 				072791912C8F33AB002364EF /* Movie.swift in Sources */,
+				0727919B2C8F3C01002364EF /* NetworkProvider.swift in Sources */,
 				0727916C2C8F27C1002364EF /* AppDelegate.swift in Sources */,
 				0727918F2C8F2BC9002364EF /* TV.swift in Sources */,
 				0727916E2C8F27C1002364EF /* SceneDelegate.swift in Sources */,

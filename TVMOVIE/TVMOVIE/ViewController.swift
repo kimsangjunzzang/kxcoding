@@ -20,19 +20,30 @@
  */
 import UIKit
 import SnapKit
+import RxSwift
 
 class ViewController: UIViewController {
-    
+    let disposeBag = DisposeBag()
     let buttonView = ButtonView()
     let collectionView = UICollectionView(frame: .zero, collectionViewLayout:UICollectionViewLayout())
+    let viewModel = ViewModel()
+    
+    // Subject - 이벤트를 발생 시키면서 Observable 형태도 되는 것
+    let tvTrigger = PublishSubject<Void>()
+    let movieTrigger = PublishSubject<Void>()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         setUI()
+        bindViewModel()
+        bindView()
+        tvTrigger.onNext(()) // 버튼을 누르지 않아도 자동으로 불러온다.
     }
     
     private func setUI(){
         self.view.addSubview(buttonView)
         self.view.addSubview(collectionView)
+        
         
         collectionView.backgroundColor = .black
         
@@ -45,7 +56,31 @@ class ViewController: UIViewController {
             make.top.equalTo(buttonView.snp.bottom)
         }
     }
-
-
+    
+    private func bindViewModel() {
+        let input = ViewModel.Input(tvTrigger: tvTrigger.asObservable(), movieTrigger: movieTrigger.asObservable())
+        let output = viewModel.transform(input: input)
+        
+        output.tvList.bind { tvList in
+            print("TV List \(tvList)")
+            
+        }.disposed(by: disposeBag)
+        
+        output.movieResult.bind{ movieResult in
+            print("Movie Result \(movieResult)")
+        }.disposed(by: disposeBag)
+    }
+    
+    private func bindView() {
+        // 순환 참조를 일으킬 수 있기 때문에 약한 참조를 한다.
+        buttonView.tvButton.rx.tap.bind{ [weak self] in
+            self?.tvTrigger.onNext(Void())
+            
+        }.disposed(by: disposeBag)
+        
+        buttonView.movieButton.rx.tap.bind { [weak self] in
+            self?.movieTrigger.onNext(Void())
+        }.disposed(by: disposeBag)
+    }
 }
 

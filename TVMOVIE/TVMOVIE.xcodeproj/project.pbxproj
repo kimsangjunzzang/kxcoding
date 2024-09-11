@@ -25,6 +25,7 @@
 		072791992C8F3B3C002364EF /* MovieNetwork.swift in Sources */ = {isa = PBXBuildFile; fileRef = 072791982C8F3B3C002364EF /* MovieNetwork.swift */; };
 		0727919B2C8F3C01002364EF /* NetworkProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0727919A2C8F3C01002364EF /* NetworkProvider.swift */; };
 		0727919D2C8F4183002364EF /* ButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0727919C2C8F4183002364EF /* ButtonView.swift */; };
+		0727919F2C90A5B1002364EF /* ViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0727919E2C90A5B1002364EF /* ViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -45,6 +46,7 @@
 		072791982C8F3B3C002364EF /* MovieNetwork.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieNetwork.swift; sourceTree = "<group>"; };
 		0727919A2C8F3C01002364EF /* NetworkProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkProvider.swift; sourceTree = "<group>"; };
 		0727919C2C8F4183002364EF /* ButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonView.swift; sourceTree = "<group>"; };
+		0727919E2C90A5B1002364EF /* ViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -84,6 +86,7 @@
 				0727916B2C8F27C1002364EF /* AppDelegate.swift */,
 				0727916D2C8F27C1002364EF /* SceneDelegate.swift */,
 				0727916F2C8F27C1002364EF /* ViewController.swift */,
+				0727919E2C90A5B1002364EF /* ViewModel.swift */,
 				0727919C2C8F4183002364EF /* ButtonView.swift */,
 				072791712C8F27C1002364EF /* Main.storyboard */,
 				072791742C8F27C2002364EF /* Assets.xcassets */,
@@ -203,6 +206,7 @@
 				072791952C8F37F6002364EF /* Network.swift in Sources */,
 				072791972C8F3A5C002364EF /* TVNetwork.swift in Sources */,
 				0727918C2C8F2AE8002364EF /* Const.swift in Sources */,
+				0727919F2C90A5B1002364EF /* ViewModel.swift in Sources */,
 				072791992C8F3B3C002364EF /* MovieNetwork.swift in Sources */,
 				072791912C8F33AB002364EF /* Movie.swift in Sources */,
 				0727919B2C8F3C01002364EF /* NetworkProvider.swift in Sources */,

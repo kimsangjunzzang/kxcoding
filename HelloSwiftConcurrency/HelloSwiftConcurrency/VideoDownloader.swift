@@ -19,6 +19,23 @@ class VideoDownloader {
         
         return localUrl
     }
+    
+    func download(completion: @escaping (Result<URL, Error>) -> ()) {
+        DispatchQueue.global().async {
+            do {
+                let data = try Data(contentsOf: self.url)
+                try data.write(to: self.localUrl, options: .atomic)
+                
+                DispatchQueue.main.async {
+                    completion(.success(self.localUrl))
+                }
+            } catch {
+                DispatchQueue.main.async {
+                    completion(.failure(error))
+                }
+            }
+        }
+    }
 }
 
 enum DounloadError: Error {

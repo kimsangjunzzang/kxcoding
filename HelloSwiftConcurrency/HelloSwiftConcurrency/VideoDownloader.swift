@@ -12,6 +12,7 @@ class VideoDownloader {
     
     let localUrl = URL(filePath: NSTemporaryDirectory().appending("video.mp4"))
     
+    // 메인 쓰레드에서 다운로드
     func download() throws -> URL  {
         let data = try Data(contentsOf: url)
         
@@ -20,6 +21,7 @@ class VideoDownloader {
         return localUrl
     }
     
+    // 백그라운드에서 비동기로 다운로드
     func download(completion: @escaping (Result<URL, Error>) -> ()) {
         DispatchQueue.global().async {
             do {

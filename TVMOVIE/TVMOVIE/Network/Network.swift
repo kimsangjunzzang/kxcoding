@@ -9,11 +9,10 @@ import Foundation
 import RxSwift
 import RxAlamofire
 
-
-
 class Network<T:Decodable> {
     private let endpoint: String
     private let queue : ConcurrentDispatchQueueScheduler
+    
     init(endpoint: String) {
         self.endpoint = endpoint
         self.queue = ConcurrentDispatchQueueScheduler(qos: .background)
@@ -23,7 +22,8 @@ class Network<T:Decodable> {
     func getItemList(path: String) -> Observable<T>{
         let fullPath = "\(endpoint)\(path)?api_key=\(apiKey)&language=ko"
         return RxAlamofire.data(.get, fullPath)
-            .observeOn(queue)
+        // 후속 처리
+            .observeOn(queue) // 백그라운드에서 작업을 실행 할 것으로 명령
             .debug()
             .map { data -> T in
                 return try JSONDecoder().decode(T.self, from: data)

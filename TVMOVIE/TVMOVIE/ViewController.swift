@@ -23,10 +23,11 @@ import SnapKit
 import RxSwift
 
 class ViewController: UIViewController {
+    let viewModel = ViewModel()
+    
     let disposeBag = DisposeBag()
     let buttonView = ButtonView()
     let collectionView = UICollectionView(frame: .zero, collectionViewLayout:UICollectionViewLayout())
-    let viewModel = ViewModel()
     
     // Subject - 이벤트를 발생 시키면서 Observable 형태도 되는 것
     let tvTrigger = PublishSubject<Void>()
@@ -44,7 +45,6 @@ class ViewController: UIViewController {
         self.view.addSubview(buttonView)
         self.view.addSubview(collectionView)
         
-        
         collectionView.backgroundColor = .black
         
         buttonView.snp.makeConstraints { make in
@@ -58,7 +58,8 @@ class ViewController: UIViewController {
     }
     
     private func bindViewModel() {
-        let input = ViewModel.Input(tvTrigger: tvTrigger.asObservable(), movieTrigger: movieTrigger.asObservable())
+        let input = ViewModel.Input(tvTrigger: tvTrigger.asObservable(),
+                                    movieTrigger: movieTrigger.asObservable())
         let output = viewModel.transform(input: input)
         
         output.tvList.bind { tvList in
